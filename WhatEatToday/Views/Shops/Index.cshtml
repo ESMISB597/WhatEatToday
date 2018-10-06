@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WhatEatToday.Models.Shop>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Shop</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.details)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pic)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.details)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.type)
+        </td>
+        <td>
+            <img src=@Url.Content("~/Content/images/"+(item.pic)) style="width: 100px;height: auto" /> 
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.shop_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.shop_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.shop_id })
+        </td>
+    </tr>
+}
+
+</table>
