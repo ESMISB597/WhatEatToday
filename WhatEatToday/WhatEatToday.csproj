@@ -415,6 +415,10 @@
     <Content Include="Views\Home\LoginHome.cshtml" />
     <Content Include="Views\Shops\FindShop.cshtml" />
     <Content Include="Views\Game\Index.cshtml" />
+    <Content Include="Views\Game\Game1.cshtml" />
+    <Content Include="Views\Game\Game2.cshtml" />
+    <Content Include="Views\Game\Game3.cshtml" />
+    <Content Include="Views\Game\rule.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
