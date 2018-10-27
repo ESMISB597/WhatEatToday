@@ -264,7 +264,7 @@
       <DependentUpon>WE_Today.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShopsController.cs" />
+    <Compile Include="Controllers\ShopsController.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
