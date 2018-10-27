@@ -8,6 +8,10 @@ namespace WhatEatToday.Controllers
 {
     public class HomeController : Controller
     {
+        public ActionResult LoginHome()
+        {
+            return View();
+        }
         public ActionResult Index()
         {
             return View();
