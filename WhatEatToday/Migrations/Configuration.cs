@@ -10,7 +10,6 @@ namespace WhatEatToday.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "WhatEatToday.Models.ApplicationDbContext";
         }
 
         protected override void Seed(WhatEatToday.Models.ApplicationDbContext context)

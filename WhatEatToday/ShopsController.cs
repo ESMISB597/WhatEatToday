@@ -8,11 +8,11 @@ using System.Web;
 using System.Web.Mvc;
 using WhatEatToday.Models;
 
-namespace WhatEatToday.Controllers
+namespace WhatEatToday
 {
     public class ShopsController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private WhatEatToday_Entities db = new WhatEatToday_Entities();
 
         // GET: Shops
         public ActionResult Index()
@@ -46,7 +46,7 @@ namespace WhatEatToday.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "shop_id,name,location,details,type,pic")] Shop shop)
+        public ActionResult Create([Bind(Include = "shop_id,name,details,type,pic,latitude,longitude")] Shop shop)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace WhatEatToday.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "shop_id,name,location,details,type,pic")] Shop shop)
+        public ActionResult Edit([Bind(Include = "shop_id,name,details,type,pic,latitude,longitude")] Shop shop)
         {
             if (ModelState.IsValid)
             {

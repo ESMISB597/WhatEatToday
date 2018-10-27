@@ -29,7 +29,5 @@ namespace WhatEatToday.Models
         {
             return new ApplicationDbContext();
         }
-
-        public System.Data.Entity.DbSet<WhatEatToday.Models.Shop> Shops { get; set; }
     }
 }
