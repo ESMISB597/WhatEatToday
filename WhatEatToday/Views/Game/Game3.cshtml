@@ -1,0 +1,144 @@
+﻿
+<html>
+<head>
+    <title>Permutation Test</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <http-equiv ="Content-Type" content="text/html; charset=utf-8" />
+    <SCRIPT Language="JavaScript">
+
+var date = new Date();
+document.write(
+    date.getDate() + "-" +
+    (parseInt(date.getMonth())+1) + "-" +
+    date.getFullYear()
+);
+ var num1 = date.getDate();
+ var num2 = (parseInt(date.getMonth())+1);
+ var num3 = date.getFullYear();
+
+    function startCalc(){
+    interval = setInterval("calc()",1);
+    }
+    function calc(){
+    num1 ;
+    num2 ;
+    num3 ;
+    one = document.autoSumForm.target.value;
+    two = document.autoSumForm.sumassess.value;
+    tree = document.autoSumForm.sumassess2.value;
+    four = document.autoSumForm.sumassess3.value;
+    sum = (two * 1) + (one * 1) + (tree * 1 ) + (four * 1) + ((num1 *1) + (num2 *1) +(num3 *1));
+    document.autoSumForm.gap.value = (two * 1) + (one * 1) + (tree * 1 ) + (four * 1) + ((num1 *1) + (num2 *1) +(num3 *1));
+    if (sum > 2500) {
+document.getElementById("demo").innerHTML = "ข้าวไข่เจียว ร้าน ครัวบ้านฉัน";
+
+   }
+    }
+
+
+
+
+    function stopCalc(){
+    clearInterval(interval);
+    }
+
+
+
+    </SCRIPT>
+    <body style="background-color: #FFCC99">
+
+        <form name="autoSumForm">
+            <br>
+            <center>
+                <br>
+                <button class="btn btn-warning btn-lg " disabled><h1 style="color:maroon">กรอกข้อมูลตามกฏโหราศาสตร์</h1></button> 
+               <br /> <a href="~/Game/rule"><h5>คลิกก่อนกรอก</h5></a><br>
+                <div class="col" style="background-color: salmon">
+                    <br>
+                    <table border="0" style="color: #330000">
+                        <tr style="background-color: salmon">
+                            <td>
+                                <h4>&nbsp;วันเกิด: &nbsp;</h4>
+                            </td>
+                            <td>
+                            <td>
+                                <h4>
+                                    <input type=text name="target" value="" onFocus="startCalc();" size="5" onBlur="stopCalc();">
+                                </h4>
+                            </td>
+                            <td>
+                                <h4>&nbsp;วันที่เกิด: &nbsp;</h4>
+                            </td>
+                            <td>
+                                <h4>
+                                    <input type=text name="sumassess" value="" onFocus="startCalc();" size="5" onBlur="stopCalc();">
+                                </h4>
+                            </td>
+                            <td>
+                                <h4>&nbsp;เดือนเกิด:&nbsp; </h4>
+                            </td>
+                            <td>
+                                <h4>
+                                    <input type=text name="sumassess2" value="" size="5" onFocus="startCalc();" onBlur="stopCalc();">
+                                </h4>
+                            </td>
+                            <td>
+                                <h4>&nbsp;ปีเกิด:&nbsp; </h4>
+                            </td>
+                            <td>
+                                <h4>
+                                    <input type=text name="sumassess3" value="" size="5" onFocus="startCalc();" onBlur="stopCalc();">
+                                </h4>
+                            </td>
+
+                            </td>
+                    </table>
+                    <br>
+                    <h4>&nbsp;รหัสลับของคุณวันนี้:&nbsp; </h4>
+
+                    <h4><input size="5" type=text name="gap"></h4> <br><br>
+                </div>
+
+
+        </form>
+        <br>
+        <h2 id="demo"> วันนี้กินอะไรดี </h2>
+        <br>
+        <button class="btn btn-warning btn-primary btn-lg">ล้างข้อมูล</button>
+        </center>
+        <br /><br />
+    </body>
+</html>
+<div class="row" style="background-color:#FF9933">
+    <div class="col-md-3">
+        <center>
+            <h2>Home</h2>
+            <center><a href="~/Home"><img src="~/Content/menu1.png" width="300px" class="animated bounceIn"></a></center>
+        </center>
+    </div>
+    <div class="col-md-3">
+        <center>
+            <h2>Find Shop</h2>
+            <center><a href="~/Shops/FindShop"><img src="~/Content/menu2.png" width="300px" class="animated bounceIn"></a></center>
+        </center>
+    </div>
+    <div class="col-md-3">
+        <center>
+            <h2>Games</h2>
+            <center><a href="~/Game/Index"><img src="~/Content/menu3.png" width="300px" class="animated bounceIn"></a></center>
+        </center>
+    </div>
+    <div class="col-md-3">
+        <center>
+            <h2>Favorit</h2>
+            <center><a href="~/Home"><img src="~/Content/menu4.png" width="300px" class="animated bounceIn"></a></center>
+        </center>
+    </div>
+</div>
+<div>

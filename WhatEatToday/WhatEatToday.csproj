@@ -281,9 +281,9 @@
     <Content Include="Content\images\12.jpg" />
     <Content Include="Content\js\chart.js" />
     <Content Include="favicon.ico" />
-    <Content Include="game1.png" />
-    <Content Include="game2.png" />
-    <Content Include="game3.png" />
+    <Content Include="Content\images\game1.png" />
+    <Content Include="Content\images\game2.png" />
+    <Content Include="Content\images\game3.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="ApplicationInsights.config">
@@ -415,6 +415,10 @@
     <Content Include="Views\Home\LoginHome.cshtml" />
     <Content Include="Views\Shops\FindShop.cshtml" />
     <Content Include="Views\Game\Index.cshtml" />
+    <Content Include="Views\Game\Game1.cshtml" />
+    <Content Include="Views\Game\Game2.cshtml" />
+    <Content Include="Views\Game\Game3.cshtml" />
+    <Content Include="Views\Game\rule.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

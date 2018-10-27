@@ -13,5 +13,21 @@ namespace WhatEatToday.Controllers
         {
             return View();
         }
+        public ActionResult Game1()
+        {
+            return View();
+        }
+        public ActionResult Game2()
+        {
+            return View();
+        }
+        public ActionResult Game3()
+        {
+            return View();
+        }
+        public ActionResult rule()
+        {
+            return View();
+        }
     }
 }
