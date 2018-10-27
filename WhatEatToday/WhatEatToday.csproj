@@ -281,9 +281,9 @@
     <Content Include="Content\images\12.jpg" />
     <Content Include="Content\js\chart.js" />
     <Content Include="favicon.ico" />
-    <Content Include="game1.png" />
-    <Content Include="game2.png" />
-    <Content Include="game3.png" />
+    <Content Include="Content\images\game1.png" />
+    <Content Include="Content\images\game2.png" />
+    <Content Include="Content\images\game3.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="ApplicationInsights.config">
