@@ -36,7 +36,19 @@
     <div class="jumbotron animated bounceInDown" style="background-color:darksalmon">
         <h1>What Eat Today!</h1>
         <p class="lead">Welcome to WhatEatToday Application will help you find your fevorite meal and Give you a better choice Enjoy !!</p>
-        <p><a href="http://asp.net" class="btn btn-danger btn-lg">Find Your Meal &raquo;</a></p>
+        @using (Html.BeginForm())
+        {<br />
+        <rigth>
+            <div>
+                <p>
+                    ค้นหาร้าน: @Html.TextBox("SearchString", null, new { @class = "form-control" })
+                    <br />
+                    <input type="submit" class="btn btn-primary" value="Search" />
+                    <br />
+                </p>
+            </div>
+        </rigth><br />
+        }
     </div> <br />
 
     <div class="row" style="background-color:#FF9933">
