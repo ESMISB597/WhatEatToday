@@ -36,8 +36,8 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
+            <a href="~/Menus">@Html.DisplayFor(modelItem => item.name)</a>
+</td>
         <td>
             @Html.DisplayFor(modelItem => item.details)
         </td>
