@@ -7,9 +7,6 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -45,7 +42,7 @@
             @Html.DisplayFor(modelItem => item.type)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.pic)
+            <img src=@Url.Content("~/Content/images/"+(item.pic)) style="width: 100px;height: auto" /> 
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.latitude)

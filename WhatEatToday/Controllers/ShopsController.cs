@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WhatEatToday.Models;
+using System.IO;
 
 namespace WhatEatToday
 {
@@ -50,6 +51,14 @@ namespace WhatEatToday
         {
             if (ModelState.IsValid)
             {
+                var file = Request.Files[0];
+                if (file !=null && file.ContentLength>0)
+                {
+                    var fileName = Path.GetFileName(file.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Content/images"), fileName);
+                    file.SaveAs(path);
+                    shop.pic = fileName;
+                }
                 db.Shops.Add(shop);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -82,6 +91,14 @@ namespace WhatEatToday
         {
             if (ModelState.IsValid)
             {
+                var file = Request.Files[0];
+                if (file != null && file.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(file.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Content/images"), fileName);
+                    file.SaveAs(path);
+                    shop.pic = fileName;
+                }
                 db.Entry(shop).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
