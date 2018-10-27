@@ -25,6 +25,43 @@
         </table>
         <br /><br />
     }
+    @{
+        if (IsPost == true)
+        {
+            foreach (var shop in Model)
+            {
+                <div class="container">
+                    <div class="jumbotron">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h4>
+                                    @Html.DisplayFor(modelItem => shop.name)
+                                    <img src=@Url.Content("~/Content/images/"+(shop.pic)) style="width: 100px;height: auto" />
+
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                รายละเอียดร้านค้า
+                                <br />
+                                @Html.DisplayFor(modelItem => shop.details)
+                            </div>
+                            <div class="col-lg-6">
+                                ประเภทร้านค้า
+                                <br />
+                                @Html.DisplayFor(modelItem => shop.type)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }else
+        {
+
+        }
+    }
+    
 <div class="row" style="background-color:#FF9933">
     <div class="col-md-3">
         <center>

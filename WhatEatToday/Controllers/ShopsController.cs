@@ -144,9 +144,22 @@ namespace WhatEatToday
             return RedirectToAction("Index");
         }
 
-        public ActionResult FindShop()
+        public ActionResult FindShop(string SearchString)
         {
-            return View();
+            var shop = from s in db.Shops
+                       select s;
+                if (!String.IsNullOrEmpty(SearchString))
+                {
+                    shop = shop.Where(p => p.name.Contains(SearchString));
+                    return View(shop);
+
+                }
+                else
+                {
+
+                }
+            
+            return View("");
         }
 
         protected override void Dispose(bool disposing)
