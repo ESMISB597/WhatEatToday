@@ -13,20 +13,18 @@ namespace WhatEatToday
 {
     public class ShopsController : Controller
     {
-        public ActionResult FindShop()
-        {
-            return View();
-        }
         private WhatEatToday_Entities db = new WhatEatToday_Entities();
 
         // GET: Shops
         public ActionResult Index(string SearchString)
         {
+
             var store = from s in db.Shops
                         select s;
             if (!String.IsNullOrEmpty(SearchString))
             {
                 store = store.Where(p => p.name.Contains(SearchString));
+                
             }else
             {
 
@@ -144,6 +142,11 @@ namespace WhatEatToday
             db.Shops.Remove(shop);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult FindShop()
+        {
+            return View();
         }
 
         protected override void Dispose(bool disposing)
