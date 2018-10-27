@@ -16,9 +16,19 @@ namespace WhatEatToday
         private WhatEatToday_Entities db = new WhatEatToday_Entities();
 
         // GET: Shops
-        public ActionResult Index()
+        public ActionResult Index(string SearchString)
         {
-            return View(db.Shops.ToList());
+            var store = from s in db.Shops
+                        select s;
+            if (!String.IsNullOrEmpty(SearchString))
+            {
+                store = store.Where(p => p.name.Contains(SearchString));
+            }else
+            {
+
+            }
+
+            return View(store);
         }
 
         // GET: Shops/Details/5

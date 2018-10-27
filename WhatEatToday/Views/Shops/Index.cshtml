@@ -10,6 +10,13 @@
 <p>
     <button type="button" class="btn btn-warning btn-lg">@Html.ActionLink("Add Shop", "Create")</button>
 </p>
+@using (Html.BeginForm()
+{
+    <p>
+        ค้นหาร้าน: @Html.TextBox("SearchString",null,new { @class = "form-control" })
+        <input type="submit" class="btn btn-success" value="Search" />
+    </p>
+}
 <table class="table" style="background-color:mintcream">
     <tr>
         <th>
