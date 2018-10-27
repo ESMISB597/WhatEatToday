@@ -14,6 +14,7 @@ namespace WhatEatToday.Controllers
         }
         public ActionResult Index()
         {
+
             return View();
         }
 
