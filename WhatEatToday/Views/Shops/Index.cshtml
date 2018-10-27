@@ -8,9 +8,9 @@
 <center><h2><b>Your Shop</b></h2></center>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <button type="button" class="btn btn-warning btn-lg">@Html.ActionLink("Add Shop", "Create")</button>
 </p>
-<table class="table">
+<table class="table" style="background-color:mintcream">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.name)
