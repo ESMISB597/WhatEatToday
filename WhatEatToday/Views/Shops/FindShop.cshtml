@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WhatEatToday.Models.Shop>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<center><h2><b>Find Shop</b></h2></center>
+
+
+<center>
+    @using (Html.BeginForm())
+    {
+        <br />
+        <table>
+            <tr>
+                <td>
+                    ค้นหาร้าน:&nbsp;&nbsp;
+                </td>
+                <td>
+                    @Html.TextBox("SearchString", null, new { @class = "form-control" })
+                </td>
+                <td> &nbsp;&nbsp;<input type="submit" class="btn btn-danger btn-lg " value="Search" />  </td>
+            </tr>
+        </table>
+        <br /><br />
+    }
+<div class="row" style="background-color:#FF9933">
+    <div class="col-md-3">
+        <center>
+            <h2>Home</h2>
+            <center><a href="~/Home"><img src="~/Content/menu1.png" width="300px" class="animated bounceIn"></a></center>
+        </center>
+    </div>
+    <div class="col-md-3">
+        <center>
+            <h2>Find Shop</h2>
+            <center><a href="~/Shops/FindShop"><img src="~/Content/menu2.png" width="300px" class="animated bounceIn"></a></center>
+        </center>
+    </div>
+    <div class="col-md-3">
+        <center>
+            <h2>Games</h2>
+            <center><a href="~/Home"><img src="~/Content/menu3.png" width="300px" class="animated bounceIn"></a></center>
+        </center>
+    </div>
+    <div class="col-md-3">
+        <center>
+            <h2>Favorit</h2>
+            <center><a href="~/Home"><img src="~/Content/menu4.png" width="300px" class="animated bounceIn"></a></center>
+        </center>
+    </div>
+</div>

@@ -13,6 +13,10 @@ namespace WhatEatToday
 {
     public class ShopsController : Controller
     {
+        public ActionResult FindShop()
+        {
+            return View();
+        }
         private WhatEatToday_Entities db = new WhatEatToday_Entities();
 
         // GET: Shops
