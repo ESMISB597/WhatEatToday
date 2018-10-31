@@ -61,19 +61,26 @@ namespace WhatEatToday
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "shop_id,name,details,type,pic,latitude,longitude")] Shop shop)
         {
-            if (ModelState.IsValid)
+            try
             {
-                var file = Request.Files[0];
-                if (file !=null && file.ContentLength>0)
+                if (ModelState.IsValid)
                 {
-                    var fileName = Path.GetFileName(file.FileName);
-                    var path = Path.Combine(Server.MapPath("~/Content/images"), fileName);
-                    file.SaveAs(path);
-                    shop.pic = fileName;
+                    var file = Request.Files[0];
+                    if (file != null && file.ContentLength > 0)
+                    {
+                        var fileName = Path.GetFileName(file.FileName);
+                        var path = Path.Combine(Server.MapPath("~/Content/images"), fileName);
+                        file.SaveAs(path);
+                        shop.pic = fileName;
+                    }
+                    db.Shops.Add(shop);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
                 }
-                db.Shops.Add(shop);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+            }
+            catch(System.Data.Entity.Validation.DbEntityValidationException e)
+            {
+                Console.WriteLine(e);
             }
 
             return View(shop);
