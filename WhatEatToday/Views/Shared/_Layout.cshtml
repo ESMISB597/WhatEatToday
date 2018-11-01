@@ -8,9 +8,9 @@
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/animate.css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Scripts/jquery-3.3.1.js")
     @Scripts.Render("~/Content/js/chart.js")
     @Scripts.Render("~/Content/js/WhatEatToday.js")
-    @Scripts.Render("~/Scripts/jquery-3.3.1.js")
 </head>
 <body>
     <nav class="animated fadeInDown navbar navbar-expand-md navbar-dark fixed-top justify-content-between" style="background-color:#8B4513">
@@ -34,9 +34,6 @@
             <br />
             @RenderBody()
             <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-            </footer>
         </div>
     </main>
 

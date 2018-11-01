@@ -54,9 +54,9 @@ namespace WhatEatToday
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "374248856444558",
+               appSecret: "e1016679ba0c7e32734c13040ff956b3");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
