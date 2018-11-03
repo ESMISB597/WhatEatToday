@@ -47,10 +47,7 @@
             @Html.DisplayNameFor(model => model.pic)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.latitude)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.longitude)
+            <p>Location</p>
         </th>
         <th></th>
     </tr>
@@ -58,7 +55,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            <a href="~/Menus">@Html.DisplayFor(modelItem => item.name)</a>
+            <a href="~/Menus/GetMenu/@Html.DisplayFor(modelItem => item.shop_id)">@Html.DisplayFor(modelItem => item.name)</a>
 </td>
         <td>
             @Html.DisplayFor(modelItem => item.details)
@@ -70,10 +67,7 @@
             <img src=@Url.Content("~/Content/images/"+(item.pic)) style="width: 100px;height: auto" /> 
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.latitude)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.longitude)
+            <input type="button" class="btn btn-info" value="ดูแผนที่" onclick="showMap(@Html.DisplayFor(modelItem => item.latitude),@Html.DisplayFor(modelItem => item.longitude))"/>
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.shop_id }) |
@@ -108,5 +102,26 @@
             <h2>Favorit</h2>
             <center><a href="~/Home"><img src="~/Content/menu4.png" width="300px" class="animated bounceIn"></a></center>
         </center>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="mapLabel">Maps</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="map" class="align-content-center"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
     </div>
 </div>

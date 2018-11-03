@@ -20,13 +20,6 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.shop_id, htmlAttributes: new { @class = "control-label col-md-2", @values = "ชื่อ" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.shop_id, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group">
             @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "control-label col-md-2", @values="ชื่อ" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
@@ -57,11 +50,22 @@
                 @Html.ValidationMessageFor(model => model.pic, "", new { @class = "text-danger" })
             </div>
         </div>
+        
+        <div class="form-group">
+            <div class="col-md-2">
+                <input type="button" class="btn btn-info" onclick="showAddMap()" value="Click for Edit Map" />
+            </div>
+            <div class="col-md-10">
+                <div id="map">
+
+                </div>
+            </div>
+        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.latitude, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.latitude, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.latitude, new { htmlAttributes = new { @class = "form-control" ,@id = "latInsert"} })
                 @Html.ValidationMessageFor(model => model.latitude, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -69,7 +73,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.longitude, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.longitude, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.longitude, new { htmlAttributes = new { @class = "form-control" ,@id = "lngInsert"} })
                 @Html.ValidationMessageFor(model => model.longitude, "", new { @class = "text-danger" })
             </div>
         </div>

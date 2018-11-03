@@ -12,6 +12,16 @@
     @Scripts.Render("~/Content/js/chart.js")
     @Scripts.Render("~/Content/js/WhatEatToday.js")
 </head>
+<style>
+        #map {
+            height: 400px;
+            width: 400px;
+            align-self: center;
+        }
+</style>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGQSBUZg2rVkQOPy-gPA9SHLRf3Z1P4Xw&callback=initMap">
+</script>
 <body>
     <nav class="animated fadeInDown navbar navbar-expand-md navbar-dark fixed-top justify-content-between" style="background-color:#8B4513">
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbartop" aria-controls="navbartop" aria-expanded="false" aria-label="Toggle navigation">

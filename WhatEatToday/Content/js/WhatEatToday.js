@@ -26,5 +26,84 @@
         clearInterval(interval);
     }
 
+    var latMap;
+    var lngMap;
+
+    function showMap(lat, lng) {
+        latMap = lat;
+        lngMap = lng;
+        showMapWithLo();
+       
+        $('#mapModal').modal('show');
+    }
+
+    var marker;
+
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: { lat: 14.8817715, lng: 102.0185075 }
+        });
+        marker = new google.maps.Marker({
+            map: map,
+            draggable: false,
+            animation: google.maps.Animation.BOUNCE,
+            mapTypeControl: false,
+            scrollwheel: false,
+            scrollable: false,
+            position: new google.maps.LatLng(14.8817715, 102.0185075)
+        });
+
+    }
+
+    function showMapWithLo() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: { lat: latMap, lng: lngMap }
+        });
+        marker = new google.maps.Marker({
+            map: map,
+            draggable: false,
+            animation: google.maps.Animation.BOUNCE,
+            mapTypeControl: false,
+            scrollwheel: false,
+            scrollable: false,
+            position: new google.maps.LatLng(latMap, lngMap)
+        });
+        marker.addListener('click', toggleBounce);
+    }
+
+    function getMapLocation() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: { lat: 14.8817715, lng: 102.0185075 }
+        });
+        marker = new google.maps.Marker({
+            map: map,
+            draggable: true,
+            animation: google.maps.Animation.DROP,
+            position: new google.maps.LatLng(14.8817715, 102.0185075)
+        });
+        google.maps.event.addListener(marker, 'dragend', function (event) {
+            $('#latInsert').val(this.getPosition().lat().toFixed(6));
+            $('#lngInsert').val(this.getPosition().lng().toFixed(6));
+        });
+    }
+
+    function showAddMap() {
+        getMapLocation();
+
+    }
+
+    function toggleBounce() {
+        if (marker.getAnimation() !== null) {
+            marker.setAnimation(null);
+        } else {
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+
+    }
+
+
 
 

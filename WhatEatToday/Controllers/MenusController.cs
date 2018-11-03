@@ -15,10 +15,28 @@ namespace WhatEatToday
         private WhatEatToday_Entities db = new WhatEatToday_Entities();
 
         // GET: Menus
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
-            var menus = db.Menus.Include(m => m.Shop);
+            var menus = from m in db.Menus
+                        select m;
             return View(menus.ToList());
+        }
+
+        // GET: Menus/GetMenu/5
+        public ActionResult GetMenu(int? id)
+        {
+            var menus = from m in db.Menus
+                        select m;
+            if (!String.IsNullOrEmpty(id.ToString()))
+            {
+                menus = menus.Where(m => m.shop_id == id);
+                return View(menus.ToList());
+            }
+            else
+            {
+
+            }
+            return View("");
         }
 
         // GET: Menus/Details/5
