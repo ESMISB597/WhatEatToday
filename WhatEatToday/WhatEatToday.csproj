@@ -476,7 +476,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49960</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49960/</IISUrl>
+          <IISUrl>https://localhost:49960/</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
           <IISAppRootUrl>http://localhost:49960/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
