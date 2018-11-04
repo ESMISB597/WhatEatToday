@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using WhatEatToday.Models;
 using System.IO;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace WhatEatToday
 {
@@ -15,21 +17,45 @@ namespace WhatEatToday
     {
         private WhatEatToday_Entities db = new WhatEatToday_Entities();
 
+        ApplicationDbContext context;
+        public ShopsController()
+        {
+            context = new Models.ApplicationDbContext();
+        }
         // GET: Shops
         public ActionResult Index(string SearchString)
         {
-
             var store = from s in db.Shops
                         select s;
-            if (!String.IsNullOrEmpty(SearchString))
+            try
             {
-                store = store.Where(p => p.name.Contains(SearchString));
-                
-            }else
+                var user = User.Identity;
+                var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+                var getR = UserManager.GetRoles(user.GetUserId());
+                if (getR.ToString() == "ร้านค้า")
+                {
+                    if (!String.IsNullOrEmpty(SearchString))
+                    {
+                        store = store.Where(p => p.name.Contains(SearchString));
+
+                    }
+                    else
+                    {
+                        ViewBag.ViewEdit = getR[0].ToString();
+                        return View(store);
+                    }
+                }
+                else
+                {
+                    ViewBag.ViewEdit = "";
+                    return View(store);
+                }
+            }
+            catch(System.InvalidOperationException e)
             {
 
             }
-
+            ViewBag.ViewEdit = "NoEdit";
             return View(store);
         }
 
@@ -51,7 +77,17 @@ namespace WhatEatToday
         // GET: Shops/Create
         public ActionResult Create()
         {
-            return View();
+            var user = User.Identity;
+            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            var getR = UserManager.GetRoles(user.GetUserId());
+            if (getR.ToString() == "ร้านค้า")
+            {
+                return View();
+            }else
+            {
+                return View("Index");
+            }
+            
         }
 
         // POST: Shops/Create

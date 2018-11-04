@@ -51,12 +51,11 @@
         </th>
         <th></th>
     </tr>
-
-@foreach (var item in Model) {
+    @foreach (var item in Model) {
     <tr>
         <td>
             <a href="~/Menus/GetMenu/@Html.DisplayFor(modelItem => item.shop_id)">@Html.DisplayFor(modelItem => item.name)</a>
-</td>
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.details)
         </td>
@@ -69,13 +68,22 @@
         <td>
             <input type="button" class="btn btn-info" value="ดูแผนที่" onclick="showMap(@Html.DisplayFor(modelItem => item.latitude),@Html.DisplayFor(modelItem => item.longitude))"/>
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.shop_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.shop_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.shop_id })
-        </td>
+        @if (ViewBag.ViewEdit != "ร้านค้า")
+        {
+            <td>
+                ร้านดี
+            </td>
+        }
+        else
+        {
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.shop_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.shop_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.shop_id })
+            </td>
+        }  
     </tr>
-}
+   }
 
 </table>
 <div class="row" style="background-color:#FF9933">

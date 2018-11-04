@@ -11,19 +11,14 @@ namespace WhatEatToday.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Customer
     {
-        [Display(Name = "Customer ID")]
         public string cus_id { get; set; }
-        [Display(Name = "Email")]
         public string email { get; set; }
         public string token { get; set; }
-        [Display(Name = "Age")]
         public string age { get; set; }
         public string login { get; set; }
-        [Display(Name = "Password")]
         public string password { get; set; }
     }
 }

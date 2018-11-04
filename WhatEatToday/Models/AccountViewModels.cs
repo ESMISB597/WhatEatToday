@@ -49,9 +49,9 @@ namespace WhatEatToday.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
+        [Display(Name = "UserName")]
         [EmailAddress]
-        public string Email { get; set; }
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -64,6 +64,10 @@ namespace WhatEatToday.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        [Display(Name = "UserRoles")]
+        public string UserRoles { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

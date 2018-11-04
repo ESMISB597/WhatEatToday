@@ -1,21 +1,28 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WhatEatToday.Models;
 
 namespace WhatEatToday.Controllers
 {
     [RequireHttps]
     public class HomeController : Controller
     {
+        ApplicationDbContext context;
+        public HomeController()
+        {
+            context = new ApplicationDbContext();
+        }
         public ActionResult LoginHome()
         {
             return View();
         }
         public ActionResult Index()
         {
-
             return View();
         }
 

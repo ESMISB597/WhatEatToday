@@ -11,8 +11,7 @@ namespace WhatEatToday.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Shop
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,20 +21,12 @@ namespace WhatEatToday.Models
             this.Owners = new HashSet<Owner>();
         }
     
-        [Display(Name = "Shop ID")]
         public int shop_id { get; set; }
-
-        [Display(Name = "Name")]
         public string name { get; set; }
-        [Display(Name = "Shop Details")]
         public string details { get; set; }
-        [Display(Name = "Shop Type")]
         public string type { get; set; }
-        [Display(Name = "Shop Picture")]
         public string pic { get; set; }
-        [Display(Name = "Shop Location (Latitude)")]
         public string latitude { get; set; }
-        [Display(Name = "Shop Location (Longitude)")]
         public string longitude { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

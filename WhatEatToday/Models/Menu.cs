@@ -11,17 +11,12 @@ namespace WhatEatToday.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Menu
     {
-        [Display(Name = "Menu")]
         public int menu_id { get; set; }
-        [Display(Name = "Shop")]
         public int shop_id { get; set; }
-        [Display(Name = "Menu Name")]
         public string menu_name { get; set; }
-        [Display(Name = "Comment")]
         public string comment { get; set; }
     
         public virtual Shop Shop { get; set; }
