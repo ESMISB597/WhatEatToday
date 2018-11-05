@@ -5,10 +5,12 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using WhatEatToday.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace WhatEatToday.Controllers
 {
@@ -78,9 +80,14 @@ namespace WhatEatToday.Controllers
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
+            var current_user_role = Roles.GetRolesForUser(User.Identity.Name);
             switch (result)
             {
                 case SignInStatus.Success:
+                    if(current_user_role.ToString() == "ร้านค้า")
+                    {
+                        System.Web.HttpContext.Current.Session["Test"] = current_user_role.ToString();
+                    }
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
