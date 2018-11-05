@@ -32,7 +32,7 @@ namespace WhatEatToday
                 var user = User.Identity;
                 var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
                 var getR = UserManager.GetRoles(user.GetUserId());
-                if (getR.ToString() == "ร้านค้า")
+                if (getR.ToString() == "Shop")
                 {
                     if (!String.IsNullOrEmpty(SearchString))
                     {
@@ -47,7 +47,6 @@ namespace WhatEatToday
                 }
                 else
                 {
-                    ViewBag.ViewEdit = "";
                     return View(store);
                 }
             }
@@ -55,7 +54,6 @@ namespace WhatEatToday
             {
 
             }
-            ViewBag.ViewEdit = "NoEdit";
             return View(store);
         }
 

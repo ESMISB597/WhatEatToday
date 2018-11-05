@@ -25,12 +25,12 @@ namespace WhatEatToday
 
 
             // In Startup iam creating first Admin Role and creating a default Admin User    
-            if (!roleManager.RoleExists("ผู้ดูแลระบบ"))
+            if (!roleManager.RoleExists("Administrator"))
             {
 
                 // first we create Admin rool   
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "ผู้ดูแลระบบ";
+                role.Name = "Administrator";
                 roleManager.Create(role);
 
                 //Here we create a Admin super user who will maintain the website                  
@@ -46,25 +46,25 @@ namespace WhatEatToday
                 //Add default User to Role Admin   
                 if (chkUser.Succeeded)
                 {
-                    var result1 = UserManager.AddToRole(user.Id, "ผู้ดูแลระบบ");
+                    var result1 = UserManager.AddToRole(user.Id, "Administrator");
 
                 }
             }
 
             // creating Creating Manager role    
-            if (!roleManager.RoleExists("ร้านค้า"))
+            if (!roleManager.RoleExists("Shop"))
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "ร้านค้า";
+                role.Name = "Shop";
                 roleManager.Create(role);
 
             }
 
             // creating Creating Employee role    
-            if (!roleManager.RoleExists("ลูกค้าทั่วไป"))
+            if (!roleManager.RoleExists("Customer"))
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "ลูกค้าทั่วไป";
+                role.Name = "Customer";
                 roleManager.Create(role);
 
             }
