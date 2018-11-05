@@ -49,9 +49,18 @@
         <th>
             <p>Location</p>
         </th>
-        <th></th>
+        @if (ViewBag.ViewEdit != "Shop")
+        {
+        }else { 
+        <th>
+            <p>Edit</p>
+        </th>
+        }
     </tr>
-    @foreach (var item in Model) {
+    @try
+    {
+        foreach (var item in Model)
+        {
     <tr>
         <td>
             <a href="~/Menus/GetMenu/@Html.DisplayFor(modelItem => item.shop_id)">@Html.DisplayFor(modelItem => item.name)</a>
@@ -63,7 +72,7 @@
             @Html.DisplayFor(modelItem => item.type)
         </td>
         <td>
-            <img src=@Url.Content("~/Content/images/"+(item.pic)) style="width: 100px;height: auto" /> 
+            <img src=@Url.Content("~/Content/images/" + (item.pic)) style="width: 100px;height: auto" /> 
         </td>
         <td>
             <input type="button" class="btn btn-info" value="ดูแผนที่" onclick="showMap(@Html.DisplayFor(modelItem => item.latitude),@Html.DisplayFor(modelItem => item.longitude))"/>
@@ -83,7 +92,11 @@
             </td>
         }  
     </tr>
-   }
+        }
+    }catch(System.NullReferenceException e)
+    {
+
+    }
 
 </table>
 <div class="row" style="background-color:#FF9933">

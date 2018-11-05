@@ -27,30 +27,36 @@ namespace WhatEatToday
         {
             var store = from s in db.Shops
                         select s;
-            try
+            if (Request.IsAuthenticated)
             {
-                var user = User.Identity;
-                var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-                var getR = UserManager.GetRoles(user.GetUserId());
-                if (getR.ToString() == "Shop")
+                try
                 {
-                    if (!String.IsNullOrEmpty(SearchString))
+                    var user = User.Identity;
+                    var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+                    var getR = UserManager.GetRoles(user.GetUserId());
+                    if (getR[0].ToString() == "Shop")
                     {
-                        store = store.Where(p => p.name.Contains(SearchString));
+                        if (!String.IsNullOrEmpty(SearchString))
+                        {
+                            store = store.Where(p => p.name.Contains(SearchString));
 
+                        }
+                        else
+                        {
+                            ViewBag.ViewEdit = getR[0].ToString();
+                            return View(store);
+                        }
                     }
                     else
                     {
-                        ViewBag.ViewEdit = getR[0].ToString();
                         return View(store);
                     }
                 }
-                else
+                catch (System.InvalidOperationException e)
                 {
-                    return View(store);
+
                 }
-            }
-            catch(System.InvalidOperationException e)
+            }else
             {
 
             }
@@ -78,7 +84,7 @@ namespace WhatEatToday
             var user = User.Identity;
             var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
             var getR = UserManager.GetRoles(user.GetUserId());
-            if (getR.ToString() == "ร้านค้า")
+            if (getR[0].ToString() == "Shop")
             {
                 return View();
             }else
