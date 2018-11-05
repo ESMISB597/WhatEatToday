@@ -1,7 +1,126 @@
-﻿
-@{
-    ViewBag.Title = "Game1";
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Untitled Document</title>
+
+    <style>
+/* Create the animation blocks */
+body{
+
+	background-image: url("bg.jpg");
+	background-position: center;
+	background-size: 1400px;
 }
 
-<h2>Game1</h2>
+#link2mygallery a{
+    display:block;
+    width:300px;
+    height:100px;
+    text-indent:-9999px;
+    background:url(push3.png);
+}
+
+#link2mygallery a:hover{
+    display:block;
+    width:300px;
+    height:100px;
+    text-indent:-9999px;
+    background:url(push2.png);
+}
+
+.circle {
+	border-radius: 50%;
+	width: 500px;
+	height: 500px;
+
+	background-image: url("circle.png");
+	background-position: center;
+
+	/* width and height can be anything, as long as they're equal */
+}
+
+@keyframes spin {
+	from { transform: rotate(15deg); }
+	to { transform: rotate(225deg); }
+}
+
+/* Create the animation blocks */
+@-webkit-keyframes spin {
+from { -webkit-transform: rotate(15deg); }
+to { -webkit-transform: rotate(225deg); }
+}
+
+@-moz-keyframes spin {
+from { -moz-transform: rotate(15deg); }
+to { -moz-transform: rotate(225deg); }
+}
+
+@-ms-keyframes spin {
+from { -ms-transform: rotate(15deg); }
+to { -ms-transform: rotate(225deg); }
+}
+
+/* Spinning, gradient circle; CSS only! */
+#advanced {
+
+/* background-image: -moz-radial-gradient(80px 80px 80deg, circle cover hidden, yellow 0%, orange 100%, red 95%);
+background-image: -webkit-radial-gradient(80px 80px, circle cover hidden, yellow, orange);
+background-image: radial-gradient(80px 80px 80deg, circle cover hidden, yellow 0%, orange 100%, red 95%); */
+
+/* webkit chrome, safari, mobile */
+-webkit-animation-name: spin;
+-webkit-animation-duration: 1s; /* 3 seconds */
+-webkit-animation-iteration-count: 20s;
+-webkit-animation-timing-function: linear;
+
+/* mozilla ff */
+-moz-animation-name: spin;
+-moz-animation-duration: 1s; /* 3 seconds */
+-moz-animation-iteration-count: 20s;
+-moz-animation-timing-function: linear;
+
+/* microsoft ie */
+-ms-animation-name: spin;
+-ms-animation-duration: 1s; /* 3 seconds */
+-ms-animation-iteration-count: 20s;
+-ms-animation-timing-function: linear;
+
+}
+a{
+	/* webkit chrome, safari, mobile */
+-webkit-animation-name: none;
+
+/* mozilla ff */
+-moz-animation-name: none;
+
+
+/* microsoft ie */
+-ms-animation-name: none;
+
+}
+    </style>
+</head>
+
+<body>
+    <center>
+        <a href="game3.html" style="text-decoration:none">
+            <div type="button" class="btn btn-warning btn-lg btn-block ">
+                <h1>  เกมส์วงล้อ มหัศจรรย์</h1>
+                <h3>Click To Start</h3>
+            </div>
+        </a>
+        <img src="colcir.png" width="100px">
+        <div id="advanced" class="circle"><a></a></div><br>
+
+        <div type="button" class="btn btn-danger btn-lg btn-block ">
+            <h2><br>เมนูที่ได้: ก๋วยเตี๋ยวลองเบิ่ง</h2> <br>
+            <!-- <div id="link2mygallery"><a href="game3.html"></a></div> -->
+    </center>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
 
