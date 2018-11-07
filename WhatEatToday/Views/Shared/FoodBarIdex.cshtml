@@ -39,7 +39,20 @@
     <script src="@Url.Content("~/Content/")vendors/scroll/jquery.mCustomScrollbar.js"></script>
     <script src="@Url.Content("~/Content/")vendors/swiper/js/swiper.min.js"></script>
     <script src="@Url.Content("~/Content/")js/theme.js"></script>
+    <style>
+        #map {
+            height: 400px;
+            width: 400px;
+            align-self: center;
+        }
+    </style>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGQSBUZg2rVkQOPy-gPA9SHLRf3Z1P4Xw&callback=initMap">
+    </script>
 
+    @Scripts.Render("~/Scripts/jquery-3.3.1.js")
+    @Scripts.Render("~/Content/js/chart.js")
+    @Scripts.Render("~/Content/js/WhatEatToday.js")
     <title>@ViewBag.Title</title>
 </head>
 <body>

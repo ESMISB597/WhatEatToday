@@ -1,20 +1,43 @@
 ﻿
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/FoodBarIdex.cshtml";
 }
-<center>
-    <button type="button" class="btn btn-lg btn-danger btn-block" disabled> <h2>Games</h2></button>
-</center>
+
+<!--================ Banner Area =================-->
+<section class="banner_area">
+    <div class="banner_inner d-flex align-items-center">
+        <div class="container">
+            <div class="banner_content text-center">
+                <h1>Games</h1>
+                <div class="page_link">
+                    <a href="~/Home/Index">Home</a>
+                    <a href="~/Game/Index">Game</a>
+                </div>
+            </div>
+        </div>
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+        <div class="shape shape4"></div>
+        <div class="shape shape5"></div>
+        <div class="shape shape6"></div>
+        <div class="shape shape7"></div>
+    </div>
+</section>
+<!--================End Banner Area =================-->
+
+
 <br /><br /><br />
 <center>
                 <div class="row">
-                    <div class="col-lg-4" style="background-color:burlywood;">
+                    <div class="col-lg-4" >
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <br /><br />
                             <a href="~/Game/Game1"><img src="~/Content/images/game1.png" width="250px" /></a><br />
                             <center> <h3> เกมส์วงล้อมหัศจรรย์</h3></center><br />
                     </div>
-                    <div class="col-lg-4" style="background-color:burlywood;">
+                    <div class="col-lg-4" >
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <br /><br />
                             <a href="~/Game/Game2">
@@ -22,7 +45,7 @@
                             </a><br />
                             <center> <h3> เกมส์จับคู่ภาพ</h3></center><br />
                     </div>
-                    <div class="col-lg-4" style="background-color:burlywood;">
+                    <div class="col-lg-4" >
                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <br /><br />
                             <a href="~/Game/Game3">
@@ -33,32 +56,6 @@
                 </div>     
                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </center>
-<br /><br /><br /><br /><br /><br />
-<div class="row" style="background-color:#FF9933">
-    <div class="col-md-3">
-        <center>
-            <h2>Home</h2>
-            <center><a href="~/Home"><img src="~/Content/menu1.png" width="300px" class="animated bounceIn"></a></center>
-        </center>
-    </div>
-    <div class="col-md-3">
-        <center>
-            <h2>Find Shop</h2>
-            <center><a href="~/Shops/FindShop"><img src="~/Content/menu2.png" width="300px" class="animated bounceIn"></a></center>
-        </center>
-    </div>
-    <div class="col-md-3">
-        <center>
-            <h2>Games</h2>
-            <center><a href="~/Game/Index"><img src="~/Content/menu3.png" width="300px" class="animated bounceIn"></a></center>
-        </center>
-    </div>
-    <div class="col-md-3">
-        <center>
-            <h2>Favorite</h2>
-            <center><a href="~/Home"><img src="~/Content/menu4.png" width="300px" class="animated bounceIn"></a></center>
-        </center>
-    </div>
-</div>
+
 
 

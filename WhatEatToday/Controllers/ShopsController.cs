@@ -85,16 +85,16 @@ namespace WhatEatToday
         // GET: Shops/Create
         public ActionResult Create()
         {
-            var user = User.Identity;
-            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-            var getR = UserManager.GetRoles(user.GetUserId());
-            if (getR[0].ToString() == "Shop")
-            {
+            //var user = User.Identity;
+            //var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            //var getR = UserManager.GetRoles(user.GetUserId());
+            //if (getR[0].ToString() == "Shop")
+            //{
                 return View();
-            }else
-            {
-                return View("Index");
-            }
+            //}else
+            //{
+                //return View("Index");
+            //}
             
         }
 
