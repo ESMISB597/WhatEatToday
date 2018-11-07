@@ -29,42 +29,44 @@
 </section>
 <!--================End Banner Area =================-->
 
-<section class="contact_area p_120 animated bounceInRight" >
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-9">
+    <section class="contact_area p_120 animated bounceInRight">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
 
-                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                {
-                    @Html.AntiForgeryToken()
-                    <div class="col-md-6">
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        <div class="form-group">
-                            <h5> @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" }) </h5>
-                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group">
-                            <h5> @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" }) </h5>
-                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-group text-left">
-                            <input type="submit" value="Log in" class="btn submit_btn" style="background-color:darkorange" />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="submit" value="Log in with Facebook" class="btn submit_btn btn-lg" style="background-color:blue" />
-                        </div>
-
-                    </div>
-               
-
-                                }
-
+                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="col-md-6">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                <h5> @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" }) </h5>
+                                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
                             </div>
-                        </div>
-                    </div>
+                            <div class="form-group">
+                                <h5> @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" }) </h5>
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group text-left">
+                                <input type="submit" value="Log in" class="btn submit_btn" style="background-color:darkorange" />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="submit" value="Log in with Facebook" class="btn submit_btn btn-lg" style="background-color:blue" />
+                            </div>
 
-</section>
+                        </div>
+
+
+                    }
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
 
 
 
