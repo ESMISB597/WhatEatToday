@@ -41,14 +41,10 @@
     <script src="@Url.Content("~/Content/Theme/")vendors/swiper/js/swiper.min.js"></script>
     <script src="@Url.Content("~/Content/Theme/")js/theme.js"></script>
 
-
-
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>
-        @RenderBody()
-    </div>
+    
     <!--================Header Menu Area =================-->
     <header class="header_area">
         <div class="main_menu">
@@ -69,12 +65,11 @@
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
                             <li class="nav-item"><a class="nav-link" href="index.html"><h3>Home</h3></a></li>
-                            <li class="nav-item active"><a class="nav-link" href="about-us.html"><h3>Login</h3></a></li>
                             <li class="nav-item"><a class="nav-link" href="menu.html"><h3>Find Shop</h3></a></li>
                             <li class="nav-item"><a class="nav-link" href="book-table.html"><h3>Games</h3></a></li>
-
-
                             <li class="nav-item"><a class="nav-link" href="contact.html"><h3>Contact Us</h3></a></li>
+                            <li class="nav-item"><a class="nav-link" href="~/Account/Login"><h3>Login</h3></a></li>
+                            <li class="nav-item"><a class="nav-link" href="~/Account/Register"><h3>Register</h3></a></li>
                         </ul>
                     </div>
                 </div>
@@ -82,31 +77,7 @@
         </div>
     </header>
     <!--================Header Menu Area =================-->
-    <!--================ Banner Area =================-->
-
-    <br /><br /><br /><br />
-    <section class="banner_area">
-        <div class="banner_inner d-flex align-items-center">
-            <div class="container">
-                <div class="banner_content text-center">
-                    <h1 style="color:#EE4000">WhatEatToday</h1>
-                    <div class="page_link">
-                        <a href="index.html">Home</a>
-                        <a href="about-us.html">Find Your Meal</a>
-                    </div>
-                </div>
-            </div>
-            <div class="shape shape1"></div>
-            <div class="shape shape2"></div>
-            <div class="shape shape3"></div>
-            <div class="shape shape4"></div>
-            <div class="shape shape5"></div>
-            <div class="shape shape6"></div>
-            <div class="shape shape7"></div>
-        </div>
-    </section>
-    <!--================End Banner Area =================-->
-    <!--================Story Area =================-->
+    
     <!--================ start footer Area  =================-->
 
     <center>
@@ -118,11 +89,12 @@
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </h4>
             <br /><br /><br /><br /><br /><br />
+            </div>
     </center>
-    </div>
-    </div>
-    </footer>
 
+    <div>
+        @RenderBody()
+    </div>
 </body>
 
 
