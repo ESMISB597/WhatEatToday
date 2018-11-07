@@ -45,14 +45,14 @@
 <body>
     
     <!--================Header Menu Area =================-->
-    <header class="header_area">
+    <header class="header_area navbar_fixed">
         <div class="main_menu">
-            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#EE7621">
-                <div class="container" style="color:white">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#EE7621">
+                <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <a class="navbar-brand logo_h" href="index.html">
-                        <img class="logo-1" src="@Url.Content("~/Content/Theme/")img/logo-2.png" width="150px" alt="">
-                        <img class="logo-2" src="@Url.Content("~/Content/Theme/")img/logo-2.png" alt="">
+                        <img class="logo-1" src="@Url.Content("~/Content/")img/logo-2.png" width="150px" alt="">
+                        <img class="logo-2" src="@Url.Content("~/Content/")img/logo-2.png" alt="">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -76,20 +76,7 @@
         </div>
     </header>
     <!--================Header Menu Area =================-->
-    
-    <!--================ start footer Area  =================-->
-
-    <center>
-        <div class="row footer-bottom d-flex justify-content-between align-items-center">
-            <h4 style="color:azure">
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;
-                <script>document.write(new Date().getFullYear());</script> What Eat Today | Webapplication 204359 <i class="fa fa-heart-o" aria-hidden="true"></i>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </h4>
-            <br /><br /><br /><br /><br /><br />
-            </div>
-    </center>
+   
 
     <div>
         @RenderBody()
