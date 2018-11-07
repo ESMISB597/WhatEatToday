@@ -47,15 +47,15 @@
     @Html.AntiForgeryToken()
 
     <section class="book_table_area section_gap">
-        <div class="container">
-            <div class="book_table_inner row">
+        <div class="container" >
+            <div class="book_table_inner row" >
                 <div class="col-lg-5">
                     <div class="table_img">
                         <img src="@Url.Content("~/Content/")img/book-table.jpg" alt="">
                     </div>
                 </div>
-                <div class="col-lg-7">
-                    <div class="table_form">
+                <div class="col-lg-7" style="background-color:lightgoldenrodyellow">
+                    <div class="table_form" style="background-color:lightgoldenrodyellow">
                         <h3>Create Shop</h3>
                         <form class="book_table_form row" action="#">
                             <div class="form-group col-md-12">
@@ -70,7 +70,7 @@
                             </div>
                             <div class="form-group col-md-12">
                                 @Html.LabelFor(model => model.type, htmlAttributes: new { @class = "control-label col-md-2" })
-                                @Html.DropDownListFor(model => model.type, listItems, "New", htmlAttributes: new
+                                @Html.DropDownListFor(model => model.type, listItems,  htmlAttributes: new
                            {
                                @class = "form-control"
                            })
@@ -81,7 +81,7 @@
                                 @Html.ValidationMessageFor(model => model.pic, "", new { @class = "text-danger" })
                             </div>
                             <div class="form-group col-md-12">
-                                <input type="button" class="btn btn-info" onclick="showAddMap()" value="Click for Edit Map" />
+                                <input type="button" class="btn btn-warning" onclick="showAddMap()" value="Click for Edit Map" /><br /><br />
                                 <div class="col-md-10">
                                     <div id="map">
                                     </div>
@@ -107,3 +107,10 @@
         </div>
     </section>
 }  <!--================End Book Table Area =================-->
+
+<div class="row" style="background-color:#EE7621">
+    <div class="col-sm-12" style="color:white"><center>
+    <br /><br />Copyright &copy;
+    <script>document.write(new Date().getFullYear());</script> What Eat Today |
+    Webapplication 204359 &nbsp;&nbsp;<i class="fa fa-heart-o" aria-hidden="true"></i> <br /><br /><br />
+</center></div>
