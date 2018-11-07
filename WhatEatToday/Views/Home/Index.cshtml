@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Welcom to What-Eat-Today";
+    Layout = "~/Views/Shared/FoodBarIdex.cshtml";
 } <body style="background-color:lightgoldenrodyellow">
     <div class="row" style="background-color:#FFDAB9">
 
@@ -10,7 +11,7 @@
     <div class="row" style="background-color:#FFCC66"><center><h1>Famous Resterant</h1></center><br /></div>
     @{
         <div class="row">
-            @foreach(var shop_show in Model)
+            @foreach (var shop_show in Model)
             {
 
             <div class="col-md-3">
