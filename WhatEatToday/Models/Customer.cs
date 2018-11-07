@@ -14,11 +14,18 @@ namespace WhatEatToday.Models
     
     public partial class Customer
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Customer()
+        {
+            this.CheckIns = new HashSet<CheckIn>();
+        }
+    
         public string cus_id { get; set; }
         public string email { get; set; }
-        public string token { get; set; }
         public string age { get; set; }
-        public string login { get; set; }
-        public string password { get; set; }
+        public string token { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CheckIn> CheckIns { get; set; }
     }
 }

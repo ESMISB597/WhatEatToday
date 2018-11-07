@@ -27,7 +27,8 @@ namespace WhatEatToday.Models
     
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }
-        public virtual DbSet<Owner> Owners { get; set; }
         public virtual DbSet<Shop> Shops { get; set; }
+        public virtual DbSet<CheckIn> CheckIns { get; set; }
+        public virtual DbSet<Owner> Owners { get; set; }
     }
 }

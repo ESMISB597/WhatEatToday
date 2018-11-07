@@ -18,6 +18,7 @@ namespace WhatEatToday.Models
         public Shop()
         {
             this.Menus = new HashSet<Menu>();
+            this.CheckIns = new HashSet<CheckIn>();
             this.Owners = new HashSet<Owner>();
         }
     
@@ -31,6 +32,8 @@ namespace WhatEatToday.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Menu> Menus { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CheckIn> CheckIns { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Owner> Owners { get; set; }
     }

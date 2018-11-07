@@ -12,13 +12,14 @@ namespace WhatEatToday.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Owner
+    public partial class CheckIn
     {
-        public string owner_id { get; set; }
-        public string email { get; set; }
-        public string token { get; set; }
-        public int shop_id { get; set; }
+        public int Id { get; set; }
+        public int Shop_Id { get; set; }
+        public string Cus_Id { get; set; }
+        public Nullable<float> Rating { get; set; }
     
+        public virtual Customer Customer { get; set; }
         public virtual Shop Shop { get; set; }
     }
 }

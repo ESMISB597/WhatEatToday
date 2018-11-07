@@ -77,14 +77,15 @@
         <td>
             <input type="button" class="btn btn-info" value="ดูแผนที่" onclick="showMap(@Html.DisplayFor(modelItem => item.latitude),@Html.DisplayFor(modelItem => item.longitude))"/>
         </td>
-        @if (ViewBag.ViewEdit != "ร้านค้า")
+        @if (ViewBag.ViewEdit != "Shop")
         {
             <td>
-                ร้านดี
+                ร้านดี 
             </td>
         }
         else
         {
+            
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.shop_id }) |
                 @Html.ActionLink("Details", "Details", new { id = item.shop_id }) |

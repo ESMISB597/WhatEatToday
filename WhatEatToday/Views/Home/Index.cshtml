@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<WhatEatToday.Models.Shop>
+
+@{
     ViewBag.Title = "Welcom to What-Eat-Today";
 } <body style="background-color:lightgoldenrodyellow">
     <div class="row" style="background-color:#FFDAB9">
@@ -6,6 +8,22 @@
         <center><img src="~/Content/logo.png" width="500px" class="animated bounceIn"></center>
     </div>
     <div class="row" style="background-color:#FFCC66"><center><h1>Famous Resterant</h1></center><br /></div>
+    @{
+        <div class="row">
+            @foreach(var shop_show in Model)
+            {
+
+            <div class="col-md-3">
+                <div class="container">
+                    <a role="button" href="~/CheckIn/Index/@Html.DisplayFor(modelItem => shop_show.shop_id)" class="btn btn-outline-info">@Html.DisplayFor(modelItem => shop_show.name)</a>
+                </div>
+                <img src=@Url.Content("~/Content/images/"+(shop_show.pic)) style="width: 100px;height: auto" class="rounded"/>
+            </div>
+
+            }
+        </div>
+    }
+
     <div class="row" style="background-color:#FFCC66">
         <div class="col-md-3" >
             <center>

@@ -27,6 +27,10 @@ namespace WhatEatToday
         {
             var store = from s in db.Shops
                         select s;
+
+            var selectstore = from str in db.Owners
+                              select str;
+
             if (Request.IsAuthenticated)
             {
                 try
@@ -105,6 +109,7 @@ namespace WhatEatToday
             {
                 if (ModelState.IsValid)
                 {
+                    var userid = User.Identity.GetUserName();
                     var file = Request.Files[0];
                     if (file != null && file.ContentLength > 0)
                     {
@@ -112,9 +117,21 @@ namespace WhatEatToday
                         var path = Path.Combine(Server.MapPath("~/Content/images"), fileName);
                         file.SaveAs(path);
                         shop.pic = fileName;
+
                     }
+
+                    /* LAMBDA */
+                    Owner owner = new Owner();
+                    owner.email = userid;
+                    owner.shop_id = shop.shop_id;
+                    owner.owner_id = User.Identity.GetUserId().ToString();
+                    db.Owners.Add(owner);
+                    /* LAMBDA */
+
                     db.Shops.Add(shop);
                     db.SaveChanges();
+
+
                     return RedirectToAction("Index");
                 }
             }

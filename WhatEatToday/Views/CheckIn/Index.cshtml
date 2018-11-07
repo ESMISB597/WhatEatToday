@@ -1,0 +1,19 @@
+﻿@model IEnumerable<WhatEatToday.Models.Shop>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+    <br />
+    <br />
+    <div class="container">
+        @{ 
+            foreach(var m in Model)
+            {
+                <a role="button" href="~/CheckIn/Shops/@Html.DisplayFor(modelItem => m.shop_id)" class="btn btn-outline-info">@Html.DisplayFor(modelItem => m.name)</a>
+            }
+        }
+    </div>
+

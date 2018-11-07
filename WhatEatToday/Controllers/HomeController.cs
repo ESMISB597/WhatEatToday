@@ -12,6 +12,7 @@ namespace WhatEatToday.Controllers
     [RequireHttps]
     public class HomeController : Controller
     {
+        private WhatEatToday_Entities db = new WhatEatToday_Entities();
         ApplicationDbContext context;
         public HomeController()
         {
@@ -23,7 +24,10 @@ namespace WhatEatToday.Controllers
         }
         public ActionResult Index()
         {
-            return View();
+            
+            var shop = from str in db.Shops
+                       select str;
+            return View(shop);
         }
 
         public ActionResult About()
