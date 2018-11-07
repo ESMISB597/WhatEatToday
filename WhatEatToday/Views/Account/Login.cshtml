@@ -4,16 +4,15 @@
     ViewBag.Title = "Log in";
     Layout = "~/Views/Shared/FoodBarIdex.cshtml";
 }
-
+<br /><br />
 <!--================ Banner Area =================-->
 <section class="banner_area">
     <div class="banner_inner d-flex align-items-center">
         <div class="container">
             <div class="banner_content text-center">
-                <h1>Login</h1>
+                <h1 style="color:darkorange">Login</h1>
                 <div class="page_link">
-                    <a href="~/Home/Index">Home</a>
-                    <a href="~/Account/Login">Login</a>
+                   
                 </div>
             </div>
         </div>
@@ -32,6 +31,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-9">
+
                 @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                 {
                     @Html.AntiForgeryToken()
@@ -48,27 +48,46 @@
                             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group text-left">
-                            <input type="submit" value="Log in" class="btn submit_btn" />
+                            <input type="submit" value="Log in" class="btn submit_btn" style="background-color:darkorange" />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="submit" value="Log in with Facebook" class="btn submit_btn btn-lg" style="background-color:blue" />
+                        </div>
+
+                    </div>
+               
+
+                                }
+
+                            </div>
                         </div>
                     </div>
-                        <div class="form-group text-right">
-                            <input type="submit" value="Log in with Facebook" class="btn submit_btn" />
-                        </div>
-                }
-            </div>
-        </div>
-    </div>
-</section>
 
-<footer class="footer-area p_120">
-    <div class="container">
-        <div class="row footer-bottom d-flex justify-content-between align-items-center">
-            <p class="col-lg-8 col-md-8 footer-text m-0">
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;
-                <script>document.write(new Date().getFullYear());</script> What Eat Today | Webapplication 204359 <i class="fa fa-heart-o" aria-hidden="true"></i>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-        </div>
+</section>
+<div class="row" style="background-color:#FF9933">
+    <div class="col-md-3"><br />
+        <center>
+            <h2>Home</h2>
+            <center><a href="~/Home"><img src="~/Content/menu1.png" width="300px" class="animated bounceIn"></a></center>
+        </center>
     </div>
-</footer>
+    <div class="col-md-3"><br />
+        <center>
+            <h2>Find Shop</h2>
+            <center><a href="~/Shops/FindShop"><img src="~/Content/menu2.png" width="300px" class="animated bounceIn"></a></center>
+        </center>
+    </div>
+    <div class="col-md-3"><br />
+        <center>
+            <h2>Games</h2>
+            <center><a href="~/Game/Index"><img src="~/Content/menu3.png" width="300px" class="animated bounceIn"></a></center>
+        </center>
+    </div>
+    <div class="col-md-3"><br />
+        <center>
+            <h2>Favorit</h2>
+            <center><a href="~/Home"><img src="~/Content/menu4.png" width="300px" class="animated bounceIn"></a></center>
+        </center>
+    </div>
+</div>
+
+
