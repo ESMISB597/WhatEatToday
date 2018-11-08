@@ -12,8 +12,10 @@ namespace WhatEatToday.Controllers
     {
         private WhatEatToday_Entities db = new WhatEatToday_Entities();
         // GET: CheckIn
-        public ActionResult Index(int? id)
+        [HttpPost]
+        public ActionResult Index()
         {
+            int id = int.Parse(Request["shopid"]);
             if (Request.IsAuthenticated)
             {
                 var shop = from str in db.Shops
@@ -25,7 +27,8 @@ namespace WhatEatToday.Controllers
                 return RedirectToAction("Login", "Account");
             }
         }
-        public ActionResult Shops(int? id)
+        [HttpPost]
+        public ActionResult Shops()
         {
 
             return View();

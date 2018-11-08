@@ -15,109 +15,208 @@
     <script src="@Url.Content("~/Content/js/")app.js"></script>
     <script src="@Url.Content("~/Content/js/")app2.js"></script>
     <style>
-              body {
-                  font-family: sans-serif;
-                  font-size: 20px;
-                  margin: 20px;
-                  background-color: #FFFFCC;
-              }
+        body {
+            font-family: sans-serif;
+            font-size: 20px;
+            margin: 20px;
+            background-color: #FFFFCC;
+        }
 
 
 
-              .container {
-                  max-width: 950px;
-                  margin: 0 auto;
-                  position: relative;
-              }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
 
-              .main-text {
-                  text-align: center;
-                  background-color: pink;
-                  border: 0px solid darkorange;
-                  color: darkred;
-                  font-size: 1.4em;
-                  font-weight: 600;
-                  margin-bottom: 1em;
-              }
+        .main-text {
+            text-align: center;
+            background-color: pink;
+            border: 0px solid darkorange;
+            color: darkred;
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 1em;
+        }
 
-              .number-selector {
-                  border: 0px solid darkorange;
-                  font-size: 2em;
-                  color: blue;
-              }
-                  /*
+        .number-selector {
+            border: 0px solid darkorange;
+            font-size: 2em;
+            color: blue;
+        }
+            /*
         .number-selector > div  {
           display: flex;
 
         } */
 
-                  .number-selector > div > div {
-                      background-image: url('../Content/images/bgdiv.png');
-                      background-repeat: no-repeat;
-                      background-size: 250px;
-                      cursor: pointer;
-                      /* flex-grow: 1; */
-                      height: 300px;
-                      border: 0px solid darkorange;
-                      /* display: flex; */
-                      align-items: center;
-                      /* justify-content: center; */
-                      background-position: center;
-                  }
+            .number-selector > div > div {
+                background-image: url('../Content/images/bgdiv.png');
+                background-repeat: no-repeat;
+                background-size: 250px;
+                cursor: pointer;
+                /* flex-grow: 1; */
+                height: 300px;
+                border: 0px solid darkorange;
+                /* display: flex; */
+                align-items: center;
+                /* justify-content: center; */
+                background-position: center;
+            }
 
-                      .number-selector > div > div.selected {
-                          background-image: url('../Content/images/p1.png');
-                          background-repeat: no-repeat;
-                          background-size: 200px;
-                          background-position: center;
-                      }
+        .number-selector1 > div > div {
+            background-image: url('../Content/images/bgdiv.png');
+            background-repeat: no-repeat;
+            background-size: 250px;
+            cursor: pointer;
+            /* flex-grow: 1; */
+            height: 300px;
+            border: 0px solid darkorange;
+            /* display: flex; */
+            align-items: center;
+            /* justify-content: center; */
+            background-position: center;
+        }
+
+
+        .number-selector2 > div > div {
+            background-image: url('../Content/images/bgdiv.png');
+            background-repeat: no-repeat;
+            background-size: 250px;
+            cursor: pointer;
+            /* flex-grow: 1; */
+            height: 300px;
+            border: 0px solid darkorange;
+            /* display: flex; */
+            align-items: center;
+            /* justify-content: center; */
+            background-position: center;
+        }
+
+        .number-selector3 > div > div {
+            background-image: url('../Content/images/bgdiv.png');
+            background-repeat: no-repeat;
+            background-size: 250px;
+            cursor: pointer;
+            /* flex-grow: 1; */
+            height: 300px;
+            border: 0px solid darkorange;
+            /* display: flex; */
+            align-items: center;
+            /* justify-content: center; */
+            background-position: center;
+        }
+
+        .number-selector4 > div > div {
+            background-image: url('../Content/images/bgdiv.png');
+            background-repeat: no-repeat;
+            background-size: 250px;
+            cursor: pointer;
+            /* flex-grow: 1; */
+            height: 300px;
+            border: 0px solid darkorange;
+            /* display: flex; */
+            align-items: center;
+            /* justify-content: center; */
+            background-position: center;
+        }
+
+
+        .number-selector > div > div.selected {
+            background-image: url('../Content/images/p1.png');
+            background-repeat: no-repeat;
+            background-size: 200px;
+            background-position: center;
+        }
+
+        .number-selector1 > div > div.selected {
+            background-image: url('../Content/images/p4.png');
+            background-repeat: no-repeat;
+            background-size: 200px;
+            background-position: center;
+        }
+
+        .number-selector2 > div > div.selected {
+            background-image: url('../Content/images/p2.png');
+            background-repeat: no-repeat;
+            background-size: 200px;
+            background-position: center;
+        }
+
+        .number-selector3 > div > div.selected {
+            background-image: url('../Content/images/p3.png');
+            background-repeat: no-repeat;
+            background-size: 200px;
+            background-position: center;
+        }
+
+        .number-selector4 > div > div.selected {
+            background-image: url('../Content/images/p5.png');
+            background-repeat: no-repeat;
+            background-size: 200px;
+            background-position: center;
+        }
 
 
 
-              .combinations-display p {
-                  margin: 0.2em 0;
-              }
+        .combinations-display p {
+            margin: 0.2em 0;
+        }
 
-              .combinations-display .combinations-input {
-                  width: 100%;
-                  border: 1px solid darkorange;
-                  font-size: 1.6em;
-                  color: blue;
-                  padding: 0.2em 0;
-              }
+        .combinations-display .combinations-input {
+            width: 100%;
+            border: 1px solid darkorange;
+            font-size: 1.6em;
+            color: blue;
+            padding: 0.2em 0;
+        }
 
-              .combinations-display button {
-                  padding: 0.2em 0.8em;
-                  font-weight: 600;
-              }
+        .combinations-display button {
+            padding: 0.2em 0.8em;
+            font-weight: 600;
+        }
 
-              .modal {
-                  position: fixed;
-                  top: 40%;
-                  left: 50%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  visibility: hidden;
-              }
+        .modal {
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+        }
 
-                  .modal > div {
-                      margin-left: -100%;
-                      background-color: rgba(98, 98, 98, 0.9);
-                      color: #ffffff;
-                      padding: 0.4em 1.4em;
-                      border-radius: 0.4em;
-                  }
+            .modal > div {
+                margin-left: -100%;
+                background-color: rgba(98, 98, 98, 0.9);
+                color: #ffffff;
+                padding: 0.4em 1.4em;
+                border-radius: 0.4em;
+            }
 
-                  .modal.active {
-                      visibility: visible;
-                      opacity: 1;
-                  }
+            .modal.active {
+                visibility: visible;
+                opacity: 1;
+            }
 
-                      .modal.active.active-fade {
-                          opacity: 0;
-                          transition: opacity 300ms ease-out;
-                      }
-    </style>
-        </head > <body > <div class="container" > <div class="main-text" > เกมส์จับคู่ภาพ </div > <br > <table width="950px" > <tr > <td > <div class="number-selector" > <div > <div > <br > &nbsp;</div > </div > </div > </td > &nbsp; <td > <div class="number-selector" > <div > <div > <br > &nbsp;</div > </div > </div > </td > &nbsp; <td > <div class="number-selector" > <div > <div > <br > &nbsp;</div > </div > </div > </td > &nbsp; <td > <div class="number-selector" > <div > <div > <br > &nbsp;</div > </div > </div > </td > &nbsp; <td > <div class="number-selector" > <div > <div > <br > &nbsp;</div > </div > </div > </td > </tr > <tr > &nbsp; <td > <br > <div class="number-selector" > <div > <div > <br > &nbsp;</div > </div > </div > </td > &nbsp; <td > <br > <div class="number-selector" > <div > <div > <br > &nbsp;</div > </div > </div > </td > &nbsp; <td > <br > <div class="number-selector" > <div > <div > <br > &nbsp;</div > </div > </div > </td > &nbsp; <td > <br > <div class="number-selector" > <div > <div > <br > &nbsp;</div > </div > </div > </td > &nbsp; <td > <br > <div class="number-selector" > <div > <div > <br > &nbsp;</div > </div > </div > </td > </tr > </table > <br > <div class="combinations-display" > <h4 > เลข 2 ตัว</h4 > <p > <input type="text" id="twos" class="combinations-input" readonly / > </p > <button class="copy-button" id="twos-button" disabled > คัดลอก</button > </div > <div class="combinations-display" > <h4 > เลข 3 ตัว</h4 > <p > <input type="text" id="threes" class="combinations-input" readonly / > </p > <button class="copy-button" id="threes-button" disabled > คัดลอก</button > </div > <div class="modal" > <div > คัดลอกแล้ว </div > </div > </div > </body > </html >
-        
+                .modal.active.active-fade {
+                    opacity: 0;
+                    transition: opacity 300ms ease-out;
+                }
+        </style>
+        </head > <body > <br> <br> <div class="container" > <div class="main-text" > เกมส์จับคู่ภาพ </div > 
+
+    <table width="1000px" > <tr >
+     <td width="250"> <div class="number-selector3" id="twos" value=1> <div > <div > <br > &nbsp; </div > </div > </div > </td > &nbsp; 
+    <td width="250"> <div class="number-selector2" id="threes" value=2> <div > <div > <br > &nbsp;</div > </div > </div >
+     </td > &nbsp; <td width="250"> <div class="number-selector" id="twos" value=3> <div > <div > <br > &nbsp;</div > </div > </div > </td > &nbsp;
+     <td width="250" > <div class="number-selector2" id="twos" value=4> <div > <div > <br > &nbsp;</div > </div > </div > </td > &nbsp;
+     <td  width="250"> <div class="number-selector4" id="threes" value=5> <div > <div > <br > &nbsp;</div > </div > </div > </td > </tr >
+     <tr > &nbsp; 
+     <td > <br > <div class="number-selector4" id="twos" value=6> <div > <div > <br > &nbsp;</div > </div > </div > </td > &nbsp; 
+     <td > <br > <div class="number-selector" id="threes" value=7> <div > <div > <br > &nbsp;</div > </div > </div > </td > &nbsp;
+     <td > <br > <div class="number-selector3" id="twos" value=8> <div > <div > <br > &nbsp; </div > </div > </div > </td > &nbsp;
+     <td > <br > <div class="number-selector1" id="threes" value=9> <div > <div > <br > &nbsp;</div > </div > </div > </td > &nbsp;
+         <td > <br > <div class="number-selector1" id="twos" value=1> <div > <div > <br > &nbsp;</div > </div > </div > </td > </tr > </table > <br >
+    

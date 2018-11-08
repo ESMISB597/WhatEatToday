@@ -75,7 +75,7 @@
             <img src=@Url.Content("~/Content/images/" + (item.pic)) style="width: 100px;height: auto" /> 
         </td>
         <td>
-            <input type="button" class="btn btn-info" value="ดูแผนที่" onclick="showMap(@Html.DisplayFor(modelItem => item.latitude),@Html.DisplayFor(modelItem => item.longitude))"/>
+            <input type="button" class="btn btn-info" value="ดูแผนที่" onclick="showMap(@Html.DisplayFor(modelItem => item.latitude),@Html.DisplayFor(modelItem => item.longitude),@Html.DisplayFor(modelItem => item.shop_id)"/>
         </td>
         @if (ViewBag.ViewEdit != "Shop")
         {

@@ -29,11 +29,12 @@
     var latMap;
     var lngMap;
 
-    function showMap(lat, lng) {
+    function showMap(lat, lng, id) {
         latMap = lat;
         lngMap = lng;
         showMapWithLo();
-       
+        $('#checkin_id').val(id);
+        //$('#checkin').attr("href", "~/CheckIn/Index/" + id);
         $('#mapModal').modal('show');
     }
 
@@ -104,6 +105,6 @@
 
     }
 
-
-
-
+    $('.number-selector > div > div.selected').click(function () {
+        console.log("3");
+    });
