@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<WhatEatToday.Models.Menu>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "GetMenu";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Menus</h2>
+<h2>GetMenu</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -24,23 +24,24 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.menu_name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.comment)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Shop.name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.menu_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.menu_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.menu_id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.menu_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.comment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Shop.name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.menu_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.menu_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.menu_id })
+            </td>
+        </tr>
+    }
 
 </table>

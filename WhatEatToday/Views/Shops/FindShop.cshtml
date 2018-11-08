@@ -1,15 +1,19 @@
 ﻿@model IEnumerable<WhatEatToday.Models.Shop>
 
 @{
-    ViewBag.Title = "Index";
-  
+    ViewBag.Title = "Shop";
+    Layout = "~/Views/Shared/FoodBarIdex.cshtml";
 }
+
+<center><h2><b>Find Shop</b></h2></center>
+
 
 <center>
     @using (Html.BeginForm())
-    {
-        <br />
-        <table>
+    {<br />
+    <br />    <br />
+    <div>
+        <table >
             <tr>
                 <td>
                     ค้นหาร้าน:&nbsp;&nbsp;
@@ -17,45 +21,115 @@
                 <td>
                     @Html.TextBox("SearchString", null, new { @class = "form-control" })
                 </td>
-                <td> &nbsp;&nbsp;<input type="submit" class="btn btn-danger btn-lg " value="Search" />  </td>
+                <td> &nbsp;&nbsp;<input type="submit" class="btn btn-primary" value="Search" />  </td>
             </tr>
         </table>
-        <br /><br />
+
+    </div>
+        <br />
+
     }
-    </center>
-    @{
-        if (IsPost == true)
-        {
-            foreach (var shop in Model)
-            {
-                <div class="container">
-                    <div class="jumbotron">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <h4>
-                                    @Html.DisplayFor(modelItem => shop.name)
-                                    <img src=@Url.Content("~/Content/images/"+(shop.pic)) style="width: 100px;height: auto" />
 
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                รายละเอียดร้านค้า
-                                <br />
-                                @Html.DisplayFor(modelItem => shop.details)
-                            </div>
-                            <div class="col-lg-6">
-                                ประเภทร้านค้า
-                                <br />
-                                @Html.DisplayFor(modelItem => shop.type)
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            }
-        }else
-        {
+</center>
 
+<table class="table" style="background-color:mintcream">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.details)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pic)
+        </th>
+        <th>
+            <p>Location</p>
+        </th>
+        @if (ViewBag.ViewEdit != "Shop")
+        {
+        }
+        else
+        {
+            <th>
+                <p>Edit</p>
+            </th>
+        }
+    </tr>
+    @try
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a href="~/Menus/GetMenu/@Html.DisplayFor(modelItem => item.shop_id)">@Html.DisplayFor(modelItem => item.name)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.details)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.type)
+                </td>
+                <td>
+                    <img src=@Url.Content("~/Content/images/" + (item.pic)) style="width: 100px;height: auto" />
+                </td>
+                <td>
+                    <input type="button" class="btn btn-info" value="ดูแผนที่" onclick="showMap(@Html.DisplayFor(modelItem => item.latitude),@Html.DisplayFor(modelItem => item.longitude))" />
+                </td>
+                @if (ViewBag.ViewEdit != "Shop")
+                {
+                    <td>
+                        ร้านดี
+                    </td>
+                }
+                else
+                {
+
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.shop_id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.shop_id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.shop_id })
+                    </td>
+                }
+            </tr>
         }
     }
+    catch (System.NullReferenceException e)
+    {
+
+    }
+
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="mapLabel">Maps</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="map" class="align-content-center"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div><br /><br /><br /><br />
+<div class="row" style="background-color:#EE7621">
+    <div class="col-lg-12" style="color:white" style="background-color:#EE7621">
+        <center>
+            <br /><br />Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script> What Eat Today |
+            Webapplication 204359 &nbsp;&nbsp;<i class="fa fa-heart-o" aria-hidden="true"></i> <br /><br /><br />
+        </center>
+    </div>
+</div>

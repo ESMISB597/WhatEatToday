@@ -2,15 +2,25 @@
 
 @{
     ViewBag.Title = "GetMenu";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/FoodBarIdex.cshtml";
 }
 
-<h2>GetMenu</h2>
+<br /><br /><br />
+<h2>&nbsp;&nbsp;&nbsp;&nbsp;Menus</h2>
+<br />
+@if (ViewBag.ViewEdit != "Shop")
 
-<p>
+{
+    <td>
+        &nbsp;
+    </td>
+}
+else
+{
+<p>&nbsp;&nbsp;&nbsp;&nbsp;
     @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+</p> }
+<table class="table" style="background-color:lightgoldenrodyellow">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.menu_name)
@@ -35,12 +45,35 @@
         <td>
             @Html.DisplayFor(modelItem => item.Shop.name)
         </td>
+
+@if (ViewBag.ViewEdit != "Shop")
+
+{
+    <td>
+        &nbsp;
+    </td>
+}
+else
+{
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.menu_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.menu_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.menu_id })
+            @Html.ActionLink("Edit", "Edit", new { id = item.menu_id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.menu_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.menu_id })
         </td>
+}
     </tr>
+    
 }
 
 </table>
+</div>
+<br /><br /><br /><br />
+<div class="row" style="background-color:#EE7621">
+    <div class="col-lg-12" style="color:white" style="background-color:#EE7621">
+        <center>
+            <br /><br />Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script> What Eat Today |
+            Webapplication 204359 &nbsp;&nbsp;<i class="fa fa-heart-o" aria-hidden="true"></i> <br /><br /><br />
+        </center>
+    </div>
+</div>

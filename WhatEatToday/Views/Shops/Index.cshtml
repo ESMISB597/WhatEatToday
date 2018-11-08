@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<WhatEatToday.Models.Shop>
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Shop";
+    Layout = "~/Views/Shared/FoodBarIdex.cshtml";
 }
 
 <center><h2><b>Your Shop</b></h2></center>
@@ -11,7 +11,7 @@
 <center>
     @using (Html.BeginForm())
     {<br />
-    
+    <br />    <br />
         <div>
             <table> <tr>
                 <td>
@@ -100,32 +100,6 @@
     }
 
 </table>
-<div class="row" style="background-color:#FF9933">
-    <div class="col-md-3">
-        <center>
-            <h2>Home</h2>
-            <center><a href="~/Home"><img src="~/Content/menu1.png" width="300px" class="animated bounceIn"></a></center>
-        </center>
-    </div>
-    <div class="col-md-3">
-        <center>
-            <h2>Find Shop</h2>
-            <center><a href="~/Shops/FindShop"><img src="~/Content/menu2.png" width="300px" class="animated bounceIn"></a></center>
-        </center>
-    </div>
-    <div class="col-md-3">
-        <center>
-            <h2>Games</h2>
-            <center><a href="~/Game/Index"><img src="~/Content/menu3.png" width="300px" class="animated bounceIn"></a></center>
-        </center>
-    </div>
-    <div class="col-md-3">
-        <center>
-            <h2>Favorit</h2>
-            <center><a href="~/Home"><img src="~/Content/menu4.png" width="300px" class="animated bounceIn"></a></center>
-        </center>
-    </div>
-</div>
 
 <!-- Modal -->
 <div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
