@@ -2,16 +2,122 @@
     ViewBag.Title = "Contact";
 }
 <h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+@{
+    ViewBag.Title = "Contact Us";
+    Layout = "~/Views/Shared/FoodBarIdex.cshtml";
+} 
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<!doctype html>
+<html lang="en">
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <title>About Us</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/")css/bootstrap.css">
+    <link rel="stylesheet" href="@Url.Content("~/Content/")vendors/linericon/style.css">
+    <link rel="stylesheet" href="@Url.Content("~/Content/")css/font-awesome.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/Content/")vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/Content/")vendors/lightbox/simpleLightbox.css">
+    <link rel="stylesheet" href="@Url.Content("~/Content/")vendors/nice-select/css/nice-select.css">
+    <link rel="stylesheet" href="@Url.Content("~/Content/")vendors/animate-css/animate.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/")css/style.css">
+    <link rel="stylesheet" href="@Url.Content("~/Content/")css/responsive.css">
+    <script src="@Url.Content("~/Content/")js/jquery-3.2.1.min.js"></script>
+    <script src="@Url.Content("~/Content/")js/popper.js"></script>
+    <script src="@Url.Content("~/Content/")js/bootstrap.min.js"></script>
+    <script src="@Url.Content("~/Content/")js/stellar.js"></script>
+    <script src="@Url.Content("~/Content/")vendors/lightbox/simpleLightbox.min.js"></script>
+    <script src="@Url.Content("~/Content/")vendors/nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="@Url.Content("~/Content/")vendors/isotope/imagesloaded.pkgd.min.js"></script>
+    <script src="@Url.Content("~/Content/")vendors/isotope/isotope-min.js"></script>
+    <script src="@Url.Content("~/Content/")vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="@Url.Content("~/Content/")js/jquery.ajaxchimp.min.js"></script>
+    <script src="@Url.Content("~/Content/")vendors/counter-up/jquery.waypoints.min.js"></script>
+    <script src="@Url.Content("~/Content/")vendors/counter-up/jquery.counterup.js"></script>
+    <script src="@Url.Content("~/Content/")js/mail-script.js"></script>
+    <script src="@Url.Content("~/Content/")vendors/popup/jquery.magnific-popup.min.js"></script>
+    <script src="@Url.Content("~/Content/")vendors/scroll/jquery.mCustomScrollbar.js"></script>
+    <script src="@Url.Content("~/Content/")vendors/swiper/js/swiper.min.js"></script>
+    <script src="@Url.Content("~/Content/")js/theme.js"></script>
+</head>
+
+<body>
+
+    <!--================Header Menu Area =================-->
+  
+    <!--================Header Menu Area =================-->
+    <!--================ Banner Area =================-->
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="container">
+                <div class="banner_content text-center">
+                    <h1>About Us</h1>
+                    <div class="page_link">
+                        <a href="index.html">Home</a>
+                        <a href="about-us.html">About Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="shape shape1"></div>
+            <div class="shape shape2"></div>
+            <div class="shape shape3"></div>
+            <div class="shape shape4"></div>
+            <div class="shape shape5"></div>
+            <div class="shape shape6"></div>
+            <div class="shape shape7"></div>
+        </div>
+    </section>
+    <!--================End Banner Area =================-->
+    <!--================Story Area =================-->
+    <section class="about_story_area section_gap">
+        <div class="container">
+            <div class="row story_inner">
+                <div class="col-lg-6">
+                    <div class="story_text">
+                        <h2>About Our Story</h2>
+                        <hr>
+                        <p>
+                            B5970544 &nbsp; นายอัศนันท์ อภิสิทธิ์วรโชติ
+                        </p>
+                        <p>
+                            <b>Email:</b> b5970544@g.sut.ac.th <br />
+                            <b>Tel:</b> 0897577592
+</p>
+
+                       
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--================End Story Area =================-->
+    <!--================Member Area =================-->
+    <section class="testimonials_area section_gap">
+        <div class="container">
+            <div class="testi_slider owl-carousel">
+                <div class="item">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="@Url.Content("~/Content/") toto.jpg" >
+                        </div>
+                     
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Member Area =================-->
+    <!--================ start footer Area  =================-->
+  
+    <!--================ End footer Area  =================-->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+</body>
+
+</html>

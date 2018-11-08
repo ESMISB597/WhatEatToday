@@ -10,132 +10,114 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Number Combination</title>
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/")style2.css" type="text/css" />
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src="@Url.Content("~/Content/js/")app.js"></script>
     <script src="@Url.Content("~/Content/js/")app2.js"></script>
-</head>
+    <style>
+              body {
+                  font-family: sans-serif;
+                  font-size: 20px;
+                  margin: 20px;
+                  background-color: #FFFFCC;
+              }
 
-<body>
-    <div class="container">
-        <div class="main-text">
-            เกมส์จับคู่ภาพ
-        </div>
 
-        <br>
 
-        <table width="950px">
-            <tr>
-                <td>
-                    <div class="number-selector">
-                        <div>
-                            <div> <br> &nbsp;</div>
-                        </div>
-                    </div>
-                </td>
-                &nbsp;
-                <td>
-                    <div class="number-selector">
-                        <div>
-                            <div> <br> &nbsp;</div>
-                        </div>
-                    </div>
-                </td>
-                &nbsp;
-                <td>
-                    <div class="number-selector">
-                        <div>
-                            <div> <br> &nbsp;</div>
-                        </div>
-                    </div>
-                </td>
-                &nbsp;
-                <td>
-                    <div class="number-selector">
-                        <div>
-                            <div> <br> &nbsp;</div>
-                        </div>
-                    </div>
-                </td>
-                &nbsp;
-                <td>
-                    <div class="number-selector">
-                        <div>
-                            <div> <br> &nbsp;</div>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                &nbsp;
-                <td>
-                    <br>
-                    <div class="number-selector">
-                        <div>
-                            <div> <br> &nbsp;</div>
-                        </div>
-                    </div>
-                </td>
-                &nbsp;
-                <td>
-                    <br><div class="number-selector">
-                        <div>
-                            <div> <br> &nbsp;</div>
-                        </div>
-                    </div>
-                </td>
-                &nbsp;
-                <td>
-                    <br><div class="number-selector">
-                        <div>
-                            <div> <br> &nbsp;</div>
-                        </div>
-                    </div>
-                </td>
-                &nbsp;
-                <td>
-                    <br><div class="number-selector">
-                        <div>
-                            <div> <br> &nbsp;</div>
-                        </div>
-                    </div>
-                </td>
-                &nbsp;
-                <td>
-                    <br><div class="number-selector">
-                        <div>
-                            <div> <br> &nbsp;</div>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <br>
+              .container {
+                  max-width: 950px;
+                  margin: 0 auto;
+                  position: relative;
+              }
 
-        <div class="combinations-display">
-            <h4>เลข 2 ตัว</h4>
-            <p>
-                <input type="text" id="twos" class="combinations-input" readonly />
-            </p>
-            <button class="copy-button" id="twos-button" disabled>คัดลอก</button>
-        </div>
+              .main-text {
+                  text-align: center;
+                  background-color: pink;
+                  border: 0px solid darkorange;
+                  color: darkred;
+                  font-size: 1.4em;
+                  font-weight: 600;
+                  margin-bottom: 1em;
+              }
 
-        <div class="combinations-display">
-            <h4>เลข 3 ตัว</h4>
-            <p>
-                <input type="text" id="threes" class="combinations-input" readonly />
-            </p>
-            <button class="copy-button" id="threes-button" disabled>คัดลอก</button>
-        </div>
+              .number-selector {
+                  border: 0px solid darkorange;
+                  font-size: 2em;
+                  color: blue;
+              }
+                  /*
+        .number-selector > div  {
+          display: flex;
 
-        <div class="modal">
-            <div>
-                คัดลอกแล้ว
-            </div>
-        </div>
-    </div>
+        } */
 
-    
-</body>
+                  .number-selector > div > div {
+                      background-image: url('../Content/images/bgdiv.png');
+                      background-repeat: no-repeat;
+                      background-size: 250px;
+                      cursor: pointer;
+                      /* flex-grow: 1; */
+                      height: 300px;
+                      border: 0px solid darkorange;
+                      /* display: flex; */
+                      align-items: center;
+                      /* justify-content: center; */
+                      background-position: center;
+                  }
 
-</html>
+                      .number-selector > div > div.selected {
+                          background-image: url('../Content/images/p1.png');
+                          background-repeat: no-repeat;
+                          background-size: 200px;
+                          background-position: center;
+                      }
+
+
+
+              .combinations-display p {
+                  margin: 0.2em 0;
+              }
+
+              .combinations-display .combinations-input {
+                  width: 100%;
+                  border: 1px solid darkorange;
+                  font-size: 1.6em;
+                  color: blue;
+                  padding: 0.2em 0;
+              }
+
+              .combinations-display button {
+                  padding: 0.2em 0.8em;
+                  font-weight: 600;
+              }
+
+              .modal {
+                  position: fixed;
+                  top: 40%;
+                  left: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  visibility: hidden;
+              }
+
+                  .modal > div {
+                      margin-left: -100%;
+                      background-color: rgba(98, 98, 98, 0.9);
+                      color: #ffffff;
+                      padding: 0.4em 1.4em;
+                      border-radius: 0.4em;
+                  }
+
+                  .modal.active {
+                      visibility: visible;
+                      opacity: 1;
+                  }
+
+                      .modal.active.active-fade {
+                          opacity: 0;
+                          transition: opacity 300ms ease-out;
+                      }
+    </style>
+        </head > <body > <div class="container" > <div class="main-text" > เกมส์จับคู่ภาพ </div > <br > <table width="950px" > <tr > <td > <div class="number-selector" > <div > <div > <br > &nbsp;</div > </div > </div > </td > &nbsp; <td > <div class="number-selector" > <div > <div > <br > &nbsp;</div > </div > </div > </td > &nbsp; <td > <div class="number-selector" > <div > <div > <br > &nbsp;</div > </div > </div > </td > &nbsp; <td > <div class="number-selector" > <div > <div > <br > &nbsp;</div > </div > </div > </td > &nbsp; <td > <div class="number-selector" > <div > <div > <br > &nbsp;</div > </div > </div > </td > </tr > <tr > &nbsp; <td > <br > <div class="number-selector" > <div > <div > <br > &nbsp;</div > </div > </div > </td > &nbsp; <td > <br > <div class="number-selector" > <div > <div > <br > &nbsp;</div > </div > </div > </td > &nbsp; <td > <br > <div class="number-selector" > <div > <div > <br > &nbsp;</div > </div > </div > </td > &nbsp; <td > <br > <div class="number-selector" > <div > <div > <br > &nbsp;</div > </div > </div > </td > &nbsp; <td > <br > <div class="number-selector" > <div > <div > <br > &nbsp;</div > </div > </div > </td > </tr > </table > <br > <div class="combinations-display" > <h4 > เลข 2 ตัว</h4 > <p > <input type="text" id="twos" class="combinations-input" readonly / > </p > <button class="copy-button" id="twos-button" disabled > คัดลอก</button > </div > <div class="combinations-display" > <h4 > เลข 3 ตัว</h4 > <p > <input type="text" id="threes" class="combinations-input" readonly / > </p > <button class="copy-button" id="threes-button" disabled > คัดลอก</button > </div > <div class="modal" > <div > คัดลอกแล้ว </div > </div > </div > </body > </html >
+        

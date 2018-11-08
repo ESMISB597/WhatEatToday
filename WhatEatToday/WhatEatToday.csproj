@@ -312,6 +312,7 @@
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\responsive.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\style2.css" />
     <Content Include="Content\css\_about.css" />
     <Content Include="Content\css\_clients.css" />
     <Content Include="Content\css\_feature.css" />
@@ -448,6 +449,7 @@
     <Content Include="Content\js\stellar.js" />
     <Content Include="Content\js\theme.js" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\toto.jpg" />
     <Content Include="Content\vendors\animate-css\animate.css" />
     <Content Include="Content\vendors\animate-css\wow.min.js" />
     <Content Include="Content\vendors\bootstrap-datepicker\bootstrap-datetimepicker.min.css" />
@@ -600,10 +602,10 @@
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Content\js\WhatEatToday.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\Game\bgdiv.png" />
+    <Content Include="Content\images\bgdiv.png" />
     <Content Include="Content\images\circle.png" />
     <Content Include="Content\images\colcir.png" />
-    <Content Include="Views\Game\p1.png" />
+    <Content Include="Content\images\p1.png" />
     <Content Include="Views\Game\p2.png" />
     <Content Include="Views\Game\p3.png" />
     <Content Include="Views\Game\p4.png" />
