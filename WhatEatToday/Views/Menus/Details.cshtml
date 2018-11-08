@@ -49,31 +49,40 @@
 <section class="book_table_area section_gap">
     <div class="container">
         <div class="book_table_inner row">
+            <div class="col-lg-5">
+                <div class="table_img">
+                    <img src="@Url.Content("~/Content/")img/c2.jpg" style="width:auto; height: 400px " />
+                </div>
+            </div>
+          
             <div class="col-lg-7">
                 <div class="table_form">
-                    <h3>Details Menu</h3>         
+                    <h3>Details Menu</h3>
                     <form class="book_table_form row" action="#">
-                        <div class="form-group col-md-12">                                                            
-                                    @Html.DisplayNameFor(model => model.menu_name)
-                                    @Html.DisplayFor(model => model.menu_name)                                
+                        <div class="form-group col-md-12">
+                            @Html.DisplayNameFor(model => model.menu_name)
+                            @Html.DisplayFor(model => model.menu_name)
                         </div>
                         <div class="form-group col-md-12">
-                            
-                                @Html.DisplayNameFor(model => model.comment)
-                                @Html.DisplayFor(model => model.comment)
-                            
+
+                            @Html.DisplayNameFor(model => model.comment)
+                            @Html.DisplayFor(model => model.comment)
+
                         </div>
                         <div class="form-group col-md-12">
-                            
-                                @Html.DisplayNameFor(model => model.Shop.name)
-                                @Html.DisplayFor(model => model.Shop.name)
-                            
-                        </div>                                       
-                                            <p>
-                                                @Html.ActionLink("Edit", "Edit", new { id = Model.menu_id }) |
-                                                @Html.ActionLink("Back to List", "Index")
-                                            </p>
+
+                            @Html.DisplayNameFor(model => model.Shop.name)
+                            @Html.DisplayFor(model => model.Shop.name)
+
+                        </div>
+
+                        <p>
+                            @Html.ActionLink("Edit", "Edit", new { id = Model.menu_id }) |
+                            @Html.ActionLink("Back to List", "Index")
+                        </p>
                     </form>
+                </div>
+             
                 </div>
             </div>
         </div>

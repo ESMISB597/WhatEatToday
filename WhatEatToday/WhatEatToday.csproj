@@ -370,6 +370,9 @@
     <Content Include="Content\img\blog\post-img2.jpg" />
     <Content Include="Content\img\blog\prev.jpg" />
     <Content Include="Content\img\book-table.jpg" />
+    <Content Include="Content\img\c.jpg" />
+    <Content Include="Content\img\c1.jpg" />
+    <Content Include="Content\img\c2.jpg" />
     <Content Include="Content\img\dish\d1.jpg" />
     <Content Include="Content\img\dish\d2.jpg" />
     <Content Include="Content\img\dish\d3.jpg" />
