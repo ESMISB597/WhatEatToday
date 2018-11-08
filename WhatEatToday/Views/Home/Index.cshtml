@@ -103,38 +103,22 @@
                 </div>
             </div>
             <div class="row">
-                <div class="single_dish col-lg-4 col-md-6 text-center">
-                    <div class="thumb">
-                        <img class="img-fluid" src="img/dish/d1.jpg" alt="">
-                    </div>
-                    <h4>Bread Fruit Cheese Sandwich</h4>
-                    <p>
-                        Bread/Potato/Cheese
-                    </p>
-                    <h5 class="price">$5.59</h5>
-                </div>
-
-                <div class="single_dish col-lg-4 col-md-6 text-center">
-                    <div class="thumb">
-                        <img class="img-fluid" src="img/dish/d2.jpg" alt="">
-                    </div>
-                    <h4>Beef Cutlet with Spring Onion</h4>
-                    <p>
-                        Bread/Potato/Cheese
-                    </p>
-                    <h5 class="price">$5.59</h5>
-                </div>
-
-                <div class="single_dish col-lg-4 col-md-6 text-center">
-                    <div class="thumb">
-                        <img class="img-fluid" src="img/dish/d3.jpg" alt="">
-                    </div>
-                    <h4>Meat with sauce & Vegetables</h4>
-                    <p>
-                        Bread/Potato/Cheese
-                    </p>
-                    <h5 class="price">$5.59</h5>
-                </div>
+                @{
+                    foreach (var shop in Model)
+                    {
+                        <div class="single_dish col-lg-4 col-md-6 text-center">
+                            <div class="thumb">
+                                <img class="img-fluid" src="img/dish/d1.jpg" alt="">
+                            </div>
+                            <h4>@Html.DisplayFor(modelItem => shop.name)</h4>
+                            <p>
+                                ร้านประเภท @Html.DisplayFor(modelItem => shop.type)
+                            </p>
+                            <a role="button" onclick="showMap(@shop.latitude,@shop.longitude)" class="btn btn-outline-info">ดูตำแหน่ง</a>
+                        </div>
+                    }
+                }
+                
             </div>
         </div>
     </section>
@@ -362,7 +346,26 @@
         </div>
     </div>
    
-   
+<!-- Modal -->
+<div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="mapLabel">Maps</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="map" class="align-content-center"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning"><i class="fa fa-map-pin"></i> Checkin ร้านนี้</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>   
 
 
 </html>
