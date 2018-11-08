@@ -2,42 +2,80 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/FoodBarIdex.cshtml";
 }
 
-<h2>Details</h2>
+@{
+    List<SelectListItem> listItems = new List<SelectListItem>();
+    listItems.Add(new SelectListItem
+    {
+        Text = "เลือกประเภทร้านค้า",
+        Value = "type",
+        Selected = true
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "ของหวาน",
+        Value = "ของหวาน",
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "อาหารตามสั่ง",
+        Value = "อาหารตามสั่ง"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "ก๋วยเตี๋ยว",
+        Value = "ก๋วยเตี๋ยว"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "เนื้อย่างเกาหลี",
+        Value = "เนื้อย่างเกาหลี"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "บุฟเฟ่ต์",
+        Value = "บุฟเฟ่ต์"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "ก๋วยจั๊บ",
+        Value = "ก๋วยจั๊บ"
+    });
 
-<div>
-    <h4>Menu</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.menu_name)
-        </dt>
+}
 
-        <dd>
-            @Html.DisplayFor(model => model.menu_name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.comment)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.comment)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Shop.name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Shop.name)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.menu_id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<section class="book_table_area section_gap">
+    <div class="container">
+        <div class="book_table_inner row">
+            <div class="col-lg-7">
+                <div class="table_form">
+                    <h3>Details Menu</h3>         
+                    <form class="book_table_form row" action="#">
+                        <div class="form-group col-md-12">                                                            
+                                    @Html.DisplayNameFor(model => model.menu_name)
+                                    @Html.DisplayFor(model => model.menu_name)                                
+                        </div>
+                        <div class="form-group col-md-12">
+                            
+                                @Html.DisplayNameFor(model => model.comment)
+                                @Html.DisplayFor(model => model.comment)
+                            
+                        </div>
+                        <div class="form-group col-md-12">
+                            
+                                @Html.DisplayNameFor(model => model.Shop.name)
+                                @Html.DisplayFor(model => model.Shop.name)
+                            
+                        </div>                                       
+                                            <p>
+                                                @Html.ActionLink("Edit", "Edit", new { id = Model.menu_id }) |
+                                                @Html.ActionLink("Back to List", "Index")
+                                            </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
