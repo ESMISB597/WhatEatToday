@@ -89,7 +89,8 @@ button:focus {
   padding-top: 120px; }
 
 .section_gap {
-  padding: 120px 0; }
+  padding: 120px 0; 
+}
   @media (max-width: 992px) {
     .section_gap {
       padding: 70px 0; } }
@@ -1676,12 +1677,14 @@ button:focus {
   padding-top: 80px;
   padding-bottom: 80px;
   z-index: 2;
-  position: relative; }
+  position: relative;
+}
 
 .table_form {
   background: #f9f9ff;
   height: 100%;
-  padding: 110px 100px; }
+  padding: 110px 100px;
+}
   .table_form h3 {
     color: #222222;
     font-size: 48px;
