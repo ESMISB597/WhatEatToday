@@ -312,6 +312,7 @@
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\responsive.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\style2.css" />
     <Content Include="Content\css\_about.css" />
     <Content Include="Content\css\_clients.css" />
     <Content Include="Content\css\_feature.css" />
