@@ -41,7 +41,6 @@
 
 }
 
-
 @using (Html.BeginForm("Edit", "Shops", FormMethod.Post, new
 {
     enctype = "multipart/form-data"
@@ -82,7 +81,7 @@
                                 @Html.ValidationMessageFor(model => model.pic, "", new { @class = "text-danger" })
                             </div>
                             <div class="form-group col-md-12">
-                                <input type="button" class="btn btn-info" onclick="showAddMap()" value="Click for Edit Map" />
+                                <input type="button" class="btn btn-warning" onclick="showAddMap()" value="Click for Edit Map" /><br /><br />
                                 <div class="col-md-10">
                                     <div id="map">
                                     </div>
