@@ -35,7 +35,8 @@ body {
   } */
   
   .number-selector >div > div{
-    background-image: url("bgdiv.png");
+    background-image: url('../Content/images/bgdiv.png');
+    background-repeat: no-repeat;
     background-size: 250px ;
     cursor: pointer;
     /* flex-grow: 1; */
@@ -49,7 +50,8 @@ body {
   }
 
   .number-selector > div > div.selected {
-    background-image:url("p1.png");
+    background-image: url('../Content/images/p1.png');
+    background-repeat: no-repeat;
     background-size:200px;
     background-position: center;
     
