@@ -448,6 +448,7 @@
     <Content Include="Content\js\popper.js" />
     <Content Include="Content\js\stellar.js" />
     <Content Include="Content\js\theme.js" />
+    <Content Include="Content\js\winwheel.js" />
     <Content Include="Content\style.css" />
     <Content Include="Content\toto.jpg" />
     <Content Include="Content\vendors\animate-css\animate.css" />
@@ -482,6 +483,7 @@
     <Content Include="Content\vendors\scroll\jquery.nicescroll.min.js" />
     <Content Include="Content\vendors\swiper\css\swiper.min.css" />
     <Content Include="Content\vendors\swiper\js\swiper.min.js" />
+    <Content Include="Content\winwheel.css" />
     <Content Include="favicon.ico" />
     <Content Include="Content\images\game1.png" />
     <Content Include="Content\images\game2.png" />
