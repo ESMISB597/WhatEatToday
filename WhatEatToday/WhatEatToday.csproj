@@ -449,6 +449,7 @@
     <Content Include="Content\js\stellar.js" />
     <Content Include="Content\js\theme.js" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\toto.jpg" />
     <Content Include="Content\vendors\animate-css\animate.css" />
     <Content Include="Content\vendors\animate-css\wow.min.js" />
     <Content Include="Content\vendors\bootstrap-datepicker\bootstrap-datetimepicker.min.css" />
