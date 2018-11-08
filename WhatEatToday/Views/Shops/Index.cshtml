@@ -19,8 +19,8 @@
               <td>
                     @Html.TextBox("SearchString", null, new { @class = "form-control" })
                 </td>
-                <td> &nbsp;&nbsp;<input type="submit" class="btn btn-primary" value="Search" />  </td>
-</tr>
+                        <td> &nbsp;&nbsp;<input type="submit" class="btn btn-primary" value="Search" />  </td>
+                    </tr>
             </table>
             
         </div>
@@ -29,9 +29,11 @@
     }
 
 </center>
+<br>
 <p>
     <button type="button" class="btn btn-warning btn-lg">@Html.ActionLink("Add Shop", "Create")</button>
 </p>
+<br>
 <table class="table" style="background-color:mintcream">
     <tr>
         <th>
@@ -79,9 +81,7 @@
         </td>
         @if (ViewBag.ViewEdit != "Shop")
         {
-            <td>
-                ร้านดี 
-            </td>
+            
         }
         else
         {
