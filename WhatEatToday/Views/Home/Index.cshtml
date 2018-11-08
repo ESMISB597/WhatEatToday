@@ -1,335 +1,309 @@
 ﻿@model IEnumerable<WhatEatToday.Models.Shop>
 
-@{
+    @{
     ViewBag.Title = "Welcom to What-Eat-Today";
     Layout = "~/Views/Shared/FoodBarIdex.cshtml";
-} 
-<!doctype html>
-<html lang="en">
-
-<head>
-    <!--================ End footer Area  =================-->
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="@Url.Content("~/Content/")js/jquery-3.2.1.min.js"></script>
-    <script src="@Url.Content("~/Content/")js/popper.js"></script>
-    <script src="@Url.Content("~/Content/")js/bootstrap.min.js"></script>
-    <script src="@Url.Content("~/Content/")js/stellar.js"></script>
-    <script src="@Url.Content("~/Content/")js/jquery.lightbox.js"></script>
-    <script src="@Url.Content("~/Content/")vendors/nice-select/js/jquery.nice-select.min.js"></script>
-    <script src="@Url.Content("~/Content/")vendors/isotope/imagesloaded.pkgd.min.js"></script>
-    <script src="@Url.Content("~/Content/")vendors/isotope/isotope-min.js"></script>
-    <script src="@Url.Content("~/Content/")vendors/owl-carousel/owl.carousel.min.js"></script>
-    <script src="@Url.Content("~/Content/")js/jquery.ajaxchimp.min.js"></script>
-    <script src="@Url.Content("~/Content/")vendors/counter-up/jquery.waypoints.min.js"></script>
-    <script src="@Url.Content("~/Content/")vendors/counter-up/jquery.counterup.js"></script>
-    <script src="@Url.Content("~/Content/")js/mail-script.js"></script>
-    <script src="@Url.Content("~/Content/")vendors/popup/jquery.magnific-popup.min.js"></script>
-    <script src="@Url.Content("~/Content/")vendors/swiper/js/swiper.min.js"></script>
-    <script src="@Url.Content("~/Content/")vendors/scroll/jquery.mCustomScrollbar.js"></script>
-    <script src="@Url.Content("~/Content/")js/theme.js"></script>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="img/favicon.png" type="image/png">
-    <title>Food Bar</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="@Url.Content("~/Content/")css/bootstrap.css">
-    <link rel="stylesheet" href="@Url.Content("~/Content/")vendors/linericon/style.css">
-    <link rel="stylesheet" href="@Url.Content("~/Content/")css/font-awesome.min.css">
-    <link rel="stylesheet" href="@Url.Content("~/Content/")vendors/owl-carousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.11/css/lightgallery.min.css">
-    <link rel="stylesheet" href="@Url.Content("~/Content/")vendors/nice-select/css/nice-select.css">
-    <link rel="stylesheet" href="@Url.Content("~/Content/")vendors/animate-css/animate.css">
-    <link rel="stylesheet" href="@Url.Content("~/Content/")vendors/popup/magnific-popup.css">
-    <link rel="stylesheet" href="@Url.Content("~/Content/")vendors/swiper/css/swiper.min.css">
-    <link rel="stylesheet" href="@Url.Content("~/Content/")vendors/scroll/jquery.mCustomScrollbar.css">
-    <!-- main css -->
-    <link rel="stylesheet" href="@Url.Content("~/Content/")css/style.css">
-    <link rel="stylesheet" href="@Url.Content("~/Content/")css/responsive.css">
-</head>
-
-<body><br /><br />
-    <!--================End Canvus Menu Area =================-->
-    <!--================ Start banner section =================-->
-    <section class="home_banner relative">
-        <div class="container-fluid pl-0">
-            <div class="row justify-content-center align-items-center full_height">
-                <div class="col-lg-6 p-0">
-                    <div class="banner_left d-flex justify-content-center flex-column">
-                        <h1>Delicious Meal</h1>
-                        <p>
-                            หิวแล้วใช่ไหม ? ค้นหาเมนูที่ใช่ร้านที่ชอบสำหรับคุณ
-                        </p>
-                        <a class="main_btn" href="~/Shops/FindShop/">Find Your Meal</a>
+    }
+    <!doctype html>
+    <html>
+    <body>
+        <br /><br />
+        <!--================End Canvus Menu Area =================-->
+        <!--================ Start banner section =================-->
+        <section class="home_banner relative">
+            <div class="container-fluid pl-0">
+                <div class="row justify-content-center align-items-center full_height">
+                    <div class="col-lg-6 p-0">
+                        <div class="banner_left d-flex justify-content-center flex-column">
+                            <h1>Delicious Meal</h1>
+                            <p>
+                                หิวแล้วใช่ไหม ? ค้นหาเมนูที่ใช่ร้านที่ชอบสำหรับคุณ
+                            </p>
+                            <a class="main_btn" href="~/Shops/FindShop/">Find Your Meal</a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="banner_right d-flex justify-content-center align-items-center">
-                        <div class="round-planet planet">
-                            <div class="round-planet planet2">
-                                <div class="round-planet planet3">
-                                    <div class="shape shape1"></div>
-                                    <div class="shape shape2"></div>
-                                    <div class="shape shape3"></div>
-                                    <div class="shape shape4"></div>
-                                    <div class="shape shape5"></div>
-                                    <div class="shape shape6"></div>
+                    <div class="col-lg-6">
+                        <div class="banner_right d-flex justify-content-center align-items-center">
+                            <div class="round-planet planet">
+                                <div class="round-planet planet2">
+                                    <div class="round-planet planet3">
+                                        <div class="shape shape1"></div>
+                                        <div class="shape shape2"></div>
+                                        <div class="shape shape3"></div>
+                                        <div class="shape shape4"></div>
+                                        <div class="shape shape5"></div>
+                                        <div class="shape shape6"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <img class="face-img img-fluid" src="img/banner/home-banner.png" alt="">
-    </section>
-    <!--================ End banner section =================-->
-    <!--================ Top Dish Area =================-->
-    <section class="top_dish_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="main_title position-relative">
-                        <h1>Our Top Rated Dishes</h1>
-                        <hr>
-                        <div class="round-planet planet">
-                            <div class="round-planet planet2">
-                                <div class="shape shape1"></div>
-                                <div class="shape shape2"></div>
+            <img class="face-img img-fluid" src="img/banner/home-banner.png" alt="">
+        </section>
+        <!--================ End banner section =================-->
+        <!--================ Top Dish Area =================-->
+        <section class="top_dish_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="main_title position-relative">
+                            <h1>Our Top Rated Dishes</h1>
+                            <hr>
+                            <div class="round-planet planet">
+                                <div class="round-planet planet2">
+                                    <div class="shape shape1"></div>
+                                    <div class="shape shape2"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                @{
-                    foreach (var shop in Model)
-                    {
-                        <div class="single_dish col-lg-4 col-md-6 text-center">
-                            <div class="thumb">
-                                <img class="img-fluid" src="img/dish/d1.jpg" alt="">
-                            </div>
-                            <h4>@Html.DisplayFor(modelItem => shop.name)</h4>
-                            <p>
-                                ร้านประเภท @Html.DisplayFor(modelItem => shop.type)
-                            </p>
-                            <a role="button" onclick="showMap(@shop.latitude,@shop.longitude)" class="btn btn-outline-info">ดูตำแหน่ง</a>
+                <div class="row">
+                    <div class="single_dish col-lg-4 col-md-6 text-center">
+                        <div class="thumb">
+                            <img class="img-fluid" src="img/dish/d1.jpg" alt="">
                         </div>
-                    }
-                }
-                
-            </div>
-        </div>
-    </section>
-    <!--================ End Top Dish Area =================-->
-    <!--================ Menu Area =================-->
-    <section class="menu_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="main_title position-relative">
-                        <h1>Our favourite Menu</h1>
-                        <hr>
-                        <div class="round-planet planet">
-                            <div class="round-planet planet2">
-                                <div class="shape shape1"></div>
-                                <div class="shape shape2"></div>
-                            </div>
-                        </div>
+                        <h4>Bread Fruit Cheese Sandwich</h4>
+                        <p>
+                            Bread/Potato/Cheese
+                        </p>
+                        <h5 class="price">$5.59</h5>
                     </div>
-                </div>
-            </div>
-            <div class="row menu_inner">
-                <div class="col-md-12 col-lg-10 col-xl-6">
-                    <div class="menu_list">
-                        <ul class="list">
-                            <li>
-                                <h4>
-                                    Wonton with french fries
-                                    <span>$5.00</span>
-                                </h4>
-                                <p>Wonthon/Potato/Fries/Sauce</p>
-                            </li>
-                            <li>
-                                <h4>
-                                    Roasted Red Potatoes with Rosemary
-                                    <span>$5.00</span>
-                                </h4>
-                                <p>Wonthon/Potato/Fries/Sauce</p>
-                            </li>
-                            <li>
-                                <h4>
-                                    Bacon-Wrapped Shrimp with Garlic
-                                    <span>$5.00</span>
-                                </h4>
-                                <p>Wonthon/Potato/Fries/Sauce</p>
-                            </li>
-                            <li>
-                                <h4>
-                                    Apple Smoked Chicken with White Sauce
-                                    <span>$5.00</span>
-                                </h4>
-                                <p>Wonthon/Potato/Fries/Sauce</p>
-                            </li>
-                            <li>
-                                <h4>
-                                    Imported Oysters Grill (5 Pieces)
-                                    <span>$5.00</span>
-                                </h4>
-                                <p>Wonthon/Potato/Fries/Sauce</p>
-                            </li>
-                            <li>
-                                <h4>
-                                    Apple Smoked Chicken with White Sauce
-                                    <span>$5.00</span>
-                                </h4>
-                                <p>Wonthon/Potato/Fries/Sauce</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
 
-                <div class="col-md-12 col-lg-10 col-xl-6">
-                    <div class="menu_list pr-0">
-                        <ul class="list">
-                            <li>
-                                <h4>
-                                    Wonton with french fries
-                                    <span>$5.00</span>
-                                </h4>
-                                <p>Wonthon/Potato/Fries/Sauce</p>
-                            </li>
-                            <li>
-                                <h4>
-                                    Roasted Red Potatoes with Rosemary
-                                    <span>$5.00</span>
-                                </h4>
-                                <p>Wonthon/Potato/Fries/Sauce</p>
-                            </li>
-                            <li>
-                                <h4>
-                                    Bacon-Wrapped Shrimp with Garlic
-                                    <span>$5.00</span>
-                                </h4>
-                                <p>Wonthon/Potato/Fries/Sauce</p>
-                            </li>
-                            <li>
-                                <h4>
-                                    Apple Smoked Chicken with White Sauce
-                                    <span>$5.00</span>
-                                </h4>
-                                <p>Wonthon/Potato/Fries/Sauce</p>
-                            </li>
-                            <li>
-                                <h4>
-                                    Imported Oysters Grill (5 Pieces)
-                                    <span>$5.00</span>
-                                </h4>
-                                <p>Wonthon/Potato/Fries/Sauce</p>
-                            </li>
-                            <li>
-                                <h4>
-                                    Apple Smoked Chicken with White Sauce
-                                    <span>$5.00</span>
-                                </h4>
-                                <p>Wonthon/Potato/Fries/Sauce</p>
-                            </li>
-                        </ul>
+                    <div class="single_dish col-lg-4 col-md-6 text-center">
+                        <div class="thumb">
+                            <img class="img-fluid" src="img/dish/d2.jpg" alt="">
+                        </div>
+                        <h4>Beef Cutlet with Spring Onion</h4>
+                        <p>
+                            Bread/Potato/Cheese
+                        </p>
+                        <h5 class="price">$5.59</h5>
+                    </div>
+
+                    <div class="single_dish col-lg-4 col-md-6 text-center">
+                        <div class="thumb">
+                            <img class="img-fluid" src="img/dish/d3.jpg" alt="">
+                        </div>
+                        <h4>Meat with sauce & Vegetables</h4>
+                        <p>
+                            Bread/Potato/Cheese
+                        </p>
+                        <h5 class="price">$5.59</h5>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!--================End Menu Area =================-->
-    <!--================ Gallery Area =================-->
-    <section class="gallery_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="main_title position-relative">
-                        <h1>foodbar galleries</h1>
-                        <hr>
-                        <div class="round-planet planet">
-                            <div class="round-planet planet2">
-                                <div class="shape shape1"></div>
-                                <div class="shape shape2"></div>
+        </section>
+        <!--================ End Top Dish Area =================-->
+        <!--================ Menu Area =================-->
+        <section class="menu_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="main_title position-relative">
+                            <h1>Our favourite Menu</h1>
+                            <hr>
+                            <div class="round-planet planet">
+                                <div class="round-planet planet2">
+                                    <div class="shape shape1"></div>
+                                    <div class="shape shape2"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="row menu_inner">
+                    <div class="col-md-12 col-lg-10 col-xl-6">
+                        <div class="menu_list">
+                            <ul class="list">
+                                <li>
+                                    <h4>
+                                        Wonton with french fries
+                                        <span>$5.00</span>
+                                    </h4>
+                                    <p>Wonthon/Potato/Fries/Sauce</p>
+                                </li>
+                                <li>
+                                    <h4>
+                                        Roasted Red Potatoes with Rosemary
+                                        <span>$5.00</span>
+                                    </h4>
+                                    <p>Wonthon/Potato/Fries/Sauce</p>
+                                </li>
+                                <li>
+                                    <h4>
+                                        Bacon-Wrapped Shrimp with Garlic
+                                        <span>$5.00</span>
+                                    </h4>
+                                    <p>Wonthon/Potato/Fries/Sauce</p>
+                                </li>
+                                <li>
+                                    <h4>
+                                        Apple Smoked Chicken with White Sauce
+                                        <span>$5.00</span>
+                                    </h4>
+                                    <p>Wonthon/Potato/Fries/Sauce</p>
+                                </li>
+                                <li>
+                                    <h4>
+                                        Imported Oysters Grill (5 Pieces)
+                                        <span>$5.00</span>
+                                    </h4>
+                                    <p>Wonthon/Potato/Fries/Sauce</p>
+                                </li>
+                                <li>
+                                    <h4>
+                                        Apple Smoked Chicken with White Sauce
+                                        <span>$5.00</span>
+                                    </h4>
+                                    <p>Wonthon/Potato/Fries/Sauce</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-lg-10 col-xl-6">
+                        <div class="menu_list pr-0">
+                            <ul class="list">
+                                <li>
+                                    <h4>
+                                        Wonton with french fries
+                                        <span>$5.00</span>
+                                    </h4>
+                                    <p>Wonthon/Potato/Fries/Sauce</p>
+                                </li>
+                                <li>
+                                    <h4>
+                                        Roasted Red Potatoes with Rosemary
+                                        <span>$5.00</span>
+                                    </h4>
+                                    <p>Wonthon/Potato/Fries/Sauce</p>
+                                </li>
+                                <li>
+                                    <h4>
+                                        Bacon-Wrapped Shrimp with Garlic
+                                        <span>$5.00</span>
+                                    </h4>
+                                    <p>Wonthon/Potato/Fries/Sauce</p>
+                                </li>
+                                <li>
+                                    <h4>
+                                        Apple Smoked Chicken with White Sauce
+                                        <span>$5.00</span>
+                                    </h4>
+                                    <p>Wonthon/Potato/Fries/Sauce</p>
+                                </li>
+                                <li>
+                                    <h4>
+                                        Imported Oysters Grill (5 Pieces)
+                                        <span>$5.00</span>
+                                    </h4>
+                                    <p>Wonthon/Potato/Fries/Sauce</p>
+                                </li>
+                                <li>
+                                    <h4>
+                                        Apple Smoked Chicken with White Sauce
+                                        <span>$5.00</span>
+                                    </h4>
+                                    <p>Wonthon/Potato/Fries/Sauce</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Menu Area =================-->
+        <!--================ Gallery Area =================-->
+        <section class="gallery_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="main_title position-relative">
+                            <h1>foodbar galleries</h1>
+                            <hr>
+                            <div class="round-planet planet">
+                                <div class="round-planet planet2">
+                                    <div class="shape shape1"></div>
+                                    <div class="shape shape2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" id="lightgallery">
+                    <div class="col-lg-7 all-image" data-src="@Url.Content(" ~/Content/")img/gallery/g1.jpg">
+                    <div class="single-gallery">
+                        <div class="overlay"></div>
+                        <img class="img-fluid w-100" src="@Url.Content(" ~/Content/")img/gallery/g1.jpg" alt="">
+                        <div class="content">
+                            <i class="lnr lnr-picture"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 all-image" data-src="@Url.Content(" ~/Content/")img/gallery/g2.jpg">
+                <div class="single-gallery">
+                    <div class="overlay"></div>
+                    <img class="img-fluid w-100" src="@Url.Content(" ~/Content/")img/gallery/g2.jpg" alt="">
+                    <div class="content">
+                        <i class="lnr lnr-picture"></i>
+                    </div>
+                </div>
             </div>
 
-            <div class="row" id="lightgallery">
-                <div class="col-lg-7 all-image" data-src="@Url.Content("~/Content/")img/gallery/g1.jpg">
-                    <div class="single-gallery">
-                        <div class="overlay"></div>
-                        <img class="img-fluid w-100" src="@Url.Content("~/Content/")img/gallery/g1.jpg" alt="">
-                        <div class="content">
-                            <i class="lnr lnr-picture"></i>
-                        </div>
-                    </div>
+            <div class="col-lg-4 all-image" data-src="@Url.Content(" ~/Content/")img/gallery/g3.jpg">
+            <div class="single-gallery">
+                <div class="overlay"></div>
+                <img class="img-fluid w-100" src="@Url.Content(" ~/Content/")img/gallery/g3.jpg" alt="">
+                <div class="content">
+                    <i class="lnr lnr-picture"></i>
                 </div>
+            </div>
+            </div>
 
-                <div class="col-lg-5 all-image" data-src="@Url.Content("~/Content/")img/gallery/g2.jpg">
-                    <div class="single-gallery">
-                        <div class="overlay"></div>
-                        <img class="img-fluid w-100" src="@Url.Content("~/Content/")img/gallery/g2.jpg" alt="">
-                        <div class="content">
-                            <i class="lnr lnr-picture"></i>
-                        </div>
-                    </div>
+            <div class="col-lg-4 all-image" data-src="@Url.Content(" ~/Content/")img/gallery/g4.jpg">
+            <div class="single-gallery">
+                <div class="overlay"></div>
+                <img class="img-fluid w-100" src="@Url.Content(" ~/Content/")img/gallery/g4.jpg" alt="">
+                <div class="content">
+                    <i class="lnr lnr-picture"></i>
                 </div>
+            </div>
+            </div>
 
-                <div class="col-lg-4 all-image" data-src="@Url.Content("~/Content/")img/gallery/g3.jpg">
-                    <div class="single-gallery">
-                        <div class="overlay"></div>
-                        <img class="img-fluid w-100" src="@Url.Content("~/Content/")img/gallery/g3.jpg" alt="">
-                        <div class="content">
-                            <i class="lnr lnr-picture"></i>
-                        </div>
-                    </div>
+            <div class="col-lg-4 all-image" data-src="@Url.Content(" ~/Content/")img/gallery/g5.jpg">
+            <div class="single-gallery">
+                <div class="overlay"></div>
+                <img class="img-fluid w-100" src="@Url.Content(" ~/Content/")img/gallery/g5.jpg" alt="">
+                <div class="content">
+                    <i class="lnr lnr-picture"></i>
                 </div>
+            </div>
+            </div>
 
-                <div class="col-lg-4 all-image" data-src="@Url.Content("~/Content/")img/gallery/g4.jpg">
-                    <div class="single-gallery">
-                        <div class="overlay"></div>
-                        <img class="img-fluid w-100" src="@Url.Content("~/Content/")img/gallery/g4.jpg" alt="">
-                        <div class="content">
-                            <i class="lnr lnr-picture"></i>
-                        </div>
-                    </div>
+            <div class="col-lg-5 all-image" data-src="@Url.Content(" ~/Content/")img/gallery/g6.jpg">
+            <div class="single-gallery">
+                <div class="overlay"></div>
+                <img class="img-fluid w-100" src="@Url.Content(" ~/Content/")img/gallery/g6.jpg" alt="">
+                <div class="content">
+                    <i class="lnr lnr-picture"></i>
                 </div>
+            </div>
+            </div>
 
-                <div class="col-lg-4 all-image" data-src="@Url.Content("~/Content/")img/gallery/g5.jpg">
-                    <div class="single-gallery">
-                        <div class="overlay"></div>
-                        <img class="img-fluid w-100" src="@Url.Content("~/Content/")img/gallery/g5.jpg" alt="">
-                        <div class="content">
-                            <i class="lnr lnr-picture"></i>
-                        </div>
-                    </div>
+            <div class="col-lg-7 all-image" data-src="@Url.Content(" ~/Content/")img/gallery/g7.jpg">
+            <div class="single-gallery">
+                <div class="overlay"></div>
+                <img class="img-fluid w-100" src="@Url.Content(" ~/Content/")img/gallery/g7.jpg" alt="">
+                <div class="content">
+                    <i class="lnr lnr-picture"></i>
                 </div>
-
-                <div class="col-lg-5 all-image" data-src="@Url.Content("~/Content/")img/gallery/g6.jpg">
-                    <div class="single-gallery">
-                        <div class="overlay"></div>
-                        <img class="img-fluid w-100" src="@Url.Content("~/Content/")img/gallery/g6.jpg" alt="">
-                        <div class="content">
-                            <i class="lnr lnr-picture"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-7 all-image" data-src="@Url.Content("~/Content/")img/gallery/g7.jpg">
-                    <div class="single-gallery">
-                        <div class="overlay"></div>
-                        <img class="img-fluid w-100" src="@Url.Content("~/Content/")img/gallery/g7.jpg" alt="">
-                        <div class="content">
-                            <i class="lnr lnr-picture"></i>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            </div>
             </div>
         </div>
     </section>
@@ -360,8 +334,7 @@
                 <div id="map" class="align-content-center"></div>
             </div>
             <div class="modal-footer">
-                <input type="hidden" id="shop_id"/>
-                <button type="button" href="~/CheckIn/Index/"class="btn btn-warning"><i class="fa fa-map-pin"></i> Checkin ร้านนี้</button>
+                <button type="button" class="btn btn-warning"><i class="fa fa-map-pin"></i> Checkin ร้านนี้</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
