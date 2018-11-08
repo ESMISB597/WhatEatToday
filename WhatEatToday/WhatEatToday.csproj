@@ -292,6 +292,11 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-WhatEatToday-20181002024027.mdf" />
+    <Content Include="App_Data\aspnet-WhatEatToday-20181002024027_log.ldf">
+      <DependentUpon>aspnet-WhatEatToday-20181002024027.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\ASPNETDB.MDF" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -600,7 +605,9 @@
     <Content Include="Views\Game\p3.png" />
     <Content Include="Views\Game\p4.png" />
     <Content Include="Views\Game\p5.png" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -670,9 +677,7 @@
     <Content Include="Views\CheckIn\Index.cshtml" />
     <Content Include="Views\Shared\FoodBarIdex.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Project_Readme.html" />
   </ItemGroup>
