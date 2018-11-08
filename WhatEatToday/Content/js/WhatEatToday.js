@@ -29,11 +29,11 @@
     var latMap;
     var lngMap;
 
-    function showMap(lat, lng) {
+    function showMap(lat, lng, id) {
         latMap = lat;
         lngMap = lng;
         showMapWithLo();
-       
+        $('#shop_id').val(id);
         $('#mapModal').modal('show');
     }
 
