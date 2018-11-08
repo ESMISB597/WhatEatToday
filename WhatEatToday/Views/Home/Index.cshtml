@@ -70,7 +70,7 @@
                                 </div>
                                 <h4>@Html.DisplayFor(modelItem => shop.name)</h4>
                                 <p>
-                                    ร้านประเภท @Html.DisplayFor(modelItem => shop.type)
+                                    ร้านประเภท @Html.DisplayFor(model => shop.type)
                                 </p>
                                 <a role="button" onclick="showMap(@Html.DisplayFor(modelItem => shop.latitude),@Html.DisplayFor(modelItem => shop.longitude),@Html.DisplayFor(modelItem => shop.shop_id))" class="btn btn-outline-info">ดูตำแหน่ง</a>
                             </div>
