@@ -2,93 +2,94 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/FoodBarIdex.cshtml";
 }
 
-<h2>Details</h2>
+@{
+    List<SelectListItem> listItems = new List<SelectListItem>();
+    listItems.Add(new SelectListItem
+    {
+        Text = "ของหวาน",
+        Value = "Sweet",
+        Selected = true
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "อาหารตามสั่ง",
+        Value = "Tamsang"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "ก๋วยเตี๋ยว",
+        Value = "Noodel"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "เนื้อย่างเกาหลี",
+        Value = "Nueyang"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "บุฟเฟ่ต์",
+        Value = "Buffet"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "ก๋วยจั๊บ",
+        Value = "Jub"
+    });
 
-<div>
-    <h4>Shop</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.name)
-        </dt>
+}
 
-        <dd>
-            @Html.DisplayFor(model => model.name)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.details)
-        </dt>
+<section class="book_table_area section_gap">
+    <div class="container">
+        <div class="book_table_inner row">
+            <div class="col-lg-5">
+                <div class="table_img">
+                    <img src=@Url.Content("~/Content/images/"+@Html.DisplayFor(model => model.pic)) style="width:auto; height: 300px " />
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="table_form">
+                    <h3>Detail Shop</h3>
+                    <form class="book_table_form row" action="#">
+                            <div class="form-group col-md-12">
+                                    @Html.DisplayNameFor(model => model.name)
+                                    @Html.DisplayFor(model => model.name)
+                            </div>
+                            <div class="form-group col-md-12">
+                                    @Html.DisplayNameFor(model => model.details)
+                                    @Html.DisplayFor(model => model.details)
+                            </div>
+                        <div class="form-group col-md-12">
+                            @Html.DisplayNameFor(model => model.type)
+                            @Html.DisplayFor(model => model.type)
+                        </div>   
+                        <div class="form-group col-md-12">
+                            <input type="button" class="btn genric-btn primary-border radius" onclick="showAddMap()" value="Click for Edit Map" /><br /><br />
+                            <div class="col-md-10">
+                                <div id="map">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            @Html.DisplayNameFor(model => model.latitude)
+                            @Html.DisplayFor(model => model.latitude)
+                        </div>
+                        <div class="form-group col-md-12">
+                            @Html.DisplayNameFor(model => model.longitude)
+                            @Html.DisplayFor(model => model.longitude)
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.details)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.type)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.type)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.pic)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.pic)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.latitude)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.latitude)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.longitude)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.longitude)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.shop_id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
-<div class="row" style="background-color:#FF9933">
-    <div class="col-md-3">
-        <center>
-            <h2>Home</h2>
-            <center><a href="~/Home"><img src="~/Content/menu1.png" width="300px" class="animated bounceIn"></a></center>
-        </center>
+                            <p>
+                                @Html.ActionLink("Edit", "Edit", new { id = Model.shop_id }) |
+                                @Html.ActionLink("Back to List", "Index")
+                            </p>
+                               
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-3">
-        <center>
-            <h2>Find Shop</h2>
-            <center><a href="~/Shops/FindShop"><img src="~/Content/menu2.png" width="300px" class="animated bounceIn"></a></center>
-        </center>
-    </div>
-    <div class="col-md-3">
-        <center>
-            <h2>Games</h2>
-            <center><a href="~/Game/Index"><img src="~/Content/menu3.png" width="300px" class="animated bounceIn"></a></center>
-        </center>
-    </div>
-    <div class="col-md-3">
-        <center>
-            <h2>Favorit</h2>
-            <center><a href="~/Home"><img src="~/Content/menu4.png" width="300px" class="animated bounceIn"></a></center>
-        </center>
-    </div>
-</div>
-<div>
+</section>

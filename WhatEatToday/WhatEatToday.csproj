@@ -326,6 +326,7 @@
     <Content Include="Content\font.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\images\12.jpg" />
+    <Content Include="Content\images\12.png" />
     <Content Include="Content\img\banner\banner-2.jpg" />
     <Content Include="Content\img\banner\banner.jpg" />
     <Content Include="Content\img\banner\home-banner.jpg" />
