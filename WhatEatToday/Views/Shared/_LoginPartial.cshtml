@@ -10,16 +10,16 @@
             &nbsp;
         </li>
         <li class="nav-item">
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link", @style = "color:white;" })
+            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link animated fadeInDown", @style = "color:white;" })
         </li>
-        <li class="nav-item"><a href="javascript:document.getElementById('logoutForm').submit()" class="nav-link" style="color:white;">Log off</a></li>
+        <li class="nav-item"><a href="javascript:document.getElementById('logoutForm').submit()" class="nav-link animated fadeInDown" style="color:white;">Log off</a></li>
     </ul>
     }
 }
 else
 {
     <ul class="nav navbar-nav menu_nav ml-auto" id="navbarSupportedContent">
-        <li class="nav-item">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" , @class="nav-link" , @style="color:white;"})</li>
-        <li class="nav-item">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-link" , @style = "color:white;" })</li>
+        <li class="nav-item animated fadeInDown">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" , @class="nav-link" , @style="color:white;"})</li>
+        <li class="nav-item animated fadeInDown">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-link" , @style = "color:white;" })</li>
     </ul>
 }
