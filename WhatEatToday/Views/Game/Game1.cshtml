@@ -35,32 +35,35 @@ body{
 	width: 500px;
 	height: 500px;
 
-	background-image: url("circle.png");
+	background-image: url('../Content/images/circle.png');
+    background-repeat: no-repeat;
 	background-position: center;
 
 	/* width and height can be anything, as long as they're equal */
 }
 
-@keyframes spin {
+-keyframes spin {
 	from { transform: rotate(15deg); }
 	to { transform: rotate(225deg); }
 }
 
 /* Create the animation blocks */
-@-webkit-keyframes spin {
+-webkit-keyframes spin {
 from { -webkit-transform: rotate(15deg); }
 to { -webkit-transform: rotate(225deg); }
 }
 
-@-moz-keyframes spin {
+-moz-keyframes spin {
 from { -moz-transform: rotate(15deg); }
 to { -moz-transform: rotate(225deg); }
 }
-
-@-ms-keyframes spin {
+   
+-ms-keyframes spin {
 from { -ms-transform: rotate(15deg); }
 to { -ms-transform: rotate(225deg); }
 }
+                                                                          
+
 
 /* Spinning, gradient circle; CSS only! */
 #advanced {
@@ -111,7 +114,7 @@ a{
                 <h3>Click To Start</h3>
             </div>
         </a>
-        <img src="colcir.png" width="100px">
+        <img src="~/Content/images/colcir.png" width="100px">
         <div id="advanced" class="circle"><a></a></div><br>
 
         <div type="button" class="btn btn-danger btn-lg btn-block ">
