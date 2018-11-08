@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/FoodBarIdex.cshtml";
 }
 
 <h2>Index</h2>
@@ -12,7 +12,20 @@
         @{ 
             foreach(var m in Model)
             {
+                <div class="row">
+                    <div class="col-lg-12">
+                        @Html.DisplayFor(modelItem => m.name)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <img src=@Url.Content("~/Content/images/" + (m.pic)) class="rounded" style="width: 400px;height: auto" />
+                    </div>
+                </div>
                 <a role="button" href="~/CheckIn/Shops/@Html.DisplayFor(modelItem => m.shop_id)" class="btn btn-outline-info">@Html.DisplayFor(modelItem => m.name)</a>
+                @Html.DisplayFor(modelItem => m.details)
+                
+
             }
         }
     </div>

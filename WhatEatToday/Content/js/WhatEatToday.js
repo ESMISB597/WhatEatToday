@@ -33,7 +33,8 @@
         latMap = lat;
         lngMap = lng;
         showMapWithLo();
-        $('#shop_id').val(id);
+        $('#checkin_id').val(id);
+        //$('#checkin').attr("href", "~/CheckIn/Index/" + id);
         $('#mapModal').modal('show');
     }
 
