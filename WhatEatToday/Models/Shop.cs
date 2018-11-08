@@ -11,8 +11,7 @@ namespace WhatEatToday.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Shop
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,7 +21,7 @@ namespace WhatEatToday.Models
             this.CheckIns = new HashSet<CheckIn>();
             this.Owners = new HashSet<Owner>();
         }
-        
+    
         public int shop_id { get; set; }
         public string name { get; set; }
         public string details { get; set; }
@@ -30,6 +29,7 @@ namespace WhatEatToday.Models
         public string pic { get; set; }
         public string latitude { get; set; }
         public string longitude { get; set; }
+        public string facebook_url { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Menu> Menus { get; set; }

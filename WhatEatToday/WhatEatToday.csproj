@@ -296,10 +296,6 @@
     <Content Include="App_Data\aspnet-WhatEatToday-20181002024027_log.ldf">
       <DependentUpon>aspnet-WhatEatToday-20181002024027.mdf</DependentUpon>
     </Content>
-    <Content Include="App_Data\ASPNETDB.MDF" />
-    <Content Include="App_Data\aspnetdb_log.ldf">
-      <DependentUpon>ASPNETDB.MDF</DependentUpon>
-    </Content>
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />

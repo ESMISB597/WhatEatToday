@@ -52,9 +52,12 @@
           <Property Name="pic" Type="nvarchar" MaxLength="50" />
           <Property Name="latitude" Type="nvarchar" MaxLength="150" />
           <Property Name="longitude" Type="nvarchar" MaxLength="150" />
+          <Property Name="facebook_url" Type="varchar" MaxLength="256" />
         </EntityType>
         <Association Name="FK_Cus_Id_CheckIn">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="CheckIn" Type="Self.CheckIn" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
@@ -66,7 +69,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Menu_ToShop">
-          <End Role="Shop" Type="Self.Shop" Multiplicity="1" />
+          <End Role="Shop" Type="Self.Shop" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Shop">
@@ -78,7 +83,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Owner_ToShop">
-          <End Role="Shop" Type="Self.Shop" Multiplicity="1" />
+          <End Role="Shop" Type="Self.Shop" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Owner" Type="Self.Owner" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Shop">
@@ -162,6 +169,7 @@
           <NavigationProperty Name="Menus" Relationship="Self.FK_Menu_ToShop" FromRole="Shop" ToRole="Menu" />
           <NavigationProperty Name="CheckIns" Relationship="WEToday_Model.FK_Shop_Id_CheckIn" FromRole="Shop" ToRole="CheckIn" />
           <NavigationProperty Name="Owners" Relationship="WEToday_Model.FK_Owner_ToShop" FromRole="Shop" ToRole="Owner" />
+          <Property Name="facebook_url" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_Menu_ToShop">
           <End Role="Shop" Type="Self.Shop" Multiplicity="1" />
@@ -284,6 +292,7 @@
           <EntitySetMapping Name="Shops">
             <EntityTypeMapping TypeName="WEToday_Model.Shop">
               <MappingFragment StoreEntitySet="Shop">
+                <ScalarProperty Name="facebook_url" ColumnName="facebook_url" />
                 <ScalarProperty Name="shop_id" ColumnName="shop_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="details" ColumnName="details" />
