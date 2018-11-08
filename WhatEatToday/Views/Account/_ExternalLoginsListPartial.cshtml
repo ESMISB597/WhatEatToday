@@ -2,7 +2,7 @@
 @using Microsoft.Owin.Security
 
 <div class="col-12">
-    <h4> Social Network Login </h4>
+    <h4> Login With Your Facebook </h4> <br />
 </div>
 @{
     var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
@@ -21,7 +21,7 @@
 
                 <p>
                     @foreach (AuthenticationDescription p in loginProviders) {
-                        <button type="submit" class="btn submit_btn" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">@p.AuthenticationType</button>
+                        <button type="submit" style="background-color:blue" class="btn  submit_btn" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">@p.AuthenticationType</button>
                     }
                 </p>
             </div>
