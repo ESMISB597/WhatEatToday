@@ -73,6 +73,8 @@ $(function() {
 
     twosButton.prop('disabled', twos.value.length === 0);
     threesButton.prop('disabled', threes.value.length === 0);
+    console.log(twos);
+    console.log(threes);
   });
 
   copyButtons.click(function(event) {
