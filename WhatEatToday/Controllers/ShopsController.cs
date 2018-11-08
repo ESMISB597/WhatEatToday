@@ -56,9 +56,9 @@ namespace WhatEatToday
                         return View(store);
                     }
                 }
-                catch (System.InvalidOperationException e)
+                catch (System.ArgumentOutOfRangeException e)
                 {
-
+                    return RedirectToAction("Index", "Home");
                 }
             }else
             {

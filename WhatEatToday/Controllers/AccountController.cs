@@ -19,6 +19,7 @@ namespace WhatEatToday.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private WhatEatToday_Entities db = new WhatEatToday_Entities();
 
         ApplicationDbContext context;
         public AccountController()
@@ -143,7 +144,8 @@ namespace WhatEatToday.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin")).ToList(), "Name", "Name");
+            
+            ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin") && !u.Name.Contains("Shop")).ToList(), "Name", "Name");
             return View();
         }
 
@@ -158,10 +160,10 @@ namespace WhatEatToday.Controllers
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
+                regisCus(model.Email);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
@@ -170,8 +172,8 @@ namespace WhatEatToday.Controllers
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
                     return RedirectToAction("Index", "Home");
                 }
-                ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin"))
-                          .ToList(), "Name", "Name");
+                ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin") && !u.Name.Contains("Shop")).ToList(), "Name", "Name");
+
                 AddErrors(result);
             }
 
@@ -179,6 +181,41 @@ namespace WhatEatToday.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        public void regisCus(String email)
+        {
+            Customer cus = new Models.Customer();
+            cus.email = email;
+            cus.cus_id = Request["username"];
+            var dup = from str in db.Customers
+                      select str;
+            var count = dup.Count(usern => usern.cus_id == cus.cus_id);
+            int i = 0;
+                if (count > 1)
+                {
+                    Redi("P2");
+                }else
+                {
+                    Redi("P10");
+                    cus.age = Request["ageSelect"];
+                    db.Customers.Add(cus);
+                    db.SaveChanges();
+                }
+            
+        }
+
+        public ActionResult Redi(string Err)
+        {
+            if(Err == "P2")
+            {
+                ViewBag.ShowError = "มีชื่อผู้ใช้นี้อยู่แล้ว กรุณาลองเปลี่ยนใหม่";
+                return RedirectToAction("Login", "Account");
+            }else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            return View("");
+        }
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]

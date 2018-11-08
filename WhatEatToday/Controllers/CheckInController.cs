@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -31,6 +32,16 @@ namespace WhatEatToday.Controllers
         }
         public void checkin(int shop_id,string customer_id)
         {
+            if (Request.IsAuthenticated)
+            {
+                var checkin_cus = from str in db.Customers
+                                  select str;
+                checkin_cus = checkin_cus.Where(checkin => checkin.email == User.Identity.GetUserId().ToString());
+                foreach(var gets in checkin_cus)
+                {
+                   
+                }
+            }
 
         }
     }
