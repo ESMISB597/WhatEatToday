@@ -243,28 +243,17 @@ namespace WhatEatToday
             if (shop == null)
             {
                 return HttpNotFound();
-            }
-            int del = (int)id;
-            Owner owner = new Owner();
-            var finddel = db.Owners.FirstOrDefault(own => own.shop_id == id);
-            db.Owners.Remove(finddel);
-            db.Shops.Remove(shop);
-            db.SaveChanges();
-            DeleteConfirmed(del);
-            return View(shop);
-        }
-
-        // POST: Shops/Delete/5
-        public void DeleteConfirmed(int id)
-        {
-            if(id == 0)
-            {
-                
             }else
             {
-
+                int del = (int)id;
+                Owner owner = new Owner();
+                var finddel = db.Owners.FirstOrDefault(own => own.shop_id == id);
+                db.Owners.Remove(finddel);
+                db.Shops.Remove(shop);
+                db.SaveChanges();
             }
-           
+            
+            return View(shop);
         }
 
         public ActionResult FindShop(string SearchString)

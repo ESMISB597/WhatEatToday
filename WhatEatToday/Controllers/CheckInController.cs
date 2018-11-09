@@ -35,26 +35,36 @@ namespace WhatEatToday.Controllers
         [HttpPost]
         public ActionResult Shops()
         {
+            if (Request.IsAuthenticated)
+            {
+                int id = int.Parse(Request["shopid"]);
+                var userid = User.Identity.GetUserName();
+                float rating = float.Parse(Request["rating"]);
+                checkin(id, userid, rating);
+            }else
+            {
 
-            return View();
+            }
+
+            return RedirectToAction("Index", "Home");
         }
-        public void checkin(int shop_id,string customer_id,int rating)
+        public void checkin(int shop_id,string customer_id,float rating)
         {
             if (Request.IsAuthenticated)
             {
                 String userid = "";
                 var checkin_cus = from str in db.Customers
                                   select str;
-                checkin_cus = checkin_cus.Where(checkin => checkin.email == User.Identity.GetUserId().ToString());
+                checkin_cus = checkin_cus.Where(checkin => checkin.email == customer_id);
                 foreach(var gets in checkin_cus)
                 {
                     userid = gets.cus_id;
                 }
 
                 CheckIn checkin_INS = new Models.CheckIn();
-                if (!String.IsNullOrEmpty(userid))
+                if (!String.IsNullOrEmpty(customer_id))
                 {
-                    checkin_INS.Cus_Id = userid;
+                    checkin_INS.Cus_Id = customer_id;
                     checkin_INS.Shop_Id = shop_id;
                     checkin_INS.Rating = rating;
                 }else
