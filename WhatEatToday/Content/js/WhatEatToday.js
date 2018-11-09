@@ -82,6 +82,8 @@
         }
     }
 
+ 
+
     function stopCalc() {
         clearInterval(interval);
     }
@@ -164,5 +166,11 @@
         }
 
     }
-
+    
+    $(document).ready(function(){
+        $('#cirwheel').click(function () {
+            $('#advanced').addClass('animated twister');
+        });
+    });
+    
 
