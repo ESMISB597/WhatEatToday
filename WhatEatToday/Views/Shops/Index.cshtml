@@ -29,86 +29,97 @@
     }
 
 </center>
-<br>
-<p>
-    <button type="button" class="btn btn-warning btn-lg">@Html.ActionLink("Add Shop", "Create")</button>
-</p>
-<br>
-<table class="table" style="background-color:mintcream">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.details)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.pic)
-        </th>
-        <th>
-            <p>Location</p>
-        </th>
-        @if (ViewBag.ViewEdit != "Shop")
-        {
-        }else { 
-        <th>
-            <p>Edit</p>
-        </th>
-        }
-    </tr>
-    @try
-    {
-        foreach (var item in Model)
-        {
-    <tr>
-        <td>
-            <a href="~/Menus/GetMenu/@Html.DisplayFor(modelItem => item.shop_id)">@Html.DisplayFor(modelItem => item.name)</a>
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.details)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.type)
-        </td>
-        <td>
-            <img src=@Url.Content("~/Content/images/" + (item.pic)) style="width: 100px;height: auto" /> 
-        </td>
-        <td>
-            <input type="button" class="btn btn-info" value="ดูแผนที่" onclick="showMap(@Html.DisplayFor(modelItem => item.latitude),@Html.DisplayFor(modelItem => item.longitude),@Html.DisplayFor(modelItem => item.shop_id))"/>
-            @if (ViewBag.ViewEdit != "Shop")
-            {
-
-            }
-            else
-            {
-                <a role="button" href="~/Menus/Create/@Html.DisplayFor(modelItem => item.shop_id)" class="btn btn-info">สร้างเมนูของร้าน</a>
-            }
-        </td>
-        @if (ViewBag.ViewEdit != "Shop")
-        {
-            
-        }
-        else
-        {
-            
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.shop_id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.shop_id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.shop_id })
-            </td>
-        }  
-    </tr>
-        }
-    }catch(System.NullReferenceException e)
+<div class="container">
+    <br>
+    @if (ViewBag.ViewEdit != "Shop")
     {
 
     }
+    else
+    {
+        <p>
+            <button type="button" class="btn btn-warning btn-lg">@Html.ActionLink("Add Shop", "Create")</button>
+        </p>
+    }
+    <br>
+    <table class="table" style="background-color:mintcream">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.details)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pic)
+            </th>
+            <th>
+                <p>Location</p>
+            </th>
+            @if (ViewBag.ViewEdit != "Shop")
+            {
+            }
+            else
+            {
+                <th>
+                    <p>Edit</p>
+                </th>
+            }
+        </tr>
+        @try
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a href="~/Menus/GetMenu/@Html.DisplayFor(modelItem => item.shop_id)">@Html.DisplayFor(modelItem => item.name)</a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.details)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.type)
+                    </td>
+                    <td>
+                        <img src=@Url.Content("~/Content/images/" + (item.pic)) style="width: 100px;height: auto" />
+                    </td>
+                    <td>
+                        <input type="button" class="btn btn-info" value="ดูแผนที่" onclick="showMap(@Html.DisplayFor(modelItem => item.latitude),@Html.DisplayFor(modelItem => item.longitude),@Html.DisplayFor(modelItem => item.shop_id))" />
+                        @if (ViewBag.ViewEdit != "Shop")
+                        {
 
-</table>
+                        }
+                        else
+                        {
+                            <a role="button" href="~/Menus/Create/@Html.DisplayFor(modelItem => item.shop_id)" class="btn btn-info">สร้างเมนูของร้าน</a>
+                        }
+                    </td>
+                    @if (ViewBag.ViewEdit != "Shop")
+                    {
 
+                    }
+                    else
+                    {
+
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.shop_id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.shop_id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.shop_id })
+                        </td>
+                    }
+                </tr>
+            }
+        }
+        catch (System.NullReferenceException e)
+        {
+
+        }
+
+    </table>
+</div>
 <!-- Modal -->
 <div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

@@ -5,10 +5,63 @@
 }
 
 <h2>Reports</h2>
-
+<br />
+<br />
+<div class="container bg-white rounded">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="text-center">รายงานของระบบ</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <p>รายงานยอดเช็คอินประจำร้าน</p>
+            <canvas id="fixGraph"></canvas>
+        </div>
+    </div>
+</div>
+<br />
+<br />
 <div class="row" style="background-color:#EE7621">
+
     <div class="col-lg-12" style="color:white" style="background-color:#EE7621">
         <center>
+            <script>
+                $.ajax({
+                    url: "/webapp61_g14/api/CheckInAPI",
+                    type: "GET",
+                    data: "",
+                    dataType: "json",
+                    success: function (result) {
+                        var checkin = [];
+                        var countin = [];
+                        var cr = 0;
+                        var shopname = [];
+
+                        for (var i in result) {
+                                shopname.push(result[i].Shop.name);
+                                countin[i] = cr += 1;
+                        }
+
+                        var chartData = {
+                            labels: shopname,
+                            datasets: [{
+                                label: "ยอดเช็คอิน",
+                                data: countin,
+                                backgroundColor: ["#F79B2E", "#DF4911", "#05A0D9", "#00B373"]
+                            }]
+                        };
+
+                        var graph = document.getElementById("fixGraph").getContext("2d");
+                        Chart.defaults.global.defaultFontFamily = "Kanit";
+                        var myPie = new Chart(graph, {
+                            type: 'bar',
+                            data: chartData,
+                        });
+                    }
+                });
+            </script>
+
             <br /><br />Copyright &copy;
             <script>document.write(new Date().getFullYear());</script> What Eat Today |
             Webapplication 204359 &nbsp;&nbsp;<i class="fa fa-heart-o" aria-hidden="true"></i> <br /><br /><br />
