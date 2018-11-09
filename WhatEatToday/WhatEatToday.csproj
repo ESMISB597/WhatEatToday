@@ -345,6 +345,7 @@
     <Content Include="Content\images\milk.jpg" />
     <Content Include="Content\images\phat.jpg" />
     <Content Include="Content\images\toto.jpg" />
+    <Content Include="Content\images\toto1.jpg" />
     <Content Include="Content\img\banner\banner-2.jpg" />
     <Content Include="Content\img\banner\banner.jpg" />
     <Content Include="Content\img\banner\home-banner.jpg" />
