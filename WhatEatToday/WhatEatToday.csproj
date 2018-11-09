@@ -343,6 +343,11 @@
     <Content Include="Content\images\cream.jpg" />
     <Content Include="Content\images\fern.jpg" />
     <Content Include="Content\images\milk.jpg" />
+    <Content Include="Content\images\p10.png" />
+    <Content Include="Content\images\p6.png" />
+    <Content Include="Content\images\p7.png" />
+    <Content Include="Content\images\p8.png" />
+    <Content Include="Content\images\p9.png" />
     <Content Include="Content\images\phat.jpg" />
     <Content Include="Content\images\toto.jpg" />
     <Content Include="Content\images\toto1.jpg" />
