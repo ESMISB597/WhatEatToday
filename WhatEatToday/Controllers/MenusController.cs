@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -13,33 +15,64 @@ namespace WhatEatToday
     public class MenusController : Controller
     {
         private WhatEatToday_Entities db = new WhatEatToday_Entities();
+                ApplicationDbContext context;
 
+        public MenusController()
+        {
+            context = new Models.ApplicationDbContext();
+        }
         // GET: Menus
         public ActionResult Index(int? id)
         {
             var menus = from m in db.Menus
                         select m;
-            menus = menus.Where(mn => mn.shop_id == id);
+            if (Request.IsAuthenticated)
+            {
+                menus = menus.Where(mn => mn.shop_id == id);
+            }else
+            {
+
+            }
+
             return View(menus.ToList());
         }
 
         // GET: Menus/GetMenu/5
         public ActionResult GetMenu(int? id)
         {
-            var menus = from m in db.Menus
-                        select m;
-            if (!String.IsNullOrEmpty(id.ToString()))
+            if (Request.IsAuthenticated)
             {
-                menus = menus.Where(m => m.shop_id == id);
-                return View(menus.ToList());
-            }
-            else
-            {
+                var menus = from m in db.Menus
+                            select m;
+                var user = User.Identity;
+                var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+                var getR = UserManager.GetRoles(user.GetUserId());
+                var userid = User.Identity.GetUserName();
 
-            }
-            if (!String.IsNullOrEmpty(id.ToString()))
-            {
-                return RedirectToAction("Index", "Shops");
+                if (!String.IsNullOrEmpty(id.ToString()))
+                {
+                    menus = menus.Where(m => m.shop_id == id);
+                    return View(menus.ToList());
+                }
+                else
+                {
+                    if (getR[0].ToString() == "Shop")
+                    {
+                        ViewBag.ViewEdit = "Shop";
+                    }
+                    else
+                    {
+
+                    }
+                    if (!String.IsNullOrEmpty(id.ToString()))
+                    {
+                        return RedirectToAction("Index", "Shops");
+                    }
+                    else
+                    {
+
+                    }
+                }
             }else
             {
 

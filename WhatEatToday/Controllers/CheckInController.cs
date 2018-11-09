@@ -27,7 +27,8 @@ namespace WhatEatToday.Controllers
                            select str;
                 menu_shop.menu = menu.Where(me => me.shop_id == id);
                 return View(menu_shop);
-            }else
+            }
+            else
             {
                 return RedirectToAction("Login", "Account");
             }
@@ -37,18 +38,26 @@ namespace WhatEatToday.Controllers
         {
             if (Request.IsAuthenticated)
             {
+                float rating;
                 int id = int.Parse(Request["shopid"]);
                 var userid = User.Identity.GetUserName();
-                float rating = float.Parse(Request["rating"]);
+                if (String.IsNullOrEmpty(Request["rating"]))
+                {
+                    rating = 0;
+                }else
+                {
+                    rating = float.Parse(Request["rating"]);
+                }
                 checkin(id, userid, rating);
-            }else
+            }
+            else
             {
 
             }
 
             return RedirectToAction("Index", "Home");
         }
-        public void checkin(int shop_id,string customer_id,float rating)
+        public void checkin(int shop_id, string customer_id, float rating)
         {
             if (Request.IsAuthenticated)
             {
@@ -56,7 +65,7 @@ namespace WhatEatToday.Controllers
                 var checkin_cus = from str in db.Customers
                                   select str;
                 checkin_cus = checkin_cus.Where(checkin => checkin.email == customer_id);
-                foreach(var gets in checkin_cus)
+                foreach (var gets in checkin_cus)
                 {
                     userid = gets.cus_id;
                 }
@@ -67,7 +76,8 @@ namespace WhatEatToday.Controllers
                     checkin_INS.Cus_Id = customer_id;
                     checkin_INS.Shop_Id = shop_id;
                     checkin_INS.Rating = rating;
-                }else
+                }
+                else
                 {
 
                 }
