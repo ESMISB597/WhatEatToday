@@ -5,35 +5,26 @@
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/FoodBarIdex.cshtml";
 }
+<br />
+<br />
 
-<!--================ Banner Area =================-->
-<section class="banner_area">
-    <div class="banner_inner d-flex align-items-center">
-        <div class="container">
-            <div class="banner_content text-center">
-                <h1>Create a new account</h1>
-                <div class="page_link">
-                    <a href="~/Home/Register">Home</a>
-                    <a href="~/Account/Register">Register</a>
+<section class="reservation">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12" >
+                <div class="main_title position-relative" >
+                    <h1 >Create New Account</h1>
+                    <hr>
+                    <div class="round-planet planet">
+                        <div class="round-planet planet2">
+                            <div class="shape shape1"></div>
+                            <div class="shape shape2"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="shape shape1"></div>
-        <div class="shape shape2"></div>
-        <div class="shape shape3"></div>
-        <div class="shape shape4"></div>
-        <div class="shape shape5"></div>
-        <div class="shape shape6"></div>
-        <div class="shape shape7"></div>
-    </div>
-</section>
-<!--================End Banner Area =================-->
-
-
-<section class="contact_area p_120">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9">
+                <div class="col-lg-10">
                     @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                     {
 
@@ -41,8 +32,8 @@
                         <div class="col-md-6">
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             <div class="form-group">
-                                <h5>ชื่อผู้ใช้</h5>
-                                <input type="text" class="form-control" name="username"/>
+                                <h5 class="col-md-2 control-label">Username</h5>
+                                <input type="text" class="form-control" name="username" />
                             </div>
                             <div class="form-group">
                                 <h5> @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })</h5>
@@ -57,7 +48,7 @@
                                 @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
                             </div>
                             <div class="form-group">
-                                <h5> อายุของท่าน </h5>
+                                <h5 class="col-md-2 control-label"> Age </h5>
                                 <select class="form-control" name="ageSelect">
                                     @for (int i = 1; i <= 100; i++)
                                     {
@@ -66,22 +57,17 @@
                                 </select>
                             </div>
                             <br />
-                                    @Html.DropDownList("UserRoles", (SelectList)ViewBag.Name, null, new { @class = "invisible"})
+                            @Html.DropDownList("UserRoles", (SelectList)ViewBag.Name, null, new { @class = "invisible" })
                             <div class="form-group text-left">
                                 <input type="submit" value="Register" class="btn submit_btn" />
                             </div>
                         </div>
                     }
-
-
-
-
-                </div>
-
-
-
             </div>
+        </div>
 </section>
+
+
 <div class="row" style="background-color:#EE7621">
     <div class="col-lg-12" style="color:white" style="background-color:#EE7621">
         <center>
@@ -91,3 +77,5 @@
         </center>
     </div>
 </div>
+
+	

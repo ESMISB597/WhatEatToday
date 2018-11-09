@@ -60,16 +60,13 @@
                     <h3>Detail Shop</h3>
                     <form class="book_table_form row" action="#">
                             <div class="form-group col-md-12">
-                                    @Html.DisplayNameFor(model => model.name)
-                                    @Html.DisplayFor(model => model.name)
+                                   ชื่อร้าน @Html.DisplayFor(model => model.name) 
                             </div>
                             <div class="form-group col-md-12">
-                                    @Html.DisplayNameFor(model => model.details)
-                                    @Html.DisplayFor(model => model.details)
+                                   รายละเอียด @Html.DisplayFor(model => model.details)
                             </div>
                         <div class="form-group col-md-12">
-                            @Html.DisplayNameFor(model => model.type)
-                            @Html.DisplayFor(model => model.type)
+                            ประเภท @Html.DisplayFor(model => model.type)
                         </div>   
                         <div class="form-group col-md-12">
                             <div class="col-md-10">
@@ -90,7 +87,7 @@
                                 @Html.ActionLink("Edit", "Edit", new { id = Model.shop_id }) |
                                 @Html.ActionLink("Back to List", "Index")
                             </p>
-                               
+
                     </form>
                 </div>
             </div>
