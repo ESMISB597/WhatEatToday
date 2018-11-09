@@ -78,7 +78,14 @@
         </td>
         <td>
             <input type="button" class="btn btn-info" value="ดูแผนที่" onclick="showMap(@Html.DisplayFor(modelItem => item.latitude),@Html.DisplayFor(modelItem => item.longitude),@Html.DisplayFor(modelItem => item.shop_id))"/>
-            <a role="button" href="~/Menus/Create/@Html.DisplayFor(modelItem => item.shop_id)" class="btn btn-info">สร้างเมนูของร้าน</a>
+            @if (ViewBag.ViewEdit != "Shop")
+            {
+
+            }
+            else
+            {
+                <a role="button" href="~/Menus/Create/@Html.DisplayFor(modelItem => item.shop_id)" class="btn btn-info">สร้างเมนูของร้าน</a>
+            }
         </td>
         @if (ViewBag.ViewEdit != "Shop")
         {

@@ -38,6 +38,14 @@ namespace WhatEatToday
                     var user = User.Identity;
                     var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
                     var getR = UserManager.GetRoles(user.GetUserId());
+                    var userid = User.Identity.GetUserName();
+                    selectstore = selectstore.Where(str => str.email == userid);
+                    List<string> listOfIds = new List<string>();
+                    foreach (var sel in selectstore)
+                    {
+                        listOfIds.Add(sel.shop_id.ToString());
+                    }
+                    ViewBag.Test = listOfIds.ToList();
                     if (getR[0].ToString() == "Shop")
                     {
                         if (!String.IsNullOrEmpty(SearchString))
@@ -47,7 +55,9 @@ namespace WhatEatToday
                         }
                         else
                         {
+                            String joint = string.Join(",", listOfIds);
                             ViewBag.ViewEdit = getR[0].ToString();
+                            store = store.Where(st => st.shop_id.ToString().Contains(joint));
                             return View(store);
                         }
                     }
@@ -59,8 +69,12 @@ namespace WhatEatToday
                 catch (System.ArgumentOutOfRangeException e)
                 {
                     return RedirectToAction("Index", "Home");
+                }catch (System.NotSupportedException e1)
+                {
+                    return RedirectToAction("Index", "Home");
                 }
-            }else
+            }
+            else
             {
 
             }
@@ -116,6 +130,9 @@ namespace WhatEatToday
                         var path = Path.Combine(Server.MapPath("~/Content/images"), fileName);
                         file.SaveAs(path);
                         shop.pic = fileName;
+
+                    }else
+                    {
 
                     }
 
@@ -205,12 +222,19 @@ namespace WhatEatToday
         // POST: Shops/Delete/5
         public void DeleteConfirmed(int id)
         {
-            Shop shop = db.Shops.Find(id);
-            Owner owner = new Owner();
-            var finddel = db.Owners.FirstOrDefault(own => own.shop_id == id);
-            db.Owners.Remove(finddel);
-            db.Shops.Remove(shop);
-            db.SaveChanges();
+            if(id == 0)
+            {
+                Shop shop = db.Shops.Find(id);
+                Owner owner = new Owner();
+                var finddel = db.Owners.FirstOrDefault(own => own.shop_id == id);
+                db.Owners.Remove(finddel);
+                db.Shops.Remove(shop);
+                db.SaveChanges();
+            }else
+            {
+
+            }
+           
         }
 
         public ActionResult FindShop(string SearchString)
