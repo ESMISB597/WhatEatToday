@@ -337,6 +337,11 @@
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\images\12.jpg" />
     <Content Include="Content\images\12.png" />
+    <Content Include="Content\images\cream.jpg" />
+    <Content Include="Content\images\fern.jpg" />
+    <Content Include="Content\images\milk.jpg" />
+    <Content Include="Content\images\phat.jpg" />
+    <Content Include="Content\images\toto.jpg" />
     <Content Include="Content\img\banner\banner-2.jpg" />
     <Content Include="Content\img\banner\banner.jpg" />
     <Content Include="Content\img\banner\home-banner.jpg" />
@@ -630,11 +635,6 @@
     <Content Include="Content\images\p3.png" />
     <Content Include="Content\images\p4.png" />
     <Content Include="Content\images\p5.png" />
-    <Content Include="Views\Home\cream.jpg" />
-    <Content Include="Views\Home\fern.jpg" />
-    <Content Include="Views\Home\milk.jpg" />
-    <Content Include="Views\Home\phat.jpg" />
-    <Content Include="Views\Home\toto.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
