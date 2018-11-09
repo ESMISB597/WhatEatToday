@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Shop_Id" Type="int" Nullable="false" />
           <Property Name="Cus_Id" Type="varchar" MaxLength="128" Nullable="false" />
           <Property Name="Rating" Type="real" />
@@ -56,20 +56,6 @@
           <Property Name="facebook_url" Type="varchar" MaxLength="256" />
           <Property Name="email" Type="varchar" MaxLength="256" />
         </EntityType>
-        <Association Name="FK_Cus_Id_CheckIn">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="CheckIn" Type="Self.CheckIn" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Customer">
-              <PropertyRef Name="cus_id" />
-            </Principal>
-            <Dependent Role="CheckIn">
-              <PropertyRef Name="Cus_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Menu_ToShop">
           <End Role="Shop" Type="Self.Shop" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -84,35 +70,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Shop_Id_CheckIn">
-          <End Role="Shop" Type="Self.Shop" Multiplicity="1" />
-          <End Role="CheckIn" Type="Self.CheckIn" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Shop">
-              <PropertyRef Name="shop_id" />
-            </Principal>
-            <Dependent Role="CheckIn">
-              <PropertyRef Name="Shop_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="WEToday_ModelStoreContainer">
           <EntitySet Name="CheckIn" EntityType="Self.CheckIn" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Owner" EntityType="Self.Owner" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Shop" EntityType="Self.Shop" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Cus_Id_CheckIn" Association="Self.FK_Cus_Id_CheckIn">
-            <End Role="Customer" EntitySet="Customer" />
-            <End Role="CheckIn" EntitySet="CheckIn" />
-          </AssociationSet>
           <AssociationSet Name="FK_Menu_ToShop" Association="Self.FK_Menu_ToShop">
             <End Role="Shop" EntitySet="Shop" />
             <End Role="Menu" EntitySet="Menu" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Shop_Id_CheckIn" Association="Self.FK_Shop_Id_CheckIn">
-            <End Role="Shop" EntitySet="Shop" />
-            <End Role="CheckIn" EntitySet="CheckIn" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
