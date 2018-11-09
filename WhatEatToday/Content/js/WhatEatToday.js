@@ -167,7 +167,10 @@
 
     }
     
-    $('#cirwheel').click(function () {
-        $('#advanced').addClass('animated twister');
+    $(document).ready(function(){
+        $('#cirwheel').click(function () {
+            $('#advanced').addClass('animated twister');
+        });
     });
+    
 
