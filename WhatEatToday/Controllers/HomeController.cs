@@ -43,5 +43,6 @@ namespace WhatEatToday.Controllers
 
             return View();
         }
+
     }
 }
