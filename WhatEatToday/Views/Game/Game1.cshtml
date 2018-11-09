@@ -54,66 +54,6 @@ body{
 	/* width and height can be anything, as long as they're equal */
 }
 
--keyframes spin {
-	from { transform: rotate(15deg); }
-	to { transform: rotate(225deg); }
-}
-
-/* Create the animation blocks */
--webkit-keyframes spin {
-from { -webkit-transform: rotate(15deg); }
-to { -webkit-transform: rotate(225deg); }
-}
-
--moz-keyframes spin {
-from { -moz-transform: rotate(15deg); }
-to { -moz-transform: rotate(225deg); }
-}
-   
--ms-keyframes spin {
-from { -ms-transform: rotate(15deg); }
-to { -ms-transform: rotate(225deg); }
-}
-                                                                          
-
-
-/* Spinning, gradient circle; CSS only! */
-#advanced {
-
-/* background-image: -moz-radial-gradient(80px 80px 80deg, circle cover hidden, yellow 0%, orange 100%, red 95%);
-background-image: -webkit-radial-gradient(80px 80px, circle cover hidden, yellow, orange);
-background-image: radial-gradient(80px 80px 80deg, circle cover hidden, yellow 0%, orange 100%, red 95%); */
-
-/* webkit chrome, safari, mobile */
--webkit-animation-name: spin;
--webkit-animation-duration: 1s; /* 3 seconds */
--webkit-animation-iteration-count: 20s;
--webkit-animation-timing-function: linear;
-
-/* mozilla ff */
--moz-animation-name: spin;
--moz-animation-duration: 1s; /* 3 seconds */
--moz-animation-iteration-count: 20s;
--moz-animation-timing-function: linear;
-
-/* microsoft ie */
--ms-animation-name: spin;
--ms-animation-duration: 1s; /* 3 seconds */
--ms-animation-iteration-count: 20s;
--ms-animation-timing-function: linear;
-
-}
-a{
-	/* webkit chrome, safari, mobile */
--webkit-animation-name: none;
-
-/* mozilla ff */
--moz-animation-name: none;
-
-
-/* microsoft ie */
--ms-animation-name: none;
-
 }
     </style>
 </head>
@@ -127,8 +67,8 @@ a{
                 <h3>Click To Start</h3>
             </div>
         </a>
-        <img src="~/Content/images/colcir.png" width="100px">
-        <div id="advanced" class="circle"><a></a></div><br>
+        <img class=" " src="~/Content/images/colcir.png" width="100px">
+        <div id="advanced" class="circle animated twister"><a></a></div><br>
 
         <div type="button" class="btn btn-danger btn-lg btn-block ">
             <h2><br>เมนูที่ได้: ก๋วยเตี๋ยวลองเบิ่ง</h2> <br>
