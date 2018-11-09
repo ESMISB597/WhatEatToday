@@ -45,10 +45,12 @@
                             @Html.DisplayFor(model => model.longitude)
                         </div>
 
-                        @using (Html.BeginForm())
+                        @using (Html.BeginForm("Delete", "Shops", FormMethod.Post))
                         {
+                            @Html.AntiForgeryToken()
 
                             <div class="form-actions no-color">
+                                <input type="hidden" name="shopid_hid" value="@Html.DisplayFor(model => model.shop_id)" />
                                 <input type="submit" value="Delete" class="btn btn-default" /> |
                                 @Html.ActionLink("Back to List", "Index")
                             </div>

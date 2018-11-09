@@ -197,17 +197,20 @@ namespace WhatEatToday
             {
                 return HttpNotFound();
             }
-            return View(shop);
+            int del = (int)id;
+            DeleteConfirmed(del);
+            return View("Index");
         }
 
         // POST: Shops/Delete/5
-        [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
+        public void DeleteConfirmed(int id)
         {
             Shop shop = db.Shops.Find(id);
+            Owner owner = new Owner();
+            var finddel = db.Owners.FirstOrDefault(own => own.shop_id == id);
+            db.Owners.Remove(finddel);
             db.Shops.Remove(shop);
             db.SaveChanges();
-            return RedirectToAction("Index");
         }
 
         public ActionResult FindShop(string SearchString)
