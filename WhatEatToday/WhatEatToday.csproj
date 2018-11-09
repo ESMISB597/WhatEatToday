@@ -706,6 +706,7 @@
     <Content Include="Views\CheckIn\Shops.cshtml" />
     <Content Include="Views\CheckIn\Index.cshtml" />
     <Content Include="Views\Shared\FoodBarIdex.cshtml" />
+    <Content Include="Views\Reports\index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
