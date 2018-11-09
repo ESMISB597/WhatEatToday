@@ -63,9 +63,19 @@ namespace WhatEatToday
         }
 
         // GET: Menus/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
-            ViewBag.shop_id = new SelectList(db.Shops, "shop_id", "name");
+            if (!String.IsNullOrEmpty(id.ToString()))
+            {
+                var menus = from m in db.Shops
+                            select m;
+                menus = menus.Where(m => m.shop_id == id);
+                ViewBag.shop_id = new SelectList(menus, "shop_id", "name");
+            }else
+            {
+                return View();
+            }
+
             return View();
         }
 
