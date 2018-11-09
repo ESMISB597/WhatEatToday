@@ -252,3 +252,202 @@ $(function () {
     });
 });
 
+$(function () {
+    var numberSelections = $('.number-selector5 > div > div');
+    var combinationsInputs = $('.combinations-input');
+    var copyButtons = $('.copy-button');
+
+    numberSelections.click(function (event) {
+        var twos = document.getElementById('twos');
+        var threes = document.getElementById('threes');
+        var twosButton = $('#twos-button');
+        var threesButton = $('#threes-button');
+
+        event.preventDefault();
+
+        selectNumber(event.target);
+
+        // Generate twos and threes combinations.
+        twos.value = generateCombination(2, selectedNumbers).join(' ');
+        threes.value = generateCombination(3, selectedNumbers).join(' ');
+
+        twosButton.prop('disabled', twos.value.length === 0);
+        threesButton.prop('disabled', threes.value.length === 0);
+        console.log(twos);
+        console.log(threes);
+    });
+
+    copyButtons.click(function (event) {
+        var data = $(event.target).parent('div').find('p > input');
+
+        data[0].select();
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+
+        displayClipboardMessage();
+    });
+
+    // Prevent editing input elements used to display combinations.
+    combinationsInputs.on('keydown', function (event) {
+        event.preventDefault();
+    });
+});
+
+
+$(function () {
+    var numberSelections = $('.number-selector6 > div > div');
+    var combinationsInputs = $('.combinations-input');
+    var copyButtons = $('.copy-button');
+
+    numberSelections.click(function (event) {
+        var twos = document.getElementById('twos');
+        var threes = document.getElementById('threes');
+        var twosButton = $('#twos-button');
+        var threesButton = $('#threes-button');
+
+        event.preventDefault();
+
+        selectNumber(event.target);
+
+        // Generate twos and threes combinations.
+        twos.value = generateCombination(2, selectedNumbers).join(' ');
+        threes.value = generateCombination(3, selectedNumbers).join(' ');
+
+        twosButton.prop('disabled', twos.value.length === 0);
+        threesButton.prop('disabled', threes.value.length === 0);
+    });
+
+    copyButtons.click(function (event) {
+        var data = $(event.target).parent('div').find('p > input');
+
+        data[0].select();
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+
+        displayClipboardMessage();
+    });
+
+    // Prevent editing input elements used to display combinations.
+    combinationsInputs.on('keydown', function (event) {
+        event.preventDefault();
+    });
+});
+
+
+$(function () {
+    var numberSelections = $('.number-selector7 > div > div');
+    var combinationsInputs = $('.combinations-input');
+    var copyButtons = $('.copy-button');
+
+    numberSelections.click(function (event) {
+        var twos = document.getElementById('twos');
+        var threes = document.getElementById('threes');
+        var twosButton = $('#twos-button');
+        var threesButton = $('#threes-button');
+
+        event.preventDefault();
+
+        selectNumber(event.target);
+
+        // Generate twos and threes combinations.
+        twos.value = generateCombination(2, selectedNumbers).join(' ');
+        threes.value = generateCombination(3, selectedNumbers).join(' ');
+
+        twosButton.prop('disabled', twos.value.length === 0);
+        threesButton.prop('disabled', threes.value.length === 0);
+    });
+
+    copyButtons.click(function (event) {
+        var data = $(event.target).parent('div').find('p > input');
+
+        data[0].select();
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+
+        displayClipboardMessage();
+    });
+
+    // Prevent editing input elements used to display combinations.
+    combinationsInputs.on('keydown', function (event) {
+        event.preventDefault();
+    });
+});
+
+
+$(function () {
+    var numberSelections = $('.number-selector8 > div > div');
+    var combinationsInputs = $('.combinations-input');
+    var copyButtons = $('.copy-button');
+
+    numberSelections.click(function (event) {
+        var twos = document.getElementById('twos');
+        var threes = document.getElementById('threes');
+        var twosButton = $('#twos-button');
+        var threesButton = $('#threes-button');
+
+        event.preventDefault();
+
+        selectNumber(event.target);
+
+        // Generate twos and threes combinations.
+        twos.value = generateCombination(2, selectedNumbers).join(' ');
+        threes.value = generateCombination(3, selectedNumbers).join(' ');
+
+        twosButton.prop('disabled', twos.value.length === 0);
+        threesButton.prop('disabled', threes.value.length === 0);
+    });
+
+    copyButtons.click(function (event) {
+        var data = $(event.target).parent('div').find('p > input');
+
+        data[0].select();
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+
+        displayClipboardMessage();
+    });
+
+    // Prevent editing input elements used to display combinations.
+    combinationsInputs.on('keydown', function (event) {
+        event.preventDefault();
+    });
+});
+
+$(function () {
+    var numberSelections = $('.number-selector9 > div > div');
+    var combinationsInputs = $('.combinations-input');
+    var copyButtons = $('.copy-button');
+
+    numberSelections.click(function (event) {
+        var twos = document.getElementById('twos');
+        var threes = document.getElementById('threes');
+        var twosButton = $('#twos-button');
+        var threesButton = $('#threes-button');
+
+        event.preventDefault();
+
+        selectNumber(event.target);
+
+        // Generate twos and threes combinations.
+        twos.value = generateCombination(2, selectedNumbers).join(' ');
+        threes.value = generateCombination(3, selectedNumbers).join(' ');
+
+        twosButton.prop('disabled', twos.value.length === 0);
+        threesButton.prop('disabled', threes.value.length === 0);
+    });
+
+    copyButtons.click(function (event) {
+        var data = $(event.target).parent('div').find('p > input');
+
+        data[0].select();
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+
+        displayClipboardMessage();
+    });
+
+    // Prevent editing input elements used to display combinations.
+    combinationsInputs.on('keydown', function (event) {
+        event.preventDefault();
+    });
+});
