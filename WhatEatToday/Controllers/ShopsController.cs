@@ -10,6 +10,7 @@ using WhatEatToday.Models;
 using System.IO;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity.Validation;
 
 namespace WhatEatToday
 {
@@ -48,6 +49,10 @@ namespace WhatEatToday
                     ViewBag.Test = listOfIds.ToList();
                     if (getR[0].ToString() == "Shop")
                     {
+                        String joint = string.Join(",", listOfIds);
+                        ViewBag.t = joint;
+                        ViewBag.ViewEdit = getR[0].ToString();
+                        store = store.Where(st => st.email == userid);
                         if (!String.IsNullOrEmpty(SearchString))
                         {
                             store = store.Where(p => p.name.Contains(SearchString));
@@ -55,11 +60,10 @@ namespace WhatEatToday
                         }
                         else
                         {
-                            String joint = string.Join(",", listOfIds);
-                            ViewBag.ViewEdit = getR[0].ToString();
-                            store = store.Where(st => st.shop_id.ToString().Contains(joint));
-                            return View(store);
+                            
                         }
+                        return View(store);
+
                     }
                     else
                     {
@@ -135,30 +139,56 @@ namespace WhatEatToday
                     {
 
                     }
-
-                    /* LAMBDA */
-                    Owner owner = new Owner();
-                    owner.email = userid;
-                    owner.shop_id = shop.shop_id;
-                    owner.owner_id = User.Identity.GetUserId().ToString();
-                    db.Owners.Add(owner);
-                    /* LAMBDA */
-
+                    shop.email = userid;
                     db.Shops.Add(shop);
                     db.SaveChanges();
-
+                    addOwner(shop.name, userid);
 
                     return RedirectToAction("Index");
                 }
             }
-            catch(System.Data.Entity.Validation.DbEntityValidationException e)
+            catch (DbEntityValidationException ex)
             {
-                Console.WriteLine(e);
+                // Retrieve the error messages as a list of strings.
+                var errorMessages = ex.EntityValidationErrors
+                        .SelectMany(x => x.ValidationErrors)
+                        .Select(x => x.ErrorMessage);
+
+                // Join the list to a single string.
+                var fullErrorMessage = errorMessages;
+
+                // Combine the original exception message with the new one.
+                var exceptionMessage = string.Concat(ex.Message + " " +fullErrorMessage);
+
+                // Throw a new DbEntityValidationException with the improved exception message.
+                Console.WriteLine(exceptionMessage, ex.EntityValidationErrors);
             }
 
             return View(shop);
         }
 
+        public void addOwner(string name,string userid)
+        {
+            var lastindex = from str in db.Shops
+                            select str;
+
+            lastindex = lastindex.Where(s => s.name == name);
+
+            List<int> lastr = new List<int>();
+            foreach(var x in lastindex)
+            {
+                lastr.Add(x.shop_id);
+            }
+            /* LAMBDA */
+            Owner owner = new Owner();
+            owner.email = userid;
+            owner.shop_id = lastr.Last();
+            owner.owner_id = User.Identity.GetUserId().ToString();
+            db.Owners.Add(owner);
+            db.SaveChanges();
+
+            /* LAMBDA */
+        }
         // GET: Shops/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -215,8 +245,13 @@ namespace WhatEatToday
                 return HttpNotFound();
             }
             int del = (int)id;
+            Owner owner = new Owner();
+            var finddel = db.Owners.FirstOrDefault(own => own.shop_id == id);
+            db.Owners.Remove(finddel);
+            db.Shops.Remove(shop);
+            db.SaveChanges();
             DeleteConfirmed(del);
-            return View("Index");
+            return View(shop);
         }
 
         // POST: Shops/Delete/5
@@ -224,12 +259,7 @@ namespace WhatEatToday
         {
             if(id == 0)
             {
-                Shop shop = db.Shops.Find(id);
-                Owner owner = new Owner();
-                var finddel = db.Owners.FirstOrDefault(own => own.shop_id == id);
-                db.Owners.Remove(finddel);
-                db.Shops.Remove(shop);
-                db.SaveChanges();
+                
             }else
             {
 
