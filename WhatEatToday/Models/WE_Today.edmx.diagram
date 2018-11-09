@@ -12,8 +12,7 @@
         <EntityTypeShape EntityType="WEToday_Model.CheckIn" Width="1.5" PointX="7" PointY="2.875" />
         <AssociationConnector Association="WEToday_Model.FK_Cus_Id_CheckIn" />
         <AssociationConnector Association="WEToday_Model.FK_Shop_Id_CheckIn" />
-        <EntityTypeShape EntityType="WEToday_Model.Owner" Width="1.5" PointX="3" PointY="0.75" />
-        <AssociationConnector Association="WEToday_Model.FK_Owner_ToShop" />
+        <EntityTypeShape EntityType="WEToday_Model.Owner" Width="1.5" PointX="3.125" PointY="1.125" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
