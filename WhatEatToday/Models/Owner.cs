@@ -18,7 +18,6 @@ namespace WhatEatToday.Models
         public string email { get; set; }
         public string token { get; set; }
         public int shop_id { get; set; }
-    
-        public virtual Shop Shop { get; set; }
+        public int owner_uniq_id { get; set; }
     }
 }

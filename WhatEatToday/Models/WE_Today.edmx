@@ -34,12 +34,13 @@
         </EntityType>
         <EntityType Name="Owner">
           <Key>
-            <PropertyRef Name="owner_id" />
+            <PropertyRef Name="owner_uniq_id" />
           </Key>
           <Property Name="owner_id" Type="varchar" MaxLength="128" Nullable="false" />
           <Property Name="email" Type="nvarchar" MaxLength="256" />
           <Property Name="token" Type="nvarchar" MaxLength="50" />
           <Property Name="shop_id" Type="int" Nullable="false" />
+          <Property Name="owner_uniq_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="Shop">
           <Key>
@@ -82,20 +83,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Owner_ToShop">
-          <End Role="Shop" Type="Self.Shop" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Owner" Type="Self.Owner" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Shop">
-              <PropertyRef Name="shop_id" />
-            </Principal>
-            <Dependent Role="Owner">
-              <PropertyRef Name="shop_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Shop_Id_CheckIn">
           <End Role="Shop" Type="Self.Shop" Multiplicity="1" />
           <End Role="CheckIn" Type="Self.CheckIn" Multiplicity="*" />
@@ -121,10 +108,6 @@
           <AssociationSet Name="FK_Menu_ToShop" Association="Self.FK_Menu_ToShop">
             <End Role="Shop" EntitySet="Shop" />
             <End Role="Menu" EntitySet="Menu" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Owner_ToShop" Association="Self.FK_Owner_ToShop">
-            <End Role="Shop" EntitySet="Shop" />
-            <End Role="Owner" EntitySet="Owner" />
           </AssociationSet>
           <AssociationSet Name="FK_Shop_Id_CheckIn" Association="Self.FK_Shop_Id_CheckIn">
             <End Role="Shop" EntitySet="Shop" />
@@ -168,7 +151,6 @@
           <Property Name="longitude" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Menus" Relationship="Self.FK_Menu_ToShop" FromRole="Shop" ToRole="Menu" />
           <NavigationProperty Name="CheckIns" Relationship="WEToday_Model.FK_Shop_Id_CheckIn" FromRole="Shop" ToRole="CheckIn" />
-          <NavigationProperty Name="Owners" Relationship="WEToday_Model.FK_Owner_ToShop" FromRole="Shop" ToRole="Owner" />
           <Property Name="facebook_url" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_Menu_ToShop">
@@ -201,10 +183,6 @@
             <End Role="CheckIn" EntitySet="CheckIns" />
           </AssociationSet>
           <EntitySet Name="Owners" EntityType="WEToday_Model.Owner" />
-          <AssociationSet Name="FK_Owner_ToShop" Association="WEToday_Model.FK_Owner_ToShop">
-            <End Role="Shop" EntitySet="Shops" />
-            <End Role="Owner" EntitySet="Owners" />
-          </AssociationSet>
         </EntityContainer>
         <EntityType Name="CheckIn">
           <Key>
@@ -243,26 +221,14 @@
         </Association>
         <EntityType Name="Owner">
           <Key>
-            <PropertyRef Name="owner_id" />
+            <PropertyRef Name="owner_uniq_id" />
           </Key>
           <Property Name="owner_id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Name="token" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="shop_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Shop" Relationship="WEToday_Model.FK_Owner_ToShop" FromRole="Owner" ToRole="Shop" />
+          <Property Name="owner_uniq_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
-        <Association Name="FK_Owner_ToShop">
-          <End Type="WEToday_Model.Shop" Role="Shop" Multiplicity="1" />
-          <End Type="WEToday_Model.Owner" Role="Owner" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Shop">
-              <PropertyRef Name="shop_id" />
-            </Principal>
-            <Dependent Role="Owner">
-              <PropertyRef Name="shop_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -316,6 +282,7 @@
           <EntitySetMapping Name="Owners">
             <EntityTypeMapping TypeName="WEToday_Model.Owner">
               <MappingFragment StoreEntitySet="Owner">
+                <ScalarProperty Name="owner_uniq_id" ColumnName="owner_uniq_id" />
                 <ScalarProperty Name="shop_id" ColumnName="shop_id" />
                 <ScalarProperty Name="token" ColumnName="token" />
                 <ScalarProperty Name="email" ColumnName="email" />
