@@ -477,6 +477,7 @@
     <Content Include="Content\js\stellar.js" />
     <Content Include="Content\js\theme.js" />
     <Content Include="Content\js\winwheel.js" />
+    <Content Include="Content\obnoxious.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\toto.jpg" />
     <Content Include="Content\vendors\animate-css\animate.css" />
