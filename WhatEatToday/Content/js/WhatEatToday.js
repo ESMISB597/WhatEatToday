@@ -164,5 +164,8 @@
         }
 
     }
-
+    
+    $('#cirwheel').click(function () {
+        $('#advanced').addClass('animated twister');
+    });
 
