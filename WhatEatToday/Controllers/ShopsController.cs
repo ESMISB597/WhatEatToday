@@ -102,7 +102,6 @@ namespace WhatEatToday
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "shop_id,name,details,type,pic,latitude,longitude")] Shop shop)
         {
             try
@@ -162,7 +161,6 @@ namespace WhatEatToday
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "shop_id,name,details,type,pic,latitude,longitude")] Shop shop)
         {
             if (ModelState.IsValid)
@@ -173,7 +171,12 @@ namespace WhatEatToday
                     var fileName = Path.GetFileName(file.FileName);
                     var path = Path.Combine(Server.MapPath("~/Content/images"), fileName);
                     file.SaveAs(path);
+                    shop.shop_id = int.Parse(Request["shop_hid"]);
                     shop.pic = fileName;
+                }else
+                {
+                    shop.shop_id = int.Parse(Request["shop_hid"]);
+                    shop.pic = Request["pictures_hid"];
                 }
                 db.Entry(shop).State = EntityState.Modified;
                 db.SaveChanges();
@@ -199,7 +202,6 @@ namespace WhatEatToday
 
         // POST: Shops/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             Shop shop = db.Shops.Find(id);
