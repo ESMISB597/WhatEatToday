@@ -208,8 +208,8 @@
                 }
         </style>
         </head > <body > <br> <br> <div class="container">
-    <div class="main-text"> เกมส์จับคู่ภาพ </div>
-
+    <div class="main-text">ไพ่ยิปซีทำนายอาหาร </div>
+                                       <p>เลือกไพ่ 1 ใบ แล้วกดตกลง </p>
     <table width="1000px">
         <tr>
             <td width="250"> <div class="number-selector3" id="twos" value=1> <div> <div> <br> &nbsp; </div> </div> </div> </td> &nbsp;
@@ -228,31 +228,46 @@
             <td> <br> <div class="number-selector1" id="threes" value=9> <div> <div> <br> &nbsp;</div> </div> </div> </td> &nbsp;
             <td> <br> <div class="number-selector1" id="twos" value=1> <div> <div> <br> &nbsp;</div> </div> </div> </td>
         </tr>
-    </table> <br>
+</table> <br><button class="btn btn-danger btn-lg" onclick="Random()">ตกลง</button>
+                                       
                                        <center>
-                                           <h2 id="demo"> วันนี้กินอะไรดี </h2>
+                                           <br /> <h2 id="demo2"> วันนี้กินอะไรดี </h2>
                                        </center>
 
        
   </body>
-     <script language="JavaScript">
-                 function Pair() {
-                   one = document.getElementById("twos").onClick;
-                   two = document.getElementById("twos").onClick;
-                           if (one == two) {
-                                     $('#demo').text("ข้าวไข่เจียว ร้าน ครัวบ้านฉัน");
-                                                }
-                                             }
-                                           </script>
-
-                                       <div class="row" style="background-color:#EE7621">
-                                           <div class="col-lg-12" style="color:white" style="background-color:#EE7621">
-                                               <center>
-                                                   <br /><br />Copyright &copy;
-                                                   <script>document.write(new Date().getFullYear());</script> What Eat Today |
-                                                   Webapplication 204359 &nbsp;&nbsp;<i class="fa fa-heart-o" aria-hidden="true"></i> <br /><br /><br />
-                                               </center>
-                                           </div>
-                                       </div>
 
 
+
+    <SCRIPT LANGUAGE="JAVASCRIPT">
+     function Random(){
+        var r_text = new Array ();
+        r_text[0] = "ข้าวไข่เจียว ร้าน ครัวบ้านฉัน";
+        r_text[1] = "ก๋วยเต๊๋ยวน้ำตก ร้าน ลองเบิ่ง";
+        r_text[2] = "ข้าวผัดกระเพราไก่กรอบ ร้าน รสนิยม";
+        r_text[3] = "ชาบู ร้าน หม้อหน้ามอ";
+        r_text[4] = "ก๋วยเตี๋ยวเรือ ร้าน AB ";
+        r_text[5] = " ส้มตำไก่ย่าง ร้าน ก.เก่ง";
+        r_text[6] = " เครปเย็น ร้าน House of Crepe";
+        r_text[7] = "ก๋วยจั๊บญวณ ร้าน ร่มไม้ชายคา";
+        r_text[8] = " แหนมเนือง ร้าน VTแหนมเนือง";
+        r_text[9] = "ยำไก่เเซ่บ ร้าน ป้าไหมต้มเเซ่บ ";
+        r_text[10] = "บิงซูบราวนี่คาราเมล ร้าน ไอเย็นI-Yen";
+    var i = Math.floor(r_text.length * Math.random());
+
+    $('#demo2').text( r_text[i]  );
+
+    // var bgcolorlist=new Array("#228B22", "#FFD700", "#ADFF2F", "#FF69B4", "#CD5C5C", "#4B0082", "#7CFC00", "#ADD8E6", "#E84643", "#ED0A07", "#EA2907", "#E5294B", "#E00D26", "#FF3030", "#FC7500", "#F95700", "#F43900", "#F95620")
+
+    // document.body.style.background=bgcolorlist[Math.floor(Math.random()*bgcolorlist.length)];
+}
+</SCRIPT>
+<br>
+<br>
+<br>
+<br>
+<style type="text/css">
+    /* body,td,th {
+         color: #000;
+         font-family: Helvetica, sans-serif;
+     */
