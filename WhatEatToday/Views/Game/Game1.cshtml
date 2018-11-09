@@ -3,111 +3,139 @@
     ViewBag.Title = "Game1";
     Layout = "~/Views/Shared/FoodBarIdex.cshtml";
 }
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Untitled Document</title>
 
     <style>
-/* Create the animation blocks */
-body{
+        /* Create the animation blocks */
+        body {
+            background-image: url("bg.jpg");
+            background-position: center;
+            background-size: 1400px;
+        }
 
-	background-image: url("bg.jpg");
-	background-position: center;
-	background-size: 1400px;
-}
+        #link2mygallery a {
+            display: block;
+            width: 300px;
+            height: 100px;
+            text-indent: -9999px;
+            background: url(push3.png);
+        }
 
-#link2mygallery a{
-    display:block;
-    width:300px;
-    height:100px;
-    text-indent:-9999px;
-    background:url(push3.png);
-}
+            #link2mygallery a:hover {
+                display: block;
+                width: 300px;
+                height: 100px;
+                text-indent: -9999px;
+                background: url(push2.png);
+            }
 
-#link2mygallery a:hover{
-    display:block;
-    width:300px;
-    height:100px;
-    text-indent:-9999px;
-    background:url(push2.png);
-}
-
-.circle {
-	border-radius: 50%;
-	width: 500px;
-	height: 500px;
-
-	background-image: url('../Content/images/circle.png');
-    background-repeat: no-repeat;
-	background-position: center;
-
-	/* width and height can be anything, as long as they're equal */
-}
-
--keyframes spin {
-	from { transform: rotate(15deg); }
-	to { transform: rotate(225deg); }
-}
-
-/* Create the animation blocks */
--webkit-keyframes spin {
-from { -webkit-transform: rotate(15deg); }
-to { -webkit-transform: rotate(225deg); }
-}
-
--moz-keyframes spin {
-from { -moz-transform: rotate(15deg); }
-to { -moz-transform: rotate(225deg); }
-}
-   
--ms-keyframes spin {
-from { -ms-transform: rotate(15deg); }
-to { -ms-transform: rotate(225deg); }
-}
-                                                                          
+        .circle {
+            border-radius: 50%;
+            width: 500px;
+            height: 500px;
+            background-image: url('../Content/images/circle.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        /* width and height can be anything, as long as they're equal */
 
 
-/* Spinning, gradient circle; CSS only! */
-#advanced {
+        keyframes spin {
+            from
 
-/* background-image: -moz-radial-gradient(80px 80px 80deg, circle cover hidden, yellow 0%, orange 100%, red 95%);
-background-image: -webkit-radial-gradient(80px 80px, circle cover hidden, yellow, orange);
-background-image: radial-gradient(80px 80px 80deg, circle cover hidden, yellow 0%, orange 100%, red 95%); */
+        {
+            transform: rotate(0deg);
+        }
 
-/* webkit chrome, safari, mobile */
--webkit-animation-name: spin;
--webkit-animation-duration: 1s; /* 3 seconds */
--webkit-animation-iteration-count: 20s;
--webkit-animation-timing-function: linear;
+        to {
+            transform: rotate(225deg);
+        }
 
-/* mozilla ff */
--moz-animation-name: spin;
--moz-animation-duration: 1s; /* 3 seconds */
--moz-animation-iteration-count: 20s;
--moz-animation-timing-function: linear;
+        }
 
-/* microsoft ie */
--ms-animation-name: spin;
--ms-animation-duration: 1s; /* 3 seconds */
--ms-animation-iteration-count: 20s;
--ms-animation-timing-function: linear;
+        /* Create the animation blocks */
+       
+        -webkit-keyframes spin {
+            from
 
-}
-a{
-	/* webkit chrome, safari, mobile */
--webkit-animation-name: none;
+        {
+            -webkit-transform: rotate(0deg);
+        }
 
-/* mozilla ff */
--moz-animation-name: none;
+        to {
+            -webkit-transform: rotate(225deg);
+        }
+
+        }
+
+        -moz-keyframes spin {
+            from
+
+        {
+            -moz-transform: rotate(0deg);
+        }
+
+        to {
+            -moz-transform: rotate(225deg);
+        }
+
+        }
+
+        -ms-keyframes spin {
+            from
+
+        {
+            -ms-transform: rotate(0deg);
+        }
+
+        to {
+            -ms-transform: rotate(225deg);
+        }
+
+        }
 
 
-/* microsoft ie */
--ms-animation-name: none;
 
-}
+        /* Spinning, gradient circle; CSS only! */
+        #advanced {
+            /* background-image: -moz-radial-gradient(80px 80px 80deg, circle cover hidden, yellow 0%, orange 100%, red 95%);
+        background-image: -webkit-radial-gradient(80px 80px, circle cover hidden, yellow, orange);
+        background-image: radial-gradient(80px 80px 80deg, circle cover hidden, yellow 0%, orange 100%, red 95%); */
+            /* webkit chrome, safari, mobile */
+            -webkit-animation-name: spin;
+            -webkit-animation-duration: 1s; /* 3 seconds */
+            -webkit-animation-iteration-count: 20s;
+            -webkit-animation-timing-function: linear;
+            /* mozilla ff */
+            -moz-animation-name: spin;
+            -moz-animation-duration: 1s; /* 3 seconds */
+            -moz-animation-iteration-count: 20s;
+            -moz-animation-timing-function: linear;
+            /* microsoft ie */
+            -ms-animation-name: spin;
+            -ms-animation-duration: 1s; /* 3 seconds */
+            -ms-animation-iteration-count: 20s;
+            -ms-animation-timing-function: linear;
+        }
+
+        a {
+            /* webkit chrome, safari, mobile */
+            -webkit-animation-name: none;
+            /* mozilla ff */
+            -moz-animation-name: none;
+            /* microsoft ie */
+            -ms-animation-name: none;
+        }
     </style>
 </head>
+<body>
     <br /><br />
     <center>
         <a href="~/Game/Game1" style="text-decoration:none">
+
             <div type="button" class="btn btn-warning btn-lg btn-block ">
                 <h1>  เกมส์วงล้อ มหัศจรรย์</h1>
                 <h3>Click To Start</h3>
@@ -118,7 +146,8 @@ a{
 
         <div type="button" class="btn btn-danger btn-lg btn-block ">
             <h2><br>เมนูที่ได้: ก๋วยเตี๋ยวลองเบิ่ง</h2> <br>
-            </div>
-            <!-- <div id="link2mygallery"><a href="game3.html"></a></div> -->
+        </div>
+        <!-- <div id="link2mygallery"><a href="game3.html"></a></div> -->
     </center>
-
+</body>
+</html>
