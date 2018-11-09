@@ -630,6 +630,11 @@
     <Content Include="Content\images\p3.png" />
     <Content Include="Content\images\p4.png" />
     <Content Include="Content\images\p5.png" />
+    <Content Include="Views\Home\cream.jpg" />
+    <Content Include="Views\Home\fern.jpg" />
+    <Content Include="Views\Home\milk.jpg" />
+    <Content Include="Views\Home\phat.jpg" />
+    <Content Include="Views\Home\toto.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
