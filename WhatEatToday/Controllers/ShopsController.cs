@@ -60,7 +60,7 @@ namespace WhatEatToday
                         }
                         else
                         {
-                            
+                            ViewBag.ViewEdit = "Shop";
                         }
                         return View(store);
 
