@@ -19,6 +19,7 @@ namespace WhatEatToday
         {
             var menus = from m in db.Menus
                         select m;
+            menus = menus.Where(mn => mn.shop_id == id);
             return View(menus.ToList());
         }
 
@@ -33,6 +34,13 @@ namespace WhatEatToday
                 return View(menus.ToList());
             }
             else
+            {
+
+            }
+            if (!String.IsNullOrEmpty(id.ToString()))
+            {
+                return RedirectToAction("Index", "Shops");
+            }else
             {
 
             }

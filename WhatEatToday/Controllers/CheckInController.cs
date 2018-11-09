@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -18,10 +19,14 @@ namespace WhatEatToday.Controllers
             int id = int.Parse(Request["shopid"]);
             if (Request.IsAuthenticated)
             {
+                dynamic menu_shop = new ExpandoObject();
                 var shop = from str in db.Shops
                            select str;
-                shop = shop.Where(shops => shops.shop_id == id);
-                return View(shop);
+                menu_shop.shop = shop.Where(shops => shops.shop_id == id);
+                var menu = from str in db.Menus
+                           select str;
+                menu_shop.menu = menu.Where(me => me.shop_id == id);
+                return View(menu_shop);
             }else
             {
                 return RedirectToAction("Login", "Account");

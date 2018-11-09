@@ -1,5 +1,4 @@
-﻿@model IEnumerable<WhatEatToday.Models.Shop>
-
+﻿@model dynamic
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/FoodBarIdex.cshtml";
@@ -12,11 +11,11 @@
         <div class="col-lg-6">
             <div class="container">
                 @{
-                    foreach (var m in Model)
+                    foreach (var m in Model.shop)
                     {
                         <div class="row">
                             <div class="col-lg-12">
-                                <h1>@Html.DisplayFor(modelItem => m.name)</h1>
+                                <h1>@m.name</h1>
                             </div>
                         </div>
                         <div class="row">
@@ -26,7 +25,7 @@
                         </div>
                         <div class="row">
                         </div>
-                        <a role="button" href="~/CheckIn/Shops/@Html.DisplayFor(modelItem => m.shop_id)" class="btn btn-outline-info">เช็คอิน @Html.DisplayFor(modelItem => m.name)</a>
+                        <a role="button" href="~/CheckIn/Shops/@m.shop_id" class="btn btn-outline-info">เช็คอิน @m.name</a>
 
 
                     }
@@ -36,7 +35,12 @@
         <div class="col-lg-6">
 
             <div class="container">
-
+                @{
+                    foreach (var menu in Model.menu)
+                    {
+                        <h4>@menu.menu_name</h4>
+                    }
+                }
             </div>
         </div>
     </div>
