@@ -165,6 +165,4 @@
 
     }
 
-    $('.number-selector > div > div.selected').click(function () {
-        console.log("3");
-    });
+
