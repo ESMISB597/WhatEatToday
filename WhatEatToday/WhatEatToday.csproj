@@ -403,6 +403,8 @@
     <Content Include="Content\img\c1.jpg" />
     <Content Include="Content\img\c2.jpg" />
     <Content Include="Content\img\c3.jpg" />
+    <Content Include="Content\img\c4.jpg" />
+    <Content Include="Content\img\c5.jpg" />
     <Content Include="Content\img\dish\d1.jpg" />
     <Content Include="Content\img\dish\d2.jpg" />
     <Content Include="Content\img\dish\d3.jpg" />
