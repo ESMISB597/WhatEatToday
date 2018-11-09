@@ -34,10 +34,11 @@
 @if (ViewBag.ViewEdit != "Shop")
 
 {
-    <button type="button" class="btn btn-warning btn-lg">@Html.ActionLink("Add Shop", "Create")</button>
 
-}else
+}
+else
 {
+    <button type="button" class="btn btn-warning btn-lg">@Html.ActionLink("Add Shop", "Create")</button>
 
 }
 <table class="table" >
