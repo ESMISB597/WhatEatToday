@@ -46,7 +46,7 @@ body{
     <center>
         <a role="button" style="text-decoration:none">
 
-            <div role="button" id="cirwheel" class="btn btn-warning btn-lg btn-block ">
+   <div role="button" id="cirwheel" class="btn btn-warning btn-lg btn-block " onclick="Random()">
                 <h1>  เกมส์วงล้อ มหัศจรรย์</h1>
                 <h3>Click To Start</h3>
             </div>
@@ -54,8 +54,8 @@ body{
         <img class=" " src="~/Content/images/colcir.png" width="100px">
         <div id="advanced" class="circle "><a></a></div><br>
 
-        <div type="button" class="btn btn-danger btn-lg btn-block ">
-            <h2><br>เมนูที่ได้: ก๋วยเตี๋ยวลองเบิ่ง</h2> <br>
+        <div id="demo2" type="button" class="btn btn-danger btn-lg btn-block ">
+            <h2><br>เมนูที่ได้</h2> <br>
         </div>
         <!-- <div id="link2mygallery"><a href="game3.html"></a></div> -->
     </center>
@@ -71,3 +71,26 @@ body{
         </div>
     </div>
 
+<SCRIPT LANGUAGE="JAVASCRIPT">
+     function Random(){
+        var r_text = new Array ();
+        r_text[0] = "ข้าวไข่เจียว ร้าน ครัวบ้านฉัน";
+        r_text[1] = "ก๋วยเต๊๋ยวน้ำตก ร้าน ลองเบิ่ง";
+        r_text[2] = "ข้าวผัดกระเพราไก่กรอบ ร้าน รสนิยม";
+        r_text[3] = "ชาบู ร้าน หม้อหน้ามอ";
+        r_text[4] = "ก๋วยเตี๋ยวเรือ ร้าน AB ";
+        r_text[5] = " ส้มตำไก่ย่าง ร้าน ก.เก่ง";
+        r_text[6] = " เครปเย็น ร้าน House of Crepe";
+        r_text[7] = "ก๋วยจั๊บญวณ ร้าน ร่มไม้ชายคา";
+        r_text[8] = " แหนมเนือง ร้าน VTแหนมเนือง";
+        r_text[9] = "ยำไก่เเซ่บ ร้าน ป้าไหมต้มเเซ่บ ";
+        r_text[10] = "บิงซูบราวนี่คาราเมล ร้าน ไอเย็นI-Yen";
+    var i = Math.floor(r_text.length * Math.random());
+
+    $('#demo2').text( r_text[i]  );
+
+    // var bgcolorlist=new Array("#228B22", "#FFD700", "#ADFF2F", "#FF69B4", "#CD5C5C", "#4B0082", "#7CFC00", "#ADD8E6", "#E84643", "#ED0A07", "#EA2907", "#E5294B", "#E00D26", "#FF3030", "#FC7500", "#F95700", "#F43900", "#F95620")
+
+    // document.body.style.background=bgcolorlist[Math.floor(Math.random()*bgcolorlist.length)];
+}
+</SCRIPT>
