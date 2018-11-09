@@ -337,6 +337,11 @@
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\images\12.jpg" />
     <Content Include="Content\images\12.png" />
+    <Content Include="Content\images\cream.jpg" />
+    <Content Include="Content\images\fern.jpg" />
+    <Content Include="Content\images\milk.jpg" />
+    <Content Include="Content\images\phat.jpg" />
+    <Content Include="Content\images\toto.jpg" />
     <Content Include="Content\img\banner\banner-2.jpg" />
     <Content Include="Content\img\banner\banner.jpg" />
     <Content Include="Content\img\banner\home-banner.jpg" />
@@ -701,6 +706,7 @@
     <Content Include="Views\CheckIn\Shops.cshtml" />
     <Content Include="Views\CheckIn\Index.cshtml" />
     <Content Include="Views\Shared\FoodBarIdex.cshtml" />
+    <Content Include="Views\Reports\index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
