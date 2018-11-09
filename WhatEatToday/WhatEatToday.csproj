@@ -318,6 +318,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrapforgame.min.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\breadcrumb.css" />
     <Content Include="Content\css\font-awesome.min.css" />
