@@ -29,6 +29,7 @@ namespace WhatEatToday.Models
         public string latitude { get; set; }
         public string longitude { get; set; }
         public string facebook_url { get; set; }
+        public string email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Menu> Menus { get; set; }

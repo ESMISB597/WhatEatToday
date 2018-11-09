@@ -54,6 +54,7 @@
           <Property Name="latitude" Type="nvarchar" MaxLength="150" />
           <Property Name="longitude" Type="nvarchar" MaxLength="150" />
           <Property Name="facebook_url" Type="varchar" MaxLength="256" />
+          <Property Name="email" Type="varchar" MaxLength="256" />
         </EntityType>
         <Association Name="FK_Cus_Id_CheckIn">
           <End Role="Customer" Type="Self.Customer" Multiplicity="1">
@@ -152,6 +153,7 @@
           <NavigationProperty Name="Menus" Relationship="Self.FK_Menu_ToShop" FromRole="Shop" ToRole="Menu" />
           <NavigationProperty Name="CheckIns" Relationship="WEToday_Model.FK_Shop_Id_CheckIn" FromRole="Shop" ToRole="CheckIn" />
           <Property Name="facebook_url" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_Menu_ToShop">
           <End Role="Shop" Type="Self.Shop" Multiplicity="1" />
@@ -258,6 +260,7 @@
           <EntitySetMapping Name="Shops">
             <EntityTypeMapping TypeName="WEToday_Model.Shop">
               <MappingFragment StoreEntitySet="Shop">
+                <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="facebook_url" ColumnName="facebook_url" />
                 <ScalarProperty Name="shop_id" ColumnName="shop_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
