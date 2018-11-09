@@ -82,6 +82,8 @@
         }
     }
 
+ 
+
     function stopCalc() {
         clearInterval(interval);
     }
